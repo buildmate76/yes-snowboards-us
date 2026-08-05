@@ -14,7 +14,7 @@
 %}
 <section
 	id="MainProduct-{{ section.id }}"
-	class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+	class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}{% unless product.selected_or_first_available_variant.available %} has-visible-back-in-stock{% endunless %}"
 	data-section="{{ section.id }}"
 >
 	{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
@@ -36,15 +36,15 @@
 
 	{%- style -%}
 		.section-{{ section.id }}-padding {
-		padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-		padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+			padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+			padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
 		}
 
 		@media screen and (min-width: 750px) {
-		.section-{{ section.id }}-padding {
-		padding-top: {{ section.settings.padding_top }}px;
-		padding-bottom: {{ section.settings.padding_bottom }}px;
-		}
+			.section-{{ section.id }}-padding {
+				padding-top: {{ section.settings.padding_top }}px;
+				padding-bottom: {{ section.settings.padding_bottom }}px;
+			}
 		}
 	{%- endstyle -%}
 
@@ -102,8 +102,23 @@
 
 	{% include 'global-variables' %}
 
+	{% style %}
+		.container {
+			padding-inline: 70px;
+		}
+
+		@media screen and (max-width: 768px) {
+			.container {
+				padding-inline: 0px;
+			}
+			.product__info-wrapper {
+				padding-inline: 0px;
+			}
+		}
+	{% endstyle %}
+
 	{% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-	<div class="page-width">
+	<div class="page-width container">
 		<div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
 			<div class="grid__item product__media-wrapper">
 				{% render 'product-media-gallery', variant_images: variant_images %}
@@ -175,7 +190,7 @@
 										</span>
 									</div>
 								{%- endif -%}
-								<div class="product__tax caption rte">
+								{% comment %} <div class="product__tax caption rte">
 									{%- if cart.taxes_included -%}
 										{{ 'products.product.include_taxes' | t }}
 									{%- endif -%}
@@ -185,7 +200,7 @@
 											| t: link: shop.shipping_policy.url
 										}}
 									{%- endif -%}
-								</div>
+								</div> {% endcomment %}
 								<div {{ block.shopify_attributes }}>
 									{%- assign product_form_installment_id = 'product-form-installment-'
 										| append: section.id
@@ -222,13 +237,13 @@
 										{% if product.category.id == 'sg-4-17-2-17' %}
 											{% assign text = 'Add any binding and save 10%' %}
 										{% endif %}
-{% comment %}
+								{% comment %}
 										<div
 											class="alert alert-secondary alert-small"
 										>
 											{{ text }}
 										</div>
-{% endcomment %}
+								{% endcomment %}
 									{% endif %}
 								{% endif %}
 							{%- when 'inventory' -%}
@@ -699,33 +714,41 @@
 									<div class="items-container">
 										<div class="item">
 											{%- render 'icon-shipping' -%}
-											{%- if shop.id == shop_id_eu or shop.id == shop_id_ca -%}
-												<h4>FREE DELIVERY > {{ localization.country.currency.symbol }} 75.00</h4>
-											{%- elsif shop.id == shop_id_us or shop.id == dev_shop_id_us -%}
-												<h4>FREE DELIVERY > {{ localization.country.currency.symbol }} 100.00</h4>
-											{% endif %}
+											<div class="item-label">
+												{%- if shop.id == shop_id_eu or shop.id == shop_id_ca -%}
+													<h4>Free Delivery</h4>
+													<p>over {{ localization.country.currency.symbol }} 75</p>
+												{%- elsif shop.id == shop_id_us or shop.id == dev_shop_id_us -%}
+													<h4>Free Delivery</h4>
+													<p>over {{ localization.country.currency.symbol }} 100</p>
+												{% endif %}
+											</div>
 										</div>
 
 										<div class="item">
 											{%- render 'icon-return' -%}
-											<h4>30 DAYS RETURN</h4>
+											<div class="item-label">
+												<h4>30-days return</h4>
+												<p>easy & free</p>
+											</div>
 										</div>
 
 										<div class="item">
 											{%- render 'icon-warranty' -%}
 											<h4>
-												{{ warranty_content }}
+												Warranty lifetime
+												{% comment %} {{ warranty_content }} {% endcomment %}
 											</h4>
 										</div>
 
-										<div class="item">
+										{% comment %} <div class="item">
 											{%- render 'icon-award' -%}
 											<h4>HALLDOR APPROVED</h4>
-										</div>
+										</div> {% endcomment %}
 									</div>
 								</div>
 
-							{%- when 'size_chart' -%}
+							{% comment %} {%- when 'size_chart' -%}
 								{% for collection in product.collections %}
 									{% if collection.handle == 'snowboards' or collection.handle == 'bindings' %}
 										<modal-opener
@@ -745,7 +768,7 @@
 											</button>
 										</modal-opener>
 									{% endif %}
-								{% endfor %}
+								{% endfor %} {% endcomment %}
 
 							{%- when 'variant_picker' -%}
 								{% render 'product-variant-picker',
@@ -965,7 +988,22 @@
 								</product-recommendations>
 							{%- when 'icon-with-text' -%}
 								{% render 'icon-with-text', block: block %}
-						{%- endcase -%}
+							{%- when 'key-benefits' -%}
+								{%- if block.settings.benefit_1 != blank
+									or block.settings.benefit_2 != blank
+									or block.settings.benefit_3 != blank
+									or block.settings.benefit_4 != blank -%}
+									<div class="key-benefits" {{ block.shopify_attributes }}>
+									{%- for i in (1..4) -%}
+										{%- assign benefit_key = 'benefit_' | append: i -%}
+										{%- assign benefit_val = block.settings[benefit_key] -%}
+										{%- if benefit_val != blank -%}
+										<span class="key-benefits__pill">{{ benefit_val }}</span>
+										{%- endif -%}
+									{%- endfor -%}
+									</div>
+								{%- endif -%}
+							{%- endcase -%}
 					{%- endfor -%}
 					<a
 						href="{{ product.url }}"
@@ -1092,8 +1130,8 @@
 			     ]
 			   }
 		</script>
-		{% render 'product-specs' %}
-		{% render 'product-video' %}
+		{% comment %} {% include 'product-specs' %} {% endcomment %}
+		{% comment %} {% render 'product-video' %} {% endcomment %}
 	</div>
 </section>
 
@@ -2464,6 +2502,36 @@
 					"default": "Heading",
 					"label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
 					"info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
+				}
+			]
+		},
+		{
+			"type": "key-benefits",
+			"name": "Key Benefits",
+			"settings": [
+				{
+				"type": "text",
+				"id": "benefit_1",
+				"label": "Benefit 1",
+				"default": "Key Benefit Lorem Ipsum"
+				},
+				{
+				"type": "text",
+				"id": "benefit_2",
+				"label": "Benefit 2",
+				"default": "Key Benefit Lorem Ipsum"
+				},
+				{
+				"type": "text",
+				"id": "benefit_3",
+				"label": "Benefit 3",
+				"default": "Key Benefit Lorem Ipsum"
+				},
+				{
+				"type": "text",
+				"id": "benefit_4",
+				"label": "Benefit 4",
+				"default": "Key Benefit Lorem Ipsum"
 				}
 			]
 		}

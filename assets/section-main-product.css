@@ -19,7 +19,7 @@
 	.product__column-sticky {
 		display: block;
 		position: sticky;
-		top: 3rem;
+		top: 13rem;
 		z-index: 2;
 	}
 
@@ -189,6 +189,78 @@
 	margin-bottom: 1rem;
 }
 
+.product-form__submit {
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+/* Klaviyo back-in-stock CTA: available in the normal product flow on every screen size. */
+[id^="MainProduct-"] .klaviyo-bis-trigger {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	max-width: 520px;
+	min-height: 4.5rem;
+	margin-top: 1rem;
+	padding: 1.4rem 3rem;
+	border: 0.75px solid #000000;
+	border-radius: 22.5px;
+	background: #000000;
+	color: #ffffff;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Full-viewport mobile add-to-cart bar. */
+@media screen and (max-width: 749px) {
+	/* Dawn's reveal animation transforms this ancestor, which otherwise traps fixed descendants. */
+	[id^="MainProduct-"] .product__info-wrapper.scroll-trigger.animate--slide-in {
+		transform: none;
+		animation: none;
+		opacity: 1;
+	}
+
+	[id^="MainProduct-"] .product-form__submit {
+		position: fixed;
+		bottom: calc(1rem + env(safe-area-inset-bottom));
+		left: 1.5rem;
+		z-index: 100;
+		box-sizing: border-box;
+		width: calc(100vw - 3rem);
+		width: calc(100dvw - 3rem);
+		margin-bottom: 0;
+	}
+
+	[id^="MainProduct-"].has-visible-back-in-stock .product-form__submit,
+	[id^="MainProduct-"]
+		.product-form__submit:has(+ .klaviyo-bis-trigger:not([style*="display: none"])) {
+		bottom: calc(7.6rem + env(safe-area-inset-bottom)) !important;
+		display: flex !important;
+		visibility: visible !important;
+		opacity: 0.5;
+	}
+
+	[id^="MainProduct-"] .klaviyo-bis-trigger {
+		position: fixed;
+		bottom: calc(1rem + env(safe-area-inset-bottom));
+		left: 1.5rem;
+		z-index: 100;
+		width: calc(100vw - 3rem);
+		width: calc(100dvw - 3rem);
+		max-width: none;
+		margin-top: 0;
+	}
+
+	[id^="MainProduct-"] {
+		padding-bottom: calc(14.5rem + env(safe-area-inset-bottom));
+	}
+}
+
 .product-form__submit[aria-disabled="true"]
 	+ .shopify-payment-button
 	.shopify-payment-button__button[disabled],
@@ -252,6 +324,9 @@ a.product__text {
 .product__title > * {
 	margin: 0;
 	color: var(--color-gray-1);
+	font-size: 45px;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	line-height: 100%;
 }
 
 .product__title > a {
@@ -397,6 +472,10 @@ wishlist-button-product .wk-button:hover {
 }
 
 @media screen and (max-width: 749px) {
+	.product__title > h1 {
+		font-size: 30px;
+	}
+
 	.product__media-list {
 		margin-left: -2.5rem;
 		margin-bottom: 3rem;
@@ -551,7 +630,7 @@ wishlist-button-product .wk-button:hover {
 		max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
 	}
 
-	.product:not(.product--columns) .product__media-list .product__media-item:first-child,
+	/* .product:not(.product--columns) .product__media-list .product__media-item:first-child, */
 	.product:not(.product--columns) .product__media-list .product__media-item--full {
 		width: 100%;
 		max-width: 100%;
@@ -1571,13 +1650,15 @@ slider-component .global-media-settings {
 
 /* Custom */
 /* toggle product description with "read more" */
-.product-description-container #product-description {
-	font-size: var(--typo-body-s);
+.product-description-container #product-description p {
+	font-size: var(--typo-body-xs);
 	max-width: var(--size-440);
+	line-height: 15px;
+	margin-bottom: 0;
 }
 
 .product-description-container #product-description:not(.display) {
-	height: calc(var(--size-4xl) + var(--size-3xs));
+	height: 60px;
 	overflow: hidden;
 }
 
@@ -1595,4 +1676,48 @@ slider-component .global-media-settings {
 
 p.text-info-delay {
 	max-width: var(--size-440);
+}
+
+.key-benefits {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px 6px;
+	max-width: 520px;
+	border-bottom: 0.75px solid var(--color-blue-light);
+	padding-bottom: 20px;
+}
+
+.key-benefits__pill {
+	display: flex;
+	min-height: 25px;
+	align-items: center;
+	justify-content: center;
+	border: 0.75px solid var(--color-gray-medium);
+	border-radius: 15px;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 12px;
+	color: var(--color-gray-dark);
+	text-align: center;
+	line-height: 15px;
+	background-color: var(--color-white);
+	padding-inline: 10px;
+}
+
+@media screen and (max-width: 768px) {
+	.product-description-container #product-description p {
+		line-height: 20px;
+		font-size: 13px;
+		margin-bottom: 0;
+	}
+
+	.key-benefits__pill {
+		min-height: 28px;
+		padding-block: 10px;
+		background-color: var(--color-gray-light);
+		border: none;
+	}
+
+	.key-benefits {
+		grid-template-columns: 1fr;
+	}
 }
