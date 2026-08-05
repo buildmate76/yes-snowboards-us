@@ -10,6 +10,19 @@
 	Usage:
 	{% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
+{% style %}
+	.product-form__buttons {
+		width: 100%;
+		max-width: 520px;
+	}
+	.product-form__submit {
+		border: 0.75px solid #000000;
+		border-radius: 22.5px;
+		background-color: #000000;
+		color: #ffffff;
+	}
+{% endstyle %}
+
 <div {{ block.shopify_attributes }}>
 	{%- if product != blank -%}
 		{%- liquid
@@ -98,18 +111,23 @@
 							{% endif %}
 						>
 							<span>
-								{%- if product.selected_or_first_available_variant.available == false
-									or quantity_rule_soldout
-								-%}
-									{{ 'products.product.sold_out' | t }}
-								{%- else -%}
-									{{ 'products.product.add_to_cart' | t }}
-								{%- endif -%}
+								{{ 'products.product.add_to_cart' | t }}
 							</span>
 							{%- render 'loading-spinner' -%}
 						</button>
+						<a
+							class="klaviyo-bis-trigger"
+							href="#"
+							{% unless product.selected_or_first_available_variant.available == false
+								or quantity_rule_soldout
+							%}
+								style="display: none;"
+							{% endunless %}
+						>
+							Notify me when available
+						</a>
 						{%- if show_dynamic_checkout -%}
-							{{ form | payment_button }}
+							{% comment %} {{ form | payment_button }} {% endcomment %}
 						{%- endif -%}
 					</div>
 				{%- endform -%}
@@ -123,7 +141,7 @@
 						class="product-form__submit button button--full-width button--primary"
 						disabled
 					>
-						{{ 'products.product.sold_out' | t }}
+						{{ 'products.product.add_to_cart' | t }}
 					</button>
 				</div>
 			</div>
