@@ -14,4 +14,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
   }
+
+	const productSection = document.querySelector('[id^="MainProduct-"]')
+	if (!productSection) return
+
+	const updateBackInStockState = () => {
+		const trigger = productSection.querySelector(".klaviyo-bis-trigger")
+		const addButton = productSection.querySelector(".product-form__submit")
+		if (!trigger || !addButton) return
+
+		const triggerShouldBeVisible = addButton.disabled
+		const desiredDisplay = triggerShouldBeVisible ? "block" : "none"
+
+		if (trigger.style.display !== desiredDisplay) {
+			trigger.style.display = desiredDisplay
+		}
+
+		trigger.setAttribute("aria-hidden", String(!triggerShouldBeVisible))
+		trigger.setAttribute("tabindex", triggerShouldBeVisible ? "0" : "-1")
+
+		productSection.classList.toggle("has-visible-back-in-stock", triggerShouldBeVisible)
+	}
+
+	updateBackInStockState()
+
+	new MutationObserver(updateBackInStockState).observe(productSection, {
+		attributes: true,
+		attributeFilter: ["disabled", "style"],
+		childList: true,
+		subtree: true,
+	})
 })

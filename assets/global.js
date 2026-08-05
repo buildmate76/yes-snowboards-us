@@ -1342,7 +1342,7 @@ class VariantSelects extends HTMLElement {
 
     if (disable) {
       addButton.setAttribute("disabled", "disabled")
-      if (text) addButtonText.textContent = text
+      addButtonText.textContent = window.variantStrings.addToCart
     } else {
       addButton.removeAttribute("disabled")
       addButtonText.textContent = window.variantStrings.addToCart
