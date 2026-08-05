@@ -1,0 +1,111 @@
+/* 
+** YES style guide variables
+*/
+:root {
+	--spacing-unit: 4px; /* Used for Border radius, Size, Spacing variables */
+
+	/* Background */
+	--gradient-bottom-black: linear-gradient(to bottom, transparent, var(--color-black));
+
+	/* Border radius */
+	--border-radius-3xs: calc(1 * var(--spacing-unit)); /*  4px */
+	--border-radius-xxs: calc(2 * var(--spacing-unit)); /*  8px */
+
+	/* Colors */
+	--color-black: #000000;
+	--color-white: #ffffff;
+
+	--color-gray-1: #333232;
+	--color-gray-2: #c0c0c0;
+	--color-gray-3: #f1f1f1;
+
+	--color-accent-primary: #ffea00;
+	--color-accent-secondary: #9747ff;
+
+	--color-success: #369e53;
+	--color-warning: #ff8b38;
+	--color-danger: #c13434;
+
+	--color-box-shadow: #00000016;
+
+	/* Page */
+	--global-container: 1440px;
+
+	/* Product Card */
+	--product-card-media-container: 348px;
+
+	/* Size - used for `height`, `max-height`, `width`, `max-width` */
+	--size-3xs: calc(1 * var(--spacing-unit)); /*  4px */
+	--size-xs-xs: calc(2.5 * var(--spacing-unit)); /* 10px */
+	--size-s: calc(6 * var(--spacing-unit)); /* 24px */
+	--size-m: calc(8 * var(--spacing-unit)); /* 32px */
+	--size-4xl: calc(18 * var(--spacing-unit)); /* 72px */
+
+	--size-5-per-100: 5%; /*  5% */
+	--size-50-per-100: 50%; /*  50% */
+	--size-64-per-100: 64%; /*  64% */
+	--size-80-per-100: 80%; /*  80% */
+	--size-100-per-100: 100%; /*  100% */
+
+	--size-100-vh: 100vh; /* 100vh */
+
+	--size-2: calc(0.5 * var(--spacing-unit)); /* 2px */
+	--size-8: calc(2 * var(--spacing-unit)); /* 8px */
+	--size-10: calc(2.5 * var(--spacing-unit)); /* 10px */
+	--size-16: calc(4 * var(--spacing-unit)); /* 16px */
+	--size-110: calc(27.5 * var(--spacing-unit)); /* 110px */
+	--size-160: calc(40 * var(--spacing-unit)); /* 160px */
+	--size-180: calc(45 * var(--spacing-unit)); /* 180px */
+	--size-248: calc(62 * var(--spacing-unit)); /* 248px */
+	--size-320: calc(80 * var(--spacing-unit)); /* 320px */
+	--size-380: calc(95 * var(--spacing-unit)); /* 380px */
+	--size-440: calc(110 * var(--spacing-unit)); /* 440px */
+	--size-800: calc(200 * var(--spacing-unit)); /* 800px */
+
+	/* Spacing - used for `margin`, `padding`, `top`, `right`, `bottom`, `left` */
+	--space-4xs: calc(0.5 * var(--spacing-unit)); /*  2px */
+	--space-3xxs: calc(0.3 * var(--spacing-unit)); /*  3px */
+	--space-3xs: calc(1 * var(--spacing-unit)); /*  4px */
+	--space-xxs: calc(2 * var(--spacing-unit)); /*  8px */
+	--space-xs-xs: calc(2.5 * var(--spacing-unit)); /* 10px */
+	--space-xs: calc(4 * var(--spacing-unit)); /* 16px */
+	--space-s: calc(6 * var(--spacing-unit)); /* 24px */
+	--space-m: calc(8 * var(--spacing-unit)); /* 32px */
+	--space-l: calc(10 * var(--spacing-unit)); /* 40px */
+	--space-xl: calc(12 * var(--spacing-unit)); /* 48px */
+	--space-2xl: calc(14 * var(--spacing-unit)); /* 56px */
+	--space-3xl: calc(16 * var(--spacing-unit)); /* 64px */
+	--space-4xl: calc(18 * var(--spacing-unit)); /* 72px */
+	--space-5xl: calc(20 * var(--spacing-unit)); /* 80px */
+	--space-6xl: calc(22 * var(--spacing-unit)); /* 88px */
+	--space-7xl: calc(24 * var(--spacing-unit)); /* 96px */
+
+	/* Transition - used for `transition-duration` */
+	--transition-duration-03s: 0.3s;
+
+	/* Typography */
+	/* Typography Headings - used for `font-size` */
+	--typo-heading-1: calc(var(--font-heading-scale) * 4rem); /* 40px */
+	--typo-heading-2: calc(var(--font-heading-scale) * 3rem); /* 30px */
+	--typo-heading-2-s: calc(var(--font-heading-scale) * 2.4rem); /* 24px */
+	--typo-heading-3: calc(var(--font-heading-scale) * 2rem); /* 20px */
+	--typo-heading-4: calc(var(--font-heading-scale) * 1.6rem); /* 16px */
+	--typo-heading-5: calc(var(--font-heading-scale) * 1.4rem); /* 14px */
+	--typo-heading-6: calc(var(--font-heading-scale) * 1.2rem); /* 12px */
+
+	/* Typography Body - used for `font-size` */
+	--typo-body-3xs: calc(var(--font-body-scale) * 0.8rem); /* 8px */
+	--typo-body-xxs: calc(var(--font-body-scale) * 1rem); /* 10px */
+	--typo-body-xs: calc(var(--font-body-scale) * 1.2rem); /* 12px */
+	--typo-body-s: calc(var(--font-body-scale) * 1.4rem); /* 14px */
+	--typo-body-m: calc(var(--font-body-scale) * 1.6rem); /* 16px */
+
+	--typo-36: calc(var(--font-body-scale) * 3.2rem); /* 36px */
+	--typo-140: calc(var(--font-body-scale) * 14rem); /* 140px */
+
+	/* Typography Weight - used for `font-weight` */
+	--font-weight-300: 300;
+	--font-weight-400: 400;
+	--font-weight-600: 600;
+	--font-weight-800: 800;
+}

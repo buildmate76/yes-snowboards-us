@@ -1,0 +1,290 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{{ 'component-featured-collections.css' | asset_url | stylesheet_tag }}
+
+{%- unless section.settings.quick_add == 'none' -%}
+	{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+	<script
+		src="{{ 'product-form.js' | asset_url }}"
+		defer="defer"
+	></script>
+{%- endunless -%}
+
+{%- if section.settings.quick_add == 'standard' -%}
+	<script
+		src="{{ 'quick-add.js' | asset_url }}"
+		defer="defer"
+	></script>
+{%- endif -%}
+
+{%- if section.settings.quick_add == 'bulk' -%}
+	<script
+		src="{{ 'quick-add-bulk.js' | asset_url }}"
+		defer="defer"
+	></script>
+	<script
+		src="{{ 'quick-order-list.js' | asset_url }}"
+		defer="defer"
+	></script>
+	<script
+		src="{{ 'quantity-popover.js' | asset_url }}"
+		defer="defer"
+	></script>
+	<script
+		src="{{ 'price-per-item.js' | asset_url }}"
+		defer="defer"
+	></script>
+{%- endif -%}
+
+{% include 'global-variables' %}
+
+<div class="featured-collections isolate gradient">
+	<div
+		class="page-width collection-two-column{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding"
+		id="collection-{{ section.id }}"
+		data-id="{{ section.id }}"
+	>
+		<div class="item">
+			<div class="collection__title title-wrapper title-wrapper--no-top-margin page-width title-wrapper--self-padded-tablet-down">
+				{%- if section.settings.title != blank -%}
+					<h2 class="h3 inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+						{{ section.settings.title }}
+					</h2>
+				{%- endif -%}
+			</div>
+
+			<slider-component
+				class="
+					slider-mobile-gutter
+					slider-component-desktop
+					{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
+				"
+			>
+				<ul
+					id="Slider-{{ section.id }}"
+					data-id="{{ section.id }}"
+					class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--2-col-desktop grid--2-col-tablet-down grid--1-col-tablet-down slider slider--desktop slider--tablet grid--peek"
+					role="list"
+					aria-label="{{ 'general.slider.name' | t }}"
+				>
+					{%- for product in section.settings.collection.products limit: 25 -%}
+						<li
+							id="Slide-{{ section.id }}-{{ forloop.index }}"
+							class="grid__item slider__slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+							{% if settings.animations_reveal_on_scroll %}
+								data-cascade
+								style="--animation-order: {{ forloop.index }};"
+							{% endif %}
+						>
+							{% render 'card-product',
+								card_product: product,
+								show_secondary_image: section.settings.show_secondary_image,
+								show_vendor: section.settings.show_vendor,
+								show_rating: section.settings.show_rating,
+								section_id: section.id,
+								quick_add: section.settings.quick_add
+							%}
+						</li>
+					{%- endfor -%}
+				</ul>
+				<div class="slider-buttons">
+					<button
+						type="button"
+						class="slider-button slider-button--prev"
+						name="previous"
+						aria-label="{{ 'general.slider.previous_slide' | t }}"
+						aria-controls="Slider-{{ section.id }}"
+					>
+						{% render 'icon-arrow' %}
+					</button>
+					<button
+						type="button"
+						class="slider-button slider-button--next"
+						name="next"
+						aria-label="{{ 'general.slider.next_slide' | t }}"
+						aria-controls="Slider-{{ section.id }}"
+					>
+						{% render 'icon-arrow' %}
+					</button>
+				</div>
+			</slider-component>
+
+			{%- if section.settings.show_view_all -%}
+				<div class="collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+					<a
+						href="{{ section.settings.collection.url }}"
+						class="button button--secondary button--small"
+						aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
+					>
+						SHOP ALL {{ section.settings.collection.title }}
+					</a>
+				</div>
+			{%- endif -%}
+		</div>
+
+		<div class="item">
+			<div class="collection__title title-wrapper title-wrapper--no-top-margin page-width title-wrapper--self-padded-tablet-down">
+				{%- if section.settings.title_2 != blank -%}
+					<h2 class="h3 inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+						{{ section.settings.title_2 }}
+					</h2>
+				{%- endif -%}
+			</div>
+
+			<slider-component class="slider-mobile-gutter {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+				<ul
+					id="Slider-{{ section.id }}"
+					data-id="{{ section.id }}"
+					class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--2-col-desktop grid--1-col-tablet-down slider slider--desktop slider--tablet grid--peek"
+					role="list"
+					aria-label="{{ 'general.slider.name' | t }}"
+				>
+					{%- for product in section.settings.collection_2.products limit: 25 -%}
+						<li
+							id="Slide-{{ section.id }}-{{ forloop.index }}"
+							class="grid__item slider__slide {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+							{% if settings.animations_reveal_on_scroll %}
+								data-cascade
+								style="--animation-order: {{ forloop.index }};"
+							{% endif %}
+						>
+							{% render 'card-product',
+								card_product: product,
+								show_secondary_image: section.settings.show_secondary_image,
+								show_vendor: section.settings.show_vendor,
+								show_rating: section.settings.show_rating,
+								section_id: section.id,
+								quick_add: section.settings.quick_add
+							%}
+						</li>
+					{%- endfor -%}
+				</ul>
+
+				<div class="slider-buttons">
+					<button
+						type="button"
+						class="slider-button slider-button--prev"
+						name="previous"
+						aria-label="{{ 'general.slider.previous_slide' | t }}"
+						aria-controls="Slider-{{ section.id }}"
+					>
+						{% render 'icon-arrow' %}
+					</button>
+					<button
+						type="button"
+						class="slider-button slider-button--next"
+						name="next"
+						aria-label="{{ 'general.slider.next_slide' | t }}"
+						aria-controls="Slider-{{ section.id }}"
+					>
+						{% render 'icon-arrow' %}
+					</button>
+				</div>
+			</slider-component>
+
+			{%- if section.settings.show_view_all -%}
+				<div class="collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+					<a
+						href="{{ section.settings.collection_2.url }}"
+						class="button button--secondary button--small"
+						aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
+					>
+						SHOP ALL {{ section.settings.collection_2.title }}
+					</a>
+				</div>
+			{%- endif -%}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "t:sections.featured-collection.name",
+	"tag": "section",
+	"class": "section",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"settings": [
+		{
+			"type": "inline_richtext",
+			"id": "title",
+			"label": "Title for first collection"
+		},
+		{
+			"type": "inline_richtext",
+			"id": "title_2",
+			"label": "Title for second collection"
+		},
+		{
+			"type": "collection",
+			"id": "collection",
+			"label": "First collection"
+		},
+		{
+			"type": "collection",
+			"id": "collection_2",
+			"label": "Second collection"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_view_all",
+			"default": true,
+			"label": "t:sections.featured-collection.settings.show_view_all.label"
+		},
+		{
+			"type": "header",
+			"content": "t:sections.featured-collection.settings.header.content"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_secondary_image",
+			"default": false,
+			"label": "t:sections.featured-collection.settings.show_secondary_image.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_vendor",
+			"default": false,
+			"label": "t:sections.featured-collection.settings.show_vendor.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_rating",
+			"default": false,
+			"label": "t:sections.featured-collection.settings.show_rating.label",
+			"info": "t:sections.featured-collection.settings.show_rating.info"
+		},
+		{
+			"type": "select",
+			"id": "quick_add",
+			"default": "none",
+			"label": "t:sections.main-collection-product-grid.settings.quick_add.label",
+			"info": "t:sections.main-collection-product-grid.settings.quick_add.info",
+			"options": [
+				{
+					"value": "none",
+					"label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_1"
+				},
+				{
+					"value": "standard",
+					"label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_2"
+				},
+				{
+					"value": "bulk",
+					"label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "t:sections.featured-collection.presets.name"
+		}
+	]
+}
+{% endschema %}

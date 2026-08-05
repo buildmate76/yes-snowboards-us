@@ -1,0 +1,101 @@
+/* Mobile, Default */
+.accordion {
+	padding: var(--space-2xl) 0;
+}
+
+.accordion .page-width {
+	margin: 0 auto;
+	padding-top: 72px;
+	padding-bottom: 96px;
+}
+
+.accordion summary {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0;
+}
+
+.accordion details[open] {
+	animation: slideDown var(--transition-duration-03s) ease-in-out;
+}
+
+@keyframes slideDown {
+	0% {
+		opacity: 0.8;
+		transform: translateY(calc(var(--space-3xs) * -1));
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.accordion details summary:after {
+	content: "+";
+	display: block;
+	font-size: var(--typo-heading-2);
+	font-weight: var(--font-weight-300);
+}
+
+.accordion details[open] summary:after {
+	content: "-";
+	font-size: var(--typo-36);
+}
+
+.accordion h2,
+.accordion h3,
+.accordion h4 {
+	text-transform: uppercase;
+}
+
+.accordion h2,
+.accordion h3,
+.accordion h4,
+.accordion p {
+	font-family: var(--font-body-family);
+	color: rgba(var(--color-foreground), 1);
+}
+
+.accordion .content {
+	width: 100%;
+	padding: var(--space-xs) var(--space-m);
+}
+
+.accordion details[open] .content {
+	width: 100%;
+	border-bottom: 1px solid;
+	padding-bottom: var(--space-m);
+}
+
+/* Video iframe responsiveness */
+.accordion .video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Tablet, Desktop */
+@media screen and (min-width: 750px) {
+	.accordion {
+		padding: var(--space-4xl) 0 var(--space-7xl) 0;
+	}
+
+	.accordion .content {
+		width: 70%;
+	}
+
+	.accordion summary {
+		padding: var(--space-xs) var(--space-m);
+	}
+}

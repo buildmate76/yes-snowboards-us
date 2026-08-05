@@ -1,0 +1,96 @@
+{{ 'breadcrumbs.css' | asset_url | stylesheet_tag }}
+
+<nav
+	class="breadcrumbs"
+	aria-label="Breadcrumbs"
+>
+	<ol class="list">
+		<li class="item">
+			<a
+				class="link"
+				href="/"
+				>Home</a
+			>
+		</li>
+
+		{% case template %}
+			{% when 'product' %}
+				{%- assign main_categories = 'snowboards,bindings,explore' | split: ',' -%}
+				{%- assign main_category = null -%}
+				{%- for collection in product.collections -%}
+					{%- if main_categories contains collection.handle -%}
+						{%- assign main_category = collection -%}
+						{%- break -%}
+					{%- endif -%}
+				{%- endfor -%}
+
+				{%- if main_category -%}
+					<li class="item">
+						<a
+							class="link"
+							href="{{ main_category.url }}"
+						>
+							{{- main_category.title -}}
+						</a>
+					</li>
+				{%- endif -%}
+				<li class="item">
+					<span
+						class="breadcrumbs__current"
+						aria-current="page"
+					>
+						{{- product.title -}}
+					</span>
+				</li>
+
+			{% when 'collection' %}
+				<li class="item">
+					<span
+						class="link"
+						aria-current="page"
+					>
+						{{- collection.title -}}
+					</span>
+				</li>
+
+			{% when 'page' %}
+				<li class="item">
+					<span
+						class="link"
+						aria-current="page"
+					>
+						{{- page.title -}}
+					</span>
+				</li>
+
+			{% when 'blog' %}
+				<li class="item">
+					<span
+						class="link"
+						aria-current="page"
+					>
+						{{- blog.title -}}
+					</span>
+				</li>
+
+			{% when 'article' %}
+				{%- assign short_title = article.metafields.custom.short_title -%}
+				<li class="item">
+					<a
+						class="link"
+						href="{{ blog.url }}"
+					>
+						{{- blog.title -}}
+					</a>
+				</li>
+				<li class="item">
+					<span
+						class="link"
+						aria-current="page"
+					>
+						{{- short_title -}}
+					</span>
+				</li>
+		{% endcase %}
+	</ol>
+</nav>

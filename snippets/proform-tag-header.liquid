@@ -1,0 +1,6 @@
+{% assign tags_array = customer.tags %}
+{% for item in tags_array %}
+    {% if item == 'proform' %}
+        <span class="pro-badge--header">pro</span>
+    {% endif %}
+{% endfor %}

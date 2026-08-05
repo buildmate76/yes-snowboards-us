@@ -1,0 +1,21 @@
+.alliance-pro-wrapper.customer div.button {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.alliance-pro-wrapper.customer div.button:hover {
+    background: var(--color-black);
+}
+
+.alliance-pro-wrapper.customer file-upload label {
+    visibility: visible;
+}
+
+.alliance-pro-wrapper.customer textarea {
+    min-height: var(--size-100-per-100);
+}
+
+.alliance-pro-wrapper.customer .policy-field label {
+    color: rgba(var(--color-foreground), 0.5);
+    visibility: visible;
+}

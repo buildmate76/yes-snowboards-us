@@ -1,0 +1,609 @@
+{{ 'section-product-spec.css' | asset_url | stylesheet_tag }}
+
+<div class="tabs-wrapper">
+	<div class="small-hide medium-hide desktop">
+		{% comment %} Snowboards specs {% endcomment %}
+		{% if product.metafields.custom.shape.value or product.metafields.custom.profile.value %}
+			<input
+				name="tab"
+				id="tabShape"
+				type="radio"
+				checked
+			>
+		{% endif %}
+
+		{% if product.metafields.custom.construction %}
+			<input
+				name="tab"
+				id="tabConstruction"
+				type="radio"
+			>
+		{% endif %}
+
+		{% if product.metafields.custom.characteristics %}
+			<input
+				name="tab"
+				id="tabCharacteristics"
+				type="radio"
+			>
+		{% endif %}
+
+		{% if product.metafields.custom.features %}
+			<input
+				name="tab"
+				id="tabFeatures"
+				type="radio"
+			>
+		{% endif %}
+
+		{% comment %} Bindings specs {% endcomment %}
+		{% if product.metafields.custom.technology.value %}
+			<input
+				name="tab"
+				id="tabTechnology"
+				type="radio"
+				checked
+			>
+		{% endif %}
+
+		{% if product.metafields.custom.bindings_construction.value %}
+			<input
+				name="tab"
+				id="tabBindingsConstruction"
+				type="radio"
+				checked
+			>
+		{% endif %}
+
+		{% if product.metafields.custom.flex %}
+			<input
+				name="tab"
+				id="tabCharacteristics"
+				type="radio"
+			>
+		{% endif %}
+
+		{% comment %}
+			{% if product.metafields.custom.construction %}
+			    <input name="tab" id="tabConstruction" type="radio" />
+			{% endif %}
+
+			{% if product.metafields.custom.features %}
+			    <input name="tab" id="tabFeatures" type="radio" />
+			{% endif %}
+		{% endcomment %}
+
+		<section class="tabs-container h3">
+			{% comment %}{{ product.metafields.custom.shape.value | json }}{% endcomment %}
+
+			{% comment %} Snowboards specs {% endcomment %}
+			{% if product.metafields.custom.shape.value or product.metafields.custom.profile.value %}
+				<label
+					for="tabShape"
+					id="labelShape"
+				>
+					Shape / Profile
+				</label>
+			{% endif %}
+			{% if product.metafields.custom.construction %}
+				<label
+					for="tabConstruction"
+					id="labelConstruction"
+				>
+					Construction
+				</label>
+			{% endif %}
+			{% if product.metafields.custom.characteristics %}
+				<label
+					for="tabCharacteristics"
+					id="labelCharacteristics"
+				>
+					Characteristics
+				</label>
+			{% endif %}
+			{% if product.metafields.custom.features %}
+				<label
+					for="tabFeatures"
+					id="labelFeatures"
+				>
+					Features
+				</label>
+			{% endif %}
+
+			{% if product.metafields.custom.flex %}
+				<label
+					for="tabCharacteristics"
+					id="labelCharacteristics"
+				>
+					Characteristics
+				</label>
+			{% endif %}
+
+			{% comment %} Bindings specs {% endcomment %}
+			{% if product.metafields.custom.technology.value %}
+				<label
+					for="tabTechnology"
+					id="labelTechnology"
+				>
+					Technology
+				</label>
+			{% endif %}
+
+			{% if product.metafields.custom.bindings_construction.value %}
+				<label
+					for="tabBindingsConstruction"
+					id="labelBindingsConstruction"
+				>
+					Construction
+				</label>
+			{% endif %}
+			{% comment %}
+				{% if product.metafields.custom.construction %}
+				    <label for="tabConstruction" id="labelConstruction"> Construction </label>
+				{% endif %}
+				{% if product.metafields.custom.characteristics %}
+				    <label for="tabCharacteristics" id="labelCharacteristics"> Characteristics </label>
+				{% endif %}
+				{% if product.metafields.custom.features %}
+				    <label for="tabFeatures" id="labelFeatures"> Features </label>
+				{% endif %}
+			{% endcomment %}
+		</section>
+
+		{% if product.metafields.custom.shape.value or product.metafields.custom.profile.value %}
+			<section
+				class="tab-content"
+				id="contentShape"
+			>
+				{% if product.metafields.custom.shape.value %}
+					{% assign shape_img = product.metafields.custom.shape.value.image | image_url %}
+
+					<div>
+						<h3>
+							Shape:
+							{{ product.metafields.custom.shape.value.display_name }}
+						</h3>
+						<img
+							src="{{ shape_img }}"
+							alt=""
+						>
+						<p>
+							{{ product.metafields.custom.shape.value.description | newline_to_br }}
+						</p>
+					</div>
+				{% endif %}
+
+				{% if product.metafields.custom.profile.value %}
+					{% assign profile_img = product.metafields.custom.profile.value.image | image_url %}
+
+					<div>
+						<h3>
+							Profile:
+							{{ product.metafields.custom.profile.value.title }}
+						</h3>
+						<img
+							src="{{ profile_img }}"
+							alt=""
+						>
+						<p>
+							{{ product.metafields.custom.profile.value.description | newline_to_br }}
+						</p>
+					</div>
+				{% endif %}
+			</section>
+		{% endif %}
+
+		{% if product.metafields.custom.construction.value %}
+			<section
+				class="tab-content"
+				id="contentConstruction"
+			>
+				{% for construction in product.metafields.custom.construction.value %}
+					{% assign construction_img = construction.image | image_url %}
+					<div>
+						<div>
+							{% if construction_img %}
+								<img
+									src="{{ construction_img }}"
+									alt=""
+								>
+							{% endif %}
+						</div>
+						<div>
+							<h3>{{ forloop.index }}. {{ construction.title }}</h3>
+							<p>
+								{{ construction.description | newline_to_br }}
+							</p>
+						</div>
+					</div>
+					{% assign construction_img = null %}
+				{% endfor %}
+			</section>
+		{% endif %}
+
+		{% if product.metafields.custom.flex.value %}
+			{% comment %}
+				{% assign characteristics_img = product.metafields.custom.characteristics.value.image
+				    | image_url
+				%}
+			{% endcomment %}
+			<section
+				class="tab-content"
+				id="contentCharacteristics"
+			>
+				<div>
+					<h3>Flex</h3>
+					<div class="bar-chart-wrapper">
+						<span
+							class="bar-chart-indice"
+							style="left: {{ product.metafields.custom.flex | times: 10  }}%;"
+						>
+							{{ product.metafields.custom.flex }}/10
+						</span>
+						<div
+							class="bar-chart"
+							data-total="{{ product.metafields.custom.flex | times: 10 }}"
+						>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span
+								class="bar-chart--inner chart-inner--resortTotal"
+								style="width: {{ product.metafields.custom.flex | times: 10 }}%;"
+							></span>
+						</div>
+						<div class="bar-chart-legend">
+							<span> soft </span>
+							<span> stiff </span>
+						</div>
+					</div>
+					<p>
+						Perfectly symmetrical shape for balanced riding, equally versatile both when used
+						regular and when used in switch. Great balance between feline stability and freestyle
+						mobility, no matter which way you point it.
+					</p>
+				</div>
+			</section>
+		{% endif %}
+
+		{% if product.metafields.custom.features.value %}
+			<section
+				class="tab-content"
+				id="contentFeatures"
+			>
+				{% for feature in product.metafields.custom.features.value %}
+					{% assign feature_img = feature.image | image_url %}
+					<div>
+						<div>
+							{% if feature_img %}
+								<img
+									src="{{ feature_img }}"
+									alt=""
+								>
+							{% endif %}
+						</div>
+						<div>
+							<h3>{{ feature.title }}</h3>
+							<p>{{ feature.description | newline_to_br }}</p>
+						</div>
+					</div>
+					{% assign feature_img = null %}
+				{% endfor %}
+			</section>
+		{% endif %}
+
+		{% if product.metafields.custom.technology.value %}
+			<section
+				class="tab-content"
+				id="contentTechnology"
+			>
+				{% for technology in product.metafields.custom.technology.value %}
+					{% assign technology_img = technology.image | image_url %}
+					<div>
+						{% if technology_img %}
+							<img
+								src="{{ technology_img }}"
+								alt=""
+							>
+						{% endif %}
+						<div>
+							<h3>{{ technology.title }}</h3>
+							<p>{{ technology.description | newline_to_br }}</p>
+						</div>
+					</div>
+					{% assign technology_img = null %}
+				{% endfor %}
+			</section>
+		{% endif %}
+
+		{% if product.metafields.custom.bindings_construction.value %}
+			<section
+				class="tab-content"
+				id="contentBindingsConstruction"
+			>
+				{% for bindings_construction in product.metafields.custom.bindings_construction.value %}
+					{% assign bindings_construction_img = bindings_construction.image | image_url %}
+					<div>
+						{% if bindings_construction_img %}
+							<img
+								src="{{ bindings_construction_img }}"
+								alt=""
+							>
+						{% endif %}
+						<div>
+							<h3>{{ bindings_construction.title }}</h3>
+							<p>
+								{{ bindings_construction.description | newline_to_br }}
+							</p>
+						</div>
+					</div>
+					{% assign bindings_construction_img = null %}
+				{% endfor %}
+			</section>
+		{% endif %}
+	</div>
+
+	<div class="accordion large-up-hide mobile">
+		{% if product.metafields.custom.shape.value or product.metafields.custom.profile.value %}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>Shape / Profile</h3>
+				</summary>
+
+				{% if product.metafields.custom.shape.value %}
+					{% assign shape_img = product.metafields.custom.shape.value.image | image_url %}
+
+					<div class="content">
+						<img
+							src="{{ shape_img }}"
+							alt=""
+						>
+						<h4 class="h3">
+							{{ product.metafields.custom.shape.value.title }}
+						</h4>
+
+						<p>
+							{{ product.metafields.custom.shape.value.description | newline_to_br }}
+						</p>
+					</div>
+				{% endif %}
+
+				{% if product.metafields.custom.profile.value %}
+					{% assign profile_img = product.metafields.custom.profile.value.image | image_url %}
+
+					<div class="content">
+						<img
+							src="{{ profile_img }}"
+							alt=""
+						>
+						<h4 class="h3">
+							{{ product.metafields.custom.profile.value.title }}
+						</h4>
+
+						<p>
+							{{ product.metafields.custom.profile.value.description | newline_to_br }}
+						</p>
+					</div>
+				{% endif %}
+			</details>
+		{% endif %}
+
+		{% if product.metafields.custom.construction.value %}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>Construction</h3>
+				</summary>
+
+				<div
+					class="content"
+					id="contentMobileConstruction"
+				>
+					{% for construction in product.metafields.custom.construction.value %}
+						{% assign construction_img = construction.image | image_url %}
+						<div>
+							{% if construction_img %}
+								<img
+									src="{{ construction_img }}"
+									alt=""
+								>
+							{% endif %}
+							<div>
+								<h4 class="h3">
+									{{ forloop.index }}.
+									{{ construction.title }}
+								</h4>
+								<p>
+									{{ construction.description | newline_to_br }}
+								</p>
+							</div>
+						</div>
+						{% assign construction_img = null %}
+					{% endfor %}
+				</div>
+			</details>
+		{% endif %}
+
+		{% if product.metafields.custom.construction.value %}
+			<section
+				class="tab-content"
+				id="contentConstruction"
+			></section>
+		{% endif %}
+
+		{% if product.metafields.custom.characteristics.value %}
+			{% assign characteristic_img = product.metafields.custom.characteristics.value.image
+				| image_url
+			%}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>Characteristics</h3>
+				</summary>
+
+				<div class="content">
+					<img
+						src="{{ characteristic_img }}"
+						alt=""
+					>
+					<h4 class="h3">
+						{{ product.metafields.custom.characteristics.value.title }}
+					</h4>
+
+					<p>
+						{{ product.metafields.custom.characteristics.value.description | newline_to_br }}
+					</p>
+				</div>
+			</details>
+		{% endif %}
+
+		{% if product.metafields.custom.features.value %}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>Features</h3>
+				</summary>
+
+				<div
+					class="content"
+					id="contentMobileFeatures"
+				>
+					{% for feature in product.metafields.custom.features.value %}
+						{% assign feature_img = feature.image | image_url %}
+						<div>
+							{% if feature_img %}
+								<img
+									src="{{ feature_img }}"
+									alt=""
+								>
+							{% endif %}
+							<div>
+								<h4 class="h3">{{ forloop.index }}. {{ feature.title }}</h4>
+								<p>{{ feature.description | newline_to_br }}</p>
+							</div>
+						</div>
+						{% assign feature_img = null %}
+					{% endfor %}
+				</div>
+			</details>
+		{% endif %}
+
+		{% if product.metafields.custom.flex.value %}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>Flex</h3>
+				</summary>
+
+				<div
+					class="content"
+					id="contentMobileFlex"
+				>
+					<div class="bar-chart-wrapper">
+						<span
+							class="bar-chart-indice"
+							style="left: {{ product.metafields.custom.flex | times: 10  }}%;"
+						>
+							{{ product.metafields.custom.flex }}/10
+						</span>
+						<div
+							class="bar-chart"
+							data-total="{{ product.metafields.custom.flex | times: 10 }}"
+						>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span class="limiter"></span>
+							<span
+								class="bar-chart--inner chart-inner--resortTotal"
+								style="width: {{ product.metafields.custom.flex | times: 10 }}%;"
+							></span>
+						</div>
+						<div class="bar-chart-legend">
+							<span> soft </span>
+							<span> stiff </span>
+						</div>
+					</div>
+					<p>
+						Perfectly symmetrical shape for balanced riding, equally versatile both when used
+						regular and when used in switch. Great balance between feline stability and freestyle
+						mobility, no matter which way you point it.
+					</p>
+				</div>
+			</details>
+		{% endif %}
+
+		{% if product.metafields.custom.technology.value %}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>Technology</h3>
+				</summary>
+
+				<div
+					class="content"
+					id="contentMobileTechnology"
+				>
+					{% for technology in product.metafields.custom.technology.value %}
+						{% assign technology_img = technology.image | image_url %}
+						<div>
+							{% if technology_img %}
+								<img
+									src="{{ technology_img }}"
+									alt=""
+								>
+							{% endif %}
+							<div>
+								<h4 class="h3">{{ technology.title }}</h4>
+								<p>
+									{{ technology.description | newline_to_br }}
+								</p>
+							</div>
+						</div>
+						{% assign technology_img = null %}
+					{% endfor %}
+				</div>
+			</details>
+		{% endif %}
+
+		{% if product.metafields.custom.bindings_construction.value %}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>Construction</h3>
+				</summary>
+
+				<div
+					class="content"
+					id="contentMobileBindingsConstruction"
+				>
+					{% for bindings_construction in product.metafields.custom.bindings_construction.value %}
+						{% assign bindings_construction_img = bindings_construction.image | image_url %}
+						<div>
+							{% if bindings_construction_img %}
+								<img
+									src="{{ bindings_construction_img }}"
+									alt=""
+								>
+							{% endif %}
+							<div>
+								<h4 class="h3">
+									{{ bindings_construction.title }}
+								</h4>
+								<p>
+									{{ bindings_construction.description | newline_to_br }}
+								</p>
+							</div>
+						</div>
+						{% assign bindings_construction_img = null %}
+					{% endfor %}
+				</div>
+			</details>
+		{% endif %}
+	</div>
+</div>

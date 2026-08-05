@@ -1,0 +1,82 @@
+{% comment %}
+	Usage:
+	- With parameters coming from block.settings.card_boolean {% render 'card-profile', card_boolean: true_or_false %}
+	- No parameters, show all profiles {% render 'card-profile' %}
+{% endcomment %}
+
+<div class="card-profile">
+	<div class="container">
+		{%- for block in section.blocks -%}
+			{% assign should_render = false %}
+
+			{% if card_boolean == true %}
+				{% if block.settings.card_boolean == true %}
+					{% assign should_render = true %}
+				{% endif %}
+			{% elsif card_boolean == false %}
+				{% if block.settings.card_boolean == false %}
+					{% assign should_render = true %}
+				{% endif %}
+			{% else %}
+				{% assign should_render = true %}
+			{% endif %}
+
+			{% if should_render %}
+				<div class="card">
+					{% assign img = block.settings.image_default | image_url: width: 400 %}
+					{% assign img_hover = block.settings.image_hover | image_url: width: 400 %}
+					{% assign name = block.settings.name %}
+					{% assign url = block.settings.url_instagram %}
+					{% assign country_profile = block.settings.country %}
+
+					{% if img %}
+						<img
+							alt="{{ name }}"
+							class="image default"
+							loading="lazy"
+							src="{{ img }}"
+							title="{{ name }}"
+						>
+					{% else %}
+						<div class="image default">
+							{% render 'card-profile-placeholder' %}
+						</div>
+					{% endif %}
+
+					{% if img_hover %}
+						<img
+							alt="{{ name }}"
+							class="image hover"
+							loading="lazy"
+							src="{{ img_hover }}"
+							title="{{ name }}"
+						>
+					{% else %}
+						<div class="image hover">
+							{% render 'card-profile-placeholder' %}
+						</div>
+					{% endif %}
+
+					<div class="info">
+						<div class="name">{{ name }}</div>
+						<div class="details">
+							{% if url %}
+								{% assign alias = url | split: '/' | last %}
+								<a
+									class="link"
+									href="{{ url }}"
+								>
+									{% render 'icon-instagram-custom' %}
+									<p class="alias">{{ alias }}</p>
+								</a>
+							{% endif %}
+							{% if country_profile %}
+								<p class="country">{{ country_profile }}</p>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{%- endfor -%}
+	</div>
+</div>

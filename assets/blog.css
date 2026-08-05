@@ -1,0 +1,103 @@
+.page-blog .title {
+  font-family: var(--typo-heading-1);
+  font-weight: var(--font-weight-400);
+  margin: var(--space-5xl) 0;
+  text-align: center;
+}
+
+/* Cards with articles's information */
+.page-blog .card {
+  text-decoration: none;
+}
+
+.page-blog .card-blog {
+  display: flex;
+  justify-content: center;
+}
+
+.page-blog .card-blog .container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-xs);
+	margin: 0;
+	width: 100%;
+}
+
+.page-blog .card-blog .card {
+	display: grid;
+	margin: 0 auto;
+	max-width: var(--size-380);
+	position: relative;
+	width: 100%;
+}
+
+.page-blog .card-blog .card .image,
+.page-blog .card-blog .card .info {
+	grid-area: 1 / 1;
+}
+
+.page-blog .card-blog .card .image {
+	max-width: 100%;
+	pointer-events: none;
+  object-fit: cover;
+  object-position: top;
+}
+
+.page-blog .card-blog .card .info {
+	align-self: end;
+	background: var(--gradient-bottom-black);
+	color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	justify-self: start;
+	padding: var(--space-m);
+	width: 100%;
+}
+
+.page-blog .card-blog .card .info .name {
+	font-size: var(--typo-heading-3);
+  color: var(--color-white);
+	text-transform: uppercase;
+}
+
+.page-blog .card-blog .card .info .details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.page-blog .card-blog .card .info .excerpt,
+.page-blog .card-blog .card .info .more {
+	font-size: var(--typo-heading-4);
+	margin: 0;
+}
+
+.page-blog .card-blog .card .info .more {
+  text-decoration: underline;
+  text-underline-offset: var(--space-3xs);
+}
+
+@media only screen and (min-width: 750px) {
+	.page-blog .card-blog .container {
+		gap: var(--space-xl);
+		grid-template-columns: 1fr 1fr;
+		max-width: calc(2 * var(--size-380) + var(--space-xl));
+	}
+
+	.page-blog .card-blog .card {
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 823px) {
+	.page-blog .card-blog .card .description {
+		min-height: var(--size-248);
+	}
+}
+
+@media only screen and (min-width: 1268px) {
+	.page-blog .card-blog .container {
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--size-380)), 1fr));
+		max-width: calc(3 * var(--size-380) + 2 * var(--space-xl));
+	}
+}

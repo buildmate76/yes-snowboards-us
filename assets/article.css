@@ -1,0 +1,186 @@
+.page-article .breadcrumbs {
+  border-bottom: 0;
+  margin: 0 0 0 var(--space-xxs);
+}
+
+.page-article .container {
+  width: var(--size-100-per-100);
+  margin: 0;
+}
+
+.page-article .banner .page-width {
+  padding: 0;
+}
+
+.page-article .banner-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: var(--space-m);
+}
+
+.page-article .banner-container .banner,
+.page-article .banner-container .info {
+  grid-area: 1 / 1;
+}
+
+.page-article .banner-container .banner {
+  max-height: calc(var(--size-100-vh) - var(--size-160));
+  object-fit: cover;
+  width: var(--size-100-per-100);
+}
+
+.page-article .banner-container .info {
+	align-self: end;
+	background: var(--gradient-bottom-black);
+	color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	justify-self: start;
+	padding: var(--space-m);
+	width: var(--size-100-per-100);
+}
+
+.page-article .banner-container .title-article {
+  font-size: var(--typo-heading-3);
+  font-weight: var(--font-weight-400);
+  color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.page-article .video-container {
+  margin: 0 0 var(--space-m);
+}
+
+.page-article .image-gallery-container {
+  margin: 0 0 var(--space-xl);
+}
+
+.page-article .image-gallery-container .media {
+  height: calc(var(--size-110) * 5);
+}
+
+.page-article .image-gallery-container .slider-button {
+  position: absolute;
+  top: initial;
+  bottom: calc(var(--space-2xl) * -1);
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: var(--size-50-per-100);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  transition: background-color var(--transition-duration-03s) ease;
+}
+
+.page-article .image-gallery-container .slider-button[disabled="disabled"] svg path {
+ fill: var(--color-gray-2);
+}
+
+.page-article .image-gallery-container .slider-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.page-article .image-gallery-container .slider-button--prev {
+  left: 0;
+}
+
+.page-article .image-gallery-container .slider-button--next {
+  left: var(--space-3xl);
+}
+
+.page-article .image-gallery-container .slider-button svg {
+  width: var(--size-16);
+  height: var(--size-16);
+}
+
+.page-article .image-gallery-container .slider-button--prev svg {
+  transform: rotate(180deg);
+}
+
+.page-article .back-to-files .article-template__link {
+  display: inline-flex;
+  justify-content: start;
+  margin: var(--space-m) 0;
+  text-decoration: underline;
+}
+
+.page-article .selected-products {
+  margin: 0;
+}
+
+.page-article .selected-products slider-component.page-width-desktop {
+  padding: 0;
+}
+
+@media only screen and (min-width: 750px) {
+  .page-article .breadcrumbs {
+    margin: 0 0 var(--space-l);
+  }
+
+  .page-article .container {
+    width: var(--size-64-per-100);
+    margin: 0 auto;
+  }
+
+  .page-article .banner-container {
+    margin-bottom: var(--space-l);
+  }
+
+  .page-article .banner-container .banner {
+    max-height: calc(var(--size-100-vh) - var(--size-110));
+  }
+
+  .page-article .video-container {
+    margin: 0 0 var(--space-6xl);
+  }
+  
+  .page-article .image-gallery-container {
+    margin: 0 0 var(--space-6xl);
+  }
+
+  .page-article .text-container, 
+  .page-article .back-to-files {
+    width: var(--size-80-per-100);
+    margin: 0 auto;
+  }
+
+  .page-article .image-gallery-container .slider-button {
+    bottom: initial;
+    justify-content: center;
+    padding: var(--space-xs-xs);
+    top: var(--size-50-per-100);
+  }
+
+  .page-article .image-gallery-container .slider-button--prev {
+    left: calc(var(--space-3xl) * -1);
+  }
+  
+  .page-article .image-gallery-container .slider-button--next {
+    left: initial;
+    right: calc(var(--space-3xl) * -1);
+  }
+
+  .page-article .back-to-files .article-template__link {
+    margin: var(--space-3xl) 0;
+  }
+
+  .page-article .selected-products {
+    margin: var(--space-2xl) 0;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .page-article .breadcrumbs {
+    padding: 0;
+  }
+
+  .page-article .banner .page-width {
+    padding: 0 var(--space-xs);
+  }
+}

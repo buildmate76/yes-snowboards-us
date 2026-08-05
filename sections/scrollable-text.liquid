@@ -1,0 +1,47 @@
+{{ 'section-scrollable-text.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.label != blank -%}
+	<div class="scrollable-text">
+		<div class="page-width">
+			<div class="container">
+				<div class="item">
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+				</div>
+				<div class="item">
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+					{{ section.settings.label }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% schema %}
+{
+	"name": "Scrollable Text",
+	"class": "section",
+	"settings": [
+		{
+			"type": "color_scheme",
+			"id": "color_scheme",
+			"label": "Color Scheme",
+			"default": "background-1"
+		},
+		{
+			"type": "text",
+			"id": "label",
+			"label": "label",
+			"default": "We are uninc"
+		}
+	]
+}
+{% endschema %}

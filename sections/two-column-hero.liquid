@@ -1,0 +1,133 @@
+{{ 'section-two-column-hero.css' | asset_url | stylesheet_tag }}
+
+{%- assign column_count = 0 -%}
+{%- for block in section.blocks -%}
+	{%- if block.settings.image != blank -%}
+		{%- assign column_count = column_count | plus: 1 -%}
+	{%- endif -%}
+{%- endfor -%}
+
+<div class="two-column-hero">
+	<div class="page-width">
+		<div class="flex two-column-hero--columns-{{ column_count }}">
+			{%- for block in section.blocks -%}
+				{%- if column_count == 2 -%}
+					{%- assign column_class = 'column--half' -%}
+				{%- else -%}
+					{%- assign column_class = 'column--full' -%}
+				{%- endif -%}
+
+				<div class="column {{ column_class }}">
+					<img
+						alt="{% if block.settings.title != blank %}{{ block.settings.title }}{% endif %}"
+						class="{% if block.settings.image_mobile != blank %}small-hide medium-hide{% endif %}"
+						title="{% if block.settings.title != blank %}{{ block.settings.title }}{% endif %}"
+						src="{{ block.settings.image | image_url: width: 2000 }}"
+					>
+
+					{%- if block.settings.image_mobile != blank -%}
+						<img
+							alt="{% if block.settings.title != blank %}{{ block.settings.title }}{% endif %}"
+							class="large-up-hide"
+							title="{% if block.settings.title != blank %}{{ block.settings.title }}{% endif %}"
+							src="{{ block.settings.image_mobile | image_url: width: 2000 }}"
+						>
+					{%- endif -%}
+
+					<div class="btn-text-container">
+						{%- if block.settings.btn_primary_url != blank -%}
+							<a
+								href="{{ block.settings.btn_primary_url }}"
+								class="button btn-primary"
+							>
+								{{ block.settings.btn_primary_text }}
+							</a>
+						{%- endif -%}
+						{%- if block.settings.btn_secondary_url != blank -%}
+							<a
+								href="{{ block.settings.btn_secondary_url }}"
+								class="button"
+							>
+								{{ block.settings.btn_secondary_text }}
+							</a>
+						{%- endif -%}
+						<h2 class="title">{{ block.settings.title }}</h2>
+					</div>
+				</div>
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Two Column Hero",
+	"class": "section",
+	"settings": [
+		{
+			"type": "color_scheme",
+			"id": "color_scheme",
+			"label": "Color Scheme",
+			"default": "background-1"
+		}
+	],
+	"max_blocks": 2,
+	"blocks": [
+		{
+			"type": "column",
+			"name": "Column",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Desktop Image"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_mobile",
+					"label": "Mobile Image"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title",
+					"default": "Column Title"
+				},
+				{
+					"type": "text",
+					"id": "btn_primary_text",
+					"label": "Primary button text"
+				},
+				{
+					"type": "url",
+					"id": "btn_primary_url",
+					"label": "Primary button link"
+				},
+				{
+					"type": "text",
+					"id": "btn_secondary_text",
+					"label": "Secondary button text"
+				},
+				{
+					"type": "url",
+					"id": "btn_secondary_url",
+					"label": "Secondary button link"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Two Column Hero",
+			"blocks": [
+				{
+					"type": "column"
+				},
+				{
+					"type": "column"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

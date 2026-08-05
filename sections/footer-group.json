@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_6JVYKE": {
+          "type": "link_list",
+          "settings": {
+            "heading_usa": "Support",
+            "heading_eu": "Support",
+            "heading_ca": "Support",
+            "information_usa": "<p><a href=\"/policies/shipping-policy\" title=\"/policies/shipping-policy\">Shipping Policy</a></p><p><a href=\"/policies/refund-policy\" title=\"/policies/refund-policy\">Return & Refund Policy</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact us</a></p><p><a href=\"/pages/warranty\" title=\"Warranty\">Warranty</a></p>",
+            "information_eu": "<p><a href=\"/policies/shipping-policy\" title=\"/policies/shipping-policy\">Shipping Policy</a></p><p><a href=\"/policies/refund-policy\" title=\"/policies/refund-policy\">Return & Refund Policy</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact us</a></p><p><a href=\"/pages/warranty\" title=\"Warranty\">Warranty</a></p>",
+            "information_ca": "<p><a href=\"/policies/shipping-policy\" title=\"/policies/shipping-policy\">Shipping Policy</a></p><p><a href=\"/policies/refund-policy\" title=\"/policies/refund-policy\">Return & Refund Policy</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact us</a></p><p><a href=\"/pages/warranty\" title=\"Warranty\">Warranty</a></p>",
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_list_6JVYKE"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "newsletter_enable": false,
+        "newsletter_heading": "Sign up for news and promotions",
+        "newsletter_description": "<p>Be the first to hear about new YES products, events, contests and team news</p>",
+        "newsletter_terms": "By subscribing to our newsletter you agree to the privacy policy",
+        "copyright_address_usa": "YES Snowboards LLC",
+        "copyright_address_eu": "YES Snowboards LLC",
+        "copyright_address_ca": "YES Snowboards LLC",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

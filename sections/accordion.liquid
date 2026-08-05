@@ -1,0 +1,159 @@
+{{ 'section-accordion.css' | asset_url | stylesheet_tag }}
+{% include 'global-variables' %}
+
+<div class="accordion color-{{ section.settings.color_scheme }}">
+	<div class="page-width">
+		<h2>{{ section.settings.accordion_heading }}</h2>
+
+		{%- for block in section.blocks -%}
+			<details>
+				<summary id="{{ section.id }}">
+					<h3>
+						{{ block.settings.item_title }}
+					</h3>
+				</summary>
+
+				<div class="content">
+					{%- assign internal_title = block.settings.content_heading -%}
+					{%- if internal_title -%}
+						<h4 class="h3">
+							{{ internal_title }}
+						</h4>
+					{% endif %}
+
+					<p>
+						{{ block.settings.content_text }}
+					</p>
+					{%- assign video_url = block.settings.video_url -%}
+					{%- assign video_id = video_url | split: 'v=' | last -%}
+					{%- if video_url -%}
+						<div class="video-container">
+							<iframe
+								width="560"
+								height="315"
+								src="{{ "https://www.youtube.com/embed/" | append: video_id }}"
+								title="Video player for {{ block.settings.content_heading }}"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin"
+								allowfullscreen
+							></iframe>
+						</div>
+					{% endif %}
+				</div>
+			</details>
+		{%- endfor -%}
+		{%- if product.collections -%}
+			{%- for collection in product.collections -%}
+				{%- if collection.id == collection_bindings_id -%}
+					<details>
+						<summary>
+							<h3>Tab specific for Bindings</h3>
+						</summary>
+						<div class="content">
+							<h4 class="h3">Heading specific for Bindings</h4>
+							<p>Content specific for Bindings</p>
+						</div>
+					</details>
+				{%- elsif collection.id == collection_snowboards_id -%}
+					<details>
+						<summary>
+							<h3>Tab specific for Snowboards</h3>
+						</summary>
+						<div class="content">
+							<h4 class="h3">Heading specific for Snowboards</h4>
+							<p>Content specific for Snowboards</p>
+						</div>
+					</details>
+				{%- endif -%}
+			{%- endfor -%}
+		{%- endif -%}
+
+		{%- if product.metafields.custom.faq_tabs -%}
+			{%- for faq_tab in product.metafields.custom.faq_tabs.value -%}
+				<details>
+					<summary>
+						<h3>
+							{{ faq_tab.title }}
+						</h3>
+					</summary>
+					<div class="content">
+						<p>
+							{{ faq_tab.content }}
+						</p>
+					</div>
+				</details>
+			{%- endfor -%}
+		{%- endif -%}
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Accordion",
+	"class": "section",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"settings": [
+		{
+			"type": "color_scheme",
+			"id": "color_scheme",
+			"label": "Color Scheme",
+			"default": "scheme-4"
+		},
+		{
+			"type": "inline_richtext",
+			"id": "accordion_heading",
+			"label": "Accordion title",
+			"default": "Accordion title"
+		}
+	],
+	"blocks": [
+		{
+			"type": "accordion_item",
+			"name": "Accordion item",
+			"limit": 10,
+			"settings": [
+				{
+					"type": "text",
+					"id": "item_title",
+					"default": "Item title",
+					"label": "Item title"
+				},
+				{
+					"type": "text",
+					"id": "content_heading",
+					"default": "Content heading",
+					"label": "Content heading"
+				},
+				{
+					"type": "richtext",
+					"id": "content_text",
+					"default": "<p>Content text</p>",
+					"label": "Content text"
+				},
+				{
+					"type": "video_url",
+					"id": "video_url",
+					"accept": ["youtube"],
+					"label": "Youtube video URL"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Accordion",
+			"blocks": [
+				{
+					"type": "accordion_item"
+				},
+				{
+					"type": "accordion_item"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

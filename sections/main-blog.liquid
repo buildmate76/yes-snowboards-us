@@ -1,0 +1,45 @@
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+{{ 'blog.css' | asset_url | stylesheet_tag }}
+
+{%- paginate blog.articles by 6 -%}
+	<div class="page-blog page-spacing-bottom">
+		<div class="page-width">
+			<h1 class="title">
+				{{ blog.title | escape }}
+			</h1>
+			<div class="card-blog">
+				<div class="container">
+					{%- for article in blog.articles -%}
+						{%- render 'article-card', article: article -%}
+					{%- endfor -%}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{%- if paginate.pages > 1 -%}
+		{%- render 'pagination', paginate: paginate -%}
+	{%- endif -%}
+{%- endpaginate -%}
+
+{% schema %}
+{
+	"name": "t:sections.main-blog.name",
+	"tag": "section",
+	"class": "section",
+	"settings": [
+		{
+			"type": "header",
+			"content": "t:sections.main-blog.settings.header.content"
+		},
+		{
+			"type": "paragraph",
+			"content": "t:sections.main-blog.settings.paragraph.content"
+		},
+		{
+			"type": "header",
+			"content": "t:sections.all.padding.section_padding_heading"
+		}
+	]
+}
+{% endschema %}

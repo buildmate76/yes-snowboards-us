@@ -1,0 +1,25 @@
+{%- liquid
+	assign current_host = request.host
+	assign current_host_path_url = request.host | append: request.path
+	assign current_url_path = request.path
+
+	#### Production
+	assign shop_id_us = 88466194745
+	assign shop_id_eu = 88465637683
+	assign shop_id_ca = 88598217020
+
+	assign shop_url_us = 'https://yessnowboards.com/'
+	assign shop_url_eu = 'https://eu.yessnowboards.com/'
+	assign shop_url_ca = 'https://ca.yessnowboards.com/'
+
+	assign shop_id_error_msg = 'Error. Could not connect to shop.'
+
+	assign collection_bindings_id = 480469975353
+	assign collection_snowboards_id = 480469942585
+
+	assign collection_handle_snowboards = 'snowboards'
+	assign collection_handle_bindings = 'bindings'
+
+	#### Development
+	assign dev_shop_id_us = 61347889219
+-%}

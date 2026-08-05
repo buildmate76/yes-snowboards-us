@@ -1,0 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": ["h1 {text-align: center;}"],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 12
+      }
+    },
+    "custom_liquid_UdpKV7": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!-- form.123formbuilder.com script begins here -->\n<script type=\"text/javascript\" defer src=\"https://form.123formbuilder.com/embed/2143405.js\" data-role=\"form\" data-default-width=\"800px\" data-custom-vars=\"hasEmbedFormStyle=1\"></script>\n<!-- form.123formbuilder.com script ends here -->",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": ["main", "custom_liquid_UdpKV7"]
+}

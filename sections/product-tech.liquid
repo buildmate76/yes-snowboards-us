@@ -1,0 +1,75 @@
+<style>
+	.designer-container {
+		display: flex;
+		background-color: #f6f6f6;
+		padding: 3rem;
+		margin-top: 5rem;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		column-gap: 2rem;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		line-height: 1.5;
+		border-radius: 0.2rem;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	.designer-container span {
+		font-style: italic;
+	}
+	.designer-container h4 {
+		margin-bottom: 0;
+	}
+	h2 {
+		font-weight: bold;
+	}
+	.designer-container .img {
+		width: 40%;
+	}
+	.designer-body {
+		width: 60%;
+		line-height: 1.8;
+	}
+	.designer-body h2 {
+		margin: 0;
+	}
+	@media only screen and (max-width: 768px) {
+		.designer-container {
+			flex-direction: column;
+		}
+	}
+</style>
+{% for product_tech in shop.metaobjects.product_tech.values %}
+	<div class="designer-container">
+		<div class="img">
+			<img
+				src="{{product_tech.shape_image |img_url:'500x' }}"
+				alt="Designer"
+			>
+		</div>
+		<div class="designer-body">
+			<h2 class="h1">{{ product_tech.shape_name }}</h2>
+			<p class="designer-text">{{ product_tech.shape_description }}</p>
+			<a
+				href="{{ product_tech.shape_image }}"
+				class="button button--primary"
+				>See all their products</a
+			>
+		</div>
+	</div>
+{% endfor %}
+
+{% schema %}
+{
+	"name": "product-tech",
+	"settings": [],
+	"presets": [
+		{
+			"name": "product-tech",
+			"category": "Text"
+		}
+	]
+}
+{% endschema %}

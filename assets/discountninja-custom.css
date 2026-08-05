@@ -1,0 +1,31 @@
+div.cart__footer div.cart__blocks div.limoniapps-discountninja-cartdiscountfield-placeholder {
+    display: none;
+}
+
+main#MainContent div.limoniapps-discountninja-cartdiscountfield-placeholder .limoniapps-discountninja-cartdiscountfield-description span {
+    font-size: var(--typo-body-m) !important;
+}
+
+main#MainContent .limoniapps-discountninja-cartdiscountfield-inner {
+    text-align: center;
+}
+
+main#MainContent .discountninja-custombloc p.info {
+    text-align: center;
+    padding-top: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+main#MainContent .limoniapps-discountninja-cartdiscountfield-feedback.limoniapps-discountninja-cartdiscountfield-notapplied {
+    display: none;
+}
+
+header .pro-badge--header {
+    font-size: var(--typo-body-xs);
+    background: var(--color-black);
+    color: var(--color-white);
+    border-radius: var(--border-radius-3xs);
+    padding: var(--space-3xs);
+    margin: var(--space-xs-xs);
+}

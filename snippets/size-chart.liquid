@@ -1,0 +1,488 @@
+{% comment %}
+	Renders product variant-picker
+
+	Accepts:
+	- product: {Object} product object.
+	- block: {Object} passing the block information.
+	- product_form_id: {String} Id of the product form to which the variant picker is associated.
+	- update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+	Usage:
+	{% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+
+<style>
+	#size-chart-button {
+		margin: 0;
+	}
+
+	#size-chart-button button {
+		text-transform: uppercase;
+		font-size: var(--typo-body-xs);
+	}
+
+	#size-chart-button button span {
+		text-decoration: underline;
+		margin-left: var(--space-3xs);
+	}
+
+	#PopupModal-sc table {
+		border: none;
+		box-shadow: none;
+	}
+
+	#PopupModal-sc p {
+		margin: var(--space-xs) 0;
+	}
+
+	#PopupModal-sc table tr {
+		border-top: none;
+	}
+
+	#PopupModal-sc table th:first-child {
+		text-transform: uppercase;
+		text-align: left;
+	}
+
+	#PopupModal-sc table td,
+	#PopupModal-sc table th {
+		border-right: none;
+		border-left: none;
+		border-top: none;
+		border-bottom: #e7e7e7 solid 1px;
+		width: 230px;
+	}
+
+	#PopupModal-sc table td + td,
+	#PopupModal-sc table th + th {
+		width: auto;
+	}
+
+	#PopupModal-sc td:nth-child(2n + 2),
+	#PopupModal-sc th:nth-child(2n + 2) {
+		background-color: #f9f9f9;
+	}
+</style>
+
+{% assign tip_length = '' %}
+{% assign tail_length = '' %}
+{% assign contact_length = '' %}
+{% assign sidecut_radius = '' %}
+{% assign effective_edge_length = '' %}
+{% assign taper = '' %}
+{% assign tip_width = '' %}
+{% assign underfoot_width_front = '' %}
+{% assign waist_width = '' %}
+{% assign underfoot_width_rear = '' %}
+{% assign tail_width = '' %}
+{% assign reference_stance = '' %}
+{% assign centered_stance = '' %}
+{% assign min_stance = '' %}
+{% assign max_stance = '' %}
+{% assign setback = '' %}
+{% assign rider_weight_kg = '' %}
+{% assign rider_weight_lbs = '' %}
+
+{% for variant in product.variants %}
+	{% assign tip_length = tip_length
+		| append: variant.metafields['size-chart'].tip_length
+		| append: ';'
+	%}
+	{% assign tail_length = tail_length
+		| append: variant.metafields['size-chart'].tail_length
+		| append: ';'
+	%}
+	{% assign contact_length = contact_length
+		| append: variant.metafields['size-chart'].contact_length
+		| append: ';'
+	%}
+	{% assign sidecut_radius = sidecut_radius
+		| append: variant.metafields['size-chart'].sidecut_radius
+		| append: ';'
+	%}
+	{% assign effective_edge_length = effective_edge_length
+		| append: variant.metafields['size-chart'].effective_edge_length
+		| append: ';'
+	%}
+	{% assign taper = taper | append: variant.metafields['size-chart'].taper | append: ';' %}
+	{% assign tip_width = tip_width
+		| append: variant.metafields['size-chart'].tip_width
+		| append: ';'
+	%}
+	{% assign underfoot_width_front = underfoot_width_front
+		| append: variant.metafields['size-chart'].underfoot_width_front
+		| append: ';'
+	%}
+	{% assign waist_width = waist_width
+		| append: variant.metafields['size-chart'].waist_width
+		| append: ';'
+	%}
+	{% assign underfoot_width_rear = underfoot_width_rear
+		| append: variant.metafields['size-chart'].underfoot_width_rear
+		| append: ';'
+	%}
+	{% assign tail_width = tail_width
+		| append: variant.metafields['size-chart'].tail_width
+		| append: ';'
+	%}
+	{% assign reference_stance = reference_stance
+		| append: variant.metafields['size-chart'].reference_stance
+		| append: ';'
+	%}
+	{% assign centered_stance = centered_stance
+		| append: variant.metafields['size-chart'].centered_stance
+		| append: ';'
+	%}
+	{% assign min_stance = min_stance
+		| append: variant.metafields['size-chart'].min_stance
+		| append: ';'
+	%}
+	{% assign max_stance = max_stance
+		| append: variant.metafields['size-chart'].max_stance
+		| append: ';'
+	%}
+	{% assign rider_weight_kg = rider_weight_kg
+		| append: variant.metafields['size-chart'].rider_weight_kg
+		| append: ';'
+	%}
+	{% assign rider_weight_lbs = rider_weight_lbs
+		| append: variant.metafields['size-chart'].rider_weight_lbs
+		| append: ';'
+	%}
+	{% assign setback = setback | append: variant.metafields['size-chart'].setback | append: ';' %}
+{% endfor %}
+
+{% assign tip_length = tip_length | split: ';' %}
+{% assign tail_length = tail_length | split: ';' %}
+{% assign contact_length = contact_length | split: ';' %}
+{% assign sidecut_radius = sidecut_radius | split: ';' %}
+{% assign effective_edge_length = effective_edge_length | split: ';' %}
+{% assign taper = taper | split: ';' %}
+{% assign tip_width = tip_width | split: ';' %}
+{% assign underfoot_width_front = underfoot_width_front | split: ';' %}
+{% assign waist_width = waist_width | split: ';' %}
+{% assign underfoot_width_rear = underfoot_width_rear | split: ';' %}
+{% assign tail_width = tail_width | split: ';' %}
+{% assign reference_stance = reference_stance | split: ';' %}
+{% assign centered_stance = centered_stance | split: ';' %}
+{% assign min_stance = min_stance | split: ';' %}
+{% assign max_stance = max_stance | split: ';' %}
+{% assign setback = setback | split: ';' %}
+{% assign rider_weight_kg = rider_weight_kg | split: ';' %}
+{% assign rider_weight_lbs = rider_weight_lbs | split: ';' %}
+
+{% for gender in product.metafields.collection.gender.value %}
+	{% if gender == 'Women' %}
+		{% assign is_women = true %}
+	{% endif %}
+{% endfor %}
+
+{% comment %}{{ product.metafields.custom.gender.value }}{% endcomment %}
+{% comment %}<a href="#popup1">size chart</a>{% endcomment %}
+
+<modal-dialog
+	id="PopupModal-sc"
+	class="product-popup-modal"
+	{{ block.shopify_attributes }}
+>
+	<div
+		role="dialog"
+		aria-label="{{ block.settings.text }}"
+		aria-modal="true"
+		class="product-popup-modal__content"
+		tabindex="-1"
+	>
+		<button
+			id="ModalClose-{{ block.id }}"
+			type="button"
+			class="product-popup-modal__toggle"
+			aria-label="{{ 'accessibility.close' | t }}"
+		>
+			{% render 'icon-close' %}
+		</button>
+		<div class="product-popup-modal__content-info">
+			<h2>Size details</h2>
+			<p>Use this chart to find the right size</p>
+			<table id="data-table">
+				{% if collection == 'snowboards' %}
+					<tr>
+						<th>size</th>
+						{% for variant in product.variants %}
+							<th>{{ variant.title }}</th>
+
+							{% assign loop_count = forloop.index | minus: 1 %}
+						{% endfor %}
+					</tr>
+					{% unless tip_length == blank %}
+						<tr>
+							<td>Tip length (cm)</td>
+							{% for loop in (0..loop_count) %}
+								<td>
+									{{ tip_length[loop] }}
+								</td>
+							{% endfor %}
+						</tr>
+					{% endunless %}
+					<tr>
+						<td>Tail length (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ tail_length[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Contact length (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ contact_length[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Sidecut radius (m)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ sidecut_radius[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Effective edge length (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ effective_edge_length[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Taper (mm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ taper[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Tip width (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ tip_width[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Underfoot width : front (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ underfoot_width_front[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Waist width (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ waist_width[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Underfoot width : rear (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ underfoot_width_rear[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Tail width (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ tail_width[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Reference stance (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ reference_stance[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Centered stance (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ centered_stance[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Min stance (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ min_stance[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Max stance (cm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ max_stance[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Setback (mm)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ setback[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Rider weight (kg)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ rider_weight_kg[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+					<tr>
+						<td>Rider weight (lbs)</td>
+						{% for loop in (0..loop_count) %}
+							<td>
+								{{ rider_weight_lbs[loop] }}
+							</td>
+						{% endfor %}
+					</tr>
+				{% endif %}
+				{% if collection == 'bindings' %}
+					{% if is_women %}
+						<tr>
+							<th>Women's</th>
+							<th>Small</th>
+							<th>Medium</th>
+						</tr>
+						<tr>
+							<td>US</td>
+							<td>5.0 - 8.5</td>
+							<td>9.0 - 11.5</td>
+						</tr>
+						<tr>
+							<td>EU</td>
+							<td>35 -39.5</td>
+							<td>40 - 42.5</td>
+						</tr>
+						<tr>
+							<td>MD</td>
+							<td>22 - 25</td>
+							<td>25.5 - 27.5</td>
+						</tr>
+
+					{% else %}
+						<tr>
+							<th>Men's / Youth</th>
+							<th>Small</th>
+							<th>Medium</th>
+							<th>Large</th>
+						</tr>
+						<tr>
+							<td>US</td>
+							<td>5.0 - 7.0</td>
+							<td>7.5 - 10.0</td>
+							<td>10.5 +</td>
+						</tr>
+						<tr>
+							<td>EU</td>
+							<td>36.5 -39.5</td>
+							<td>40 - 43</td>
+							<td>43.5 +</td>
+						</tr>
+						<tr>
+							<td>MD</td>
+							<td>23.5 - 25.0</td>
+							<td>25.5 - 28.0</td>
+							<td>28.5 +</td>
+						</tr>
+					{% endif %}
+				{% endif %}
+			</table>
+		</div>
+	</div>
+</modal-dialog>
+
+{% comment %}
+	<div class="size-chart">
+	    {% assign variants_size_chart = "" %}
+
+	    {% for variant in product.variants %}
+	        {% assign variants_size_chart = variants_size_chart | append: variant.title | append: ":" | append: variant.metafields.size-chart | append: ";" %}
+	    {% endfor %}
+
+	    {% assign variants_size_chart = variants_size_chart | split: ";" %}
+
+	    <a href="">size chart</a>
+
+	    <table id="data-table"></table>
+	</div>
+
+	<script>
+	    var variants_data = {{ variants_size_chart | json }};
+
+	    const variants = variants_data.map(item => {
+	        const [key, value] = item.split(":");
+
+	        // Replace "=>" with ":"
+	        let jsonString = value.replace(/=>/g, ":");
+
+	        // Replace the comma in sidecut_radius value with a dot
+	        jsonString = jsonString.replace(/"(\d+),(\d+)"/g, (match, p1, p2) => {
+	            return `"${p1}.${p2}"`;
+	        });
+
+	        return { [key]: JSON.parse(jsonString) };
+	    });
+
+	    function capitalizeAndReplaceUnderscores(text) {
+	        return text.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+	    }
+
+	    function buildTable(data) {
+	        const table = document.getElementById('data-table');
+	        const sizes = data.map(item => Object.keys(item)[0]);
+	        const attributes = Object.keys(data[0][sizes[0]]);
+
+	        // Create header row
+	        let headerRow = '<tr><th>SIZE</th>';
+	        sizes.forEach(size => {
+	            headerRow += `<th>${size}</th>`;
+	        });
+	        headerRow += '</tr>';
+	        table.innerHTML += headerRow;
+
+	        // Create data rows
+	        attributes.forEach(attr => {
+	            let row = `<tr><td>${capitalizeAndReplaceUnderscores(attr)}`;
+	            if(attr == "taper" || attr == "setback") {
+	                row = row + " (mm)</td>";
+	            } else if (attr == "sidecut_radius") {
+	                row = row + " (m)</td>";
+	            } else {
+	                row = row + " (cm)</td>";
+	            }
+	            sizes.forEach(size => {
+	                const value = data.find(item => item[size])[size][attr];
+	                row += `<td>${value !== undefined ? value : ''}</td>`; // Check for undefined and use empty string if true
+	            });
+	            row += '</tr>';
+	            table.innerHTML += row;
+	        });
+	    }
+	    // Build the table on page load
+	    buildTable(variants);
+
+	</script>
+{% endcomment %}

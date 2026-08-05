@@ -1,0 +1,158 @@
+{{ 'section-banner-collections.css' | asset_url | stylesheet_tag }}
+{% include 'global-variables' %}
+
+<div class="banner-collections">
+	<div class="page-width">
+		<div class="container">
+			{% for collection in product.collections %}
+				{% comment %} In Collection "Snowboards" shows "Binding banner {% endcomment %}
+				{%- if collection.handle == collection_handle_snowboards -%}
+					{%- if section.settings.image_desktop_bindings != blank -%}
+						<img
+							alt="{% if section.settings.title_bindings != blank %}{{ section.settings.title_bindings }}{% endif %}"
+							class="small-hide medium-hide"
+							title="{% if section.settings.title_bindings != blank %}{{ section.settings.title_bindings }}{% endif %}"
+							src="{{ section.settings.image_desktop_bindings | image_url: width: 2000 }}"
+						>
+					{%- endif -%}
+
+					{%- if section.settings.image_mobile_bindings != blank -%}
+						<img
+							alt="{% if section.settings.title_bindings != blank %}{{ section.settings.title_bindings }}{% endif %}"
+							class="large-up-hide"
+							title="{% if section.settings.title_bindings != blank %}{{ section.settings.title_bindings }}{% endif %}"
+							src="{{ section.settings.image_mobile_bindings | image_url: width: 2000 }}"
+						>
+					{%- endif -%}
+
+					{%- if section.settings.btn_url_bindings != blank
+						or section.settings.title_bindings != blank
+					-%}
+						<div class="btn-text-container">
+							{%- if section.settings.btn_url_bindings != blank -%}
+								<a
+									href="{{ section.settings.btn_url_bindings }}"
+									class="button"
+								>
+									{{ section.settings.btn_text_bindings }}
+								</a>
+							{%- endif -%}
+
+							{%- if section.settings.title_bindings != blank -%}
+								<h2 class="title">
+									{{ section.settings.title_bindings }}
+								</h2>
+							{% endif %}
+						</div>
+					{% endif %}
+				{% endif %}
+
+				{% comment %} In collection "Bindings" shows "Snowboards" collection {% endcomment %}
+				{%- if collection.handle == collection_handle_bindings -%}
+					{%- if section.settings.image_desktop_snowboard != blank -%}
+						<img
+							alt="{% if section.settings.title_snowboards != blank %}{{ section.settings.title_snowboards }}{% endif %}"
+							class="small-hide medium-hide"
+							title="{% if section.settings.title_snowboards != blank %}{{ section.settings.title_snowboards }}{% endif %}"
+							src="{{ section.settings.image_desktop_snowboard | image_url: width: 2000 }}"
+						>
+					{%- endif -%}
+
+					{%- if section.settings.image_mobile_snowboard != blank -%}
+						<img
+							alt="{% if section.settings.title_snowboards != blank %}{{ section.settings.title_snowboards }}{% endif %}"
+							class="large-up-hide"
+							title="{% if section.settings.title_snowboards != blank %}{{ section.settings.title_snowboards }}{% endif %}"
+							src="{{ section.settings.image_mobile_snowboard | image_url: width: 2000 }}"
+						>
+					{%- endif -%}
+
+					{%- if section.settings.btn_url_snowboards != blank
+						or section.settings.title_snowboards != blank
+					-%}
+						<div class="btn-text-container">
+							{%- if section.settings.btn_url_snowboards != blank -%}
+								<a
+									href="{{ section.settings.btn_url_snowboards }}"
+									class="button"
+								>
+									{{ section.settings.btn_text_snowboards }}
+								</a>
+							{%- endif -%}
+
+							{%- if section.settings.title_snowboards != blank -%}
+								<h2 class="title">
+									{{ section.settings.title_snowboards }}
+								</h2>
+							{% endif %}
+						</div>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "banner-collections",
+	"class": "section",
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "image_desktop_snowboard",
+			"label": "Snowboard Collection - Desktop Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_mobile_snowboard",
+			"label": "Snowboard Collection - Mobile Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_desktop_bindings",
+			"label": "Bindings Collection - Desktop Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_mobile_bindings",
+			"label": "Bindings Collection - Mobile Image"
+		},
+		{
+			"type": "text",
+			"id": "title_snowboards",
+			"label": "Title for Snowboards"
+		},
+		{
+			"type": "text",
+			"id": "title_bindings",
+			"label": "Title for Bindings"
+		},
+		{
+			"type": "text",
+			"id": "btn_text_snowboards",
+			"label": "Button's text for Snowboards"
+		},
+		{
+			"type": "url",
+			"id": "btn_url_snowboards",
+			"label": "Snowboards URL"
+		},
+		{
+			"type": "text",
+			"id": "btn_text_bindings",
+			"label": "Button's text for Bindings"
+		},
+		{
+			"type": "url",
+			"id": "btn_url_bindings",
+			"label": "Bindings URL"
+		}
+	],
+	"presets": [
+		{
+			"name": "Banner Collections"
+		}
+	]
+}
+{% endschema %}

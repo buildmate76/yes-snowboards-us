@@ -1,0 +1,35 @@
+{% liquid
+	comment
+		this snippet returns the discount precentage for a given collection.
+		requires collection as a parameter
+		eg. render 'alliance-collection-discount', current_collection_id: collection
+	endcomment
+
+	comment
+		Check if the customer is an active member and get the group metafield
+	endcomment
+
+	assign active_member = false
+	if customer and customer.metafields.alliance_pro.is_active == true
+		assign active_member = true
+		assign group_id = customer.metafields.alliance_pro.group_id
+		for g in shop.metafields.alliance_pro.groups.value
+			if g.id == group_id
+				assign group = g
+				assign group_name = group.name
+			endif
+		endfor
+	endif
+
+	comment
+		Output the discount percentage for this collection, if set
+	endcomment
+
+	if active_member and group
+		assign cid_str = current_collection_id | append: ''
+		assign discount_percentage = group.collectionsDiscountPercentages[cid_str]
+		if discount_percentage > 0
+			echo discount_percentage
+		endif
+	endif
+%}

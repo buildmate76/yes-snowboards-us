@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-warranty-lobsternow",
+      "settings": {}
+    },
+    "two_column_hero_iMYY6d": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_7jrUpz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/warranty-desktop-banner.jpg",
+            "image_mobile": "shopify://shop_images/warranty-mobile-banner.jpg",
+            "title": "SNOWBOARDS",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_secondary_text": "SHOP NOW",
+            "btn_secondary_url": "shopify://collections/snowboards"
+          }
+        }
+      },
+      "block_order": [
+        "column_7jrUpz"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "two_column_hero_iMYY6d"
+  ]
+}

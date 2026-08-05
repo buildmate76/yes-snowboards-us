@@ -1,0 +1,54 @@
+.breadcrumbs {
+	margin: 0;
+	padding: var(--space-xxs);
+	border-top: 1px solid var(--color-gray-2);
+	border-bottom: 1px solid var(--color-gray-2);
+}
+
+.breadcrumbs .list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.breadcrumbs .item {
+	align-items: center;
+	display: flex;
+	font-size: var(--typo-body-xxs);
+}
+
+.breadcrumbs .item,
+.breadcrumbs .link {
+	font-size: var(--typo-body-xxs);
+	text-transform: uppercase;
+}
+
+.breadcrumbs .item:not(:last-child)::after {
+	content: url("data:image/svg+xml,%3Csvg class='icon icon-arrow' width='6' height='6' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7.46574V9.38117H12L6.5 14.6486L7.92 16.0085L15.84 8.42345L7.92 0.838379L6.5 2.19833L12 7.46574H0Z' fill='currentColor'/%3E%3C/svg%3E%0A");
+	margin: 0 var(--space-3xs);
+}
+
+.breadcrumbs .link {
+	text-decoration: none;
+	color: var(--color-gray-2);
+}
+
+.breadcrumbs .link:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--color-gray-2);
+	text-underline-offset: var(--space-3xs);
+}
+
+.breadcrumbs [aria-current="page"] {
+	color: var(--color-black);
+}
+
+@media only screen and (min-width: 750px) {
+	.breadcrumbs {
+		border: 0;
+		margin: var(--space-s) 0 var(--space-xs);
+		padding: 0 calc(var(--space-xs-xs) * 2);
+	}
+}

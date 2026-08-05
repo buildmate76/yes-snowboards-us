@@ -1,0 +1,415 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_faFj6z": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/yes-pro-program-banner.jpg",
+        "text": "",
+        "url": "",
+        "button_style": "primary",
+        "button_size": "large",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_YBKzhG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tgRhA4": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>The #YES Pro Program</strong>",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tgRhA4"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_jwedxm": {
+      "type": "rich-text",
+      "blocks": {
+        "text_attWe4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The YES Pro Program is open to our family of authorized dealers, industry affiliates and professional mountain guides. All people who live and breathe snowboarding and work in our industry full time.</p><p>We're honored to partner with these riders as they are working toward the same goals we are - to help others get in the mountains and enjoy wild natural experiences, and to use those influential wilderness experiences to help protect the planet.</p><p>If you feel you qualify for the YES Pro Program, don't hesitate to apply now. </p>"
+          }
+        },
+        "heading_76FwDH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Start application",
+            "heading_size": "h2"
+          }
+        },
+        "text_Aw6xeV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The first step is to sign in or create an account. If you are applying as an industry professional, please sign up using your work email address. Return to this page to continue the process.</p>"
+          }
+        },
+        "button_fLwxtH": {
+          "type": "button",
+          "settings": {
+            "button_label": "Create an account",
+            "button_link": "/account/login",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "text_z6U4bz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Already have an account ? <a href=\"https://www.jonessnowboards.com/account/login\" target=\"_blank\">Sign in</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_attWe4",
+        "heading_76FwDH",
+        "text_Aw6xeV",
+        "button_fLwxtH",
+        "text_z6U4bz"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_pCFTFh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_n9jGMY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Want to join the YES Pro Program?</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_fnPAqx": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Apply here</h4><p>Once you’ve successfully created your account, you can fill out the form below to obtain your Pro Program activation code.</p>"
+          }
+        },
+        "button_xWCQPP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Fill out application",
+            "button_link": "/customer_authentication/login?return_to=/a/pro-program/application",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        },
+        "heading_bC6RqW": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Already have an activation code?</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_mAmDKD": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Follow the steps here</h4><p>Now that you are signed into your account, you can enter your activation code in the form below and get direct access to the Pro Program.</p>"
+          }
+        },
+        "button_hHzPYC": {
+          "type": "button",
+          "settings": {
+            "button_label": "Activate Membership",
+            "button_link": "/customer_authentication/login?return_to=/a/pro-program/application?code-only",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_n9jGMY",
+        "text_fnPAqx",
+        "button_xWCQPP",
+        "heading_bC6RqW",
+        "text_mAmDKD",
+        "button_hHzPYC"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {background: #f1f1f1; padding: 20px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_XHQVAT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9F8F33": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Terms & Conditions</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "heading_MjkwJ9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Additional Discounts",
+            "heading_size": "h2"
+          }
+        },
+        "text_XNGek9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>YES Pro program discounts cannot be combined with any other offer advertised on jonessnowboards.com including shipping discount promotions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9F8F33",
+        "heading_MjkwJ9",
+        "text_XNGek9"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_ifJ6EE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_EbDQRt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Code expiration date",
+            "heading_size": "h2"
+          }
+        },
+        "text_wjBref": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Programs are annual and run for 1 year starting from the application validation. Codes issued in previous years expire - you may need to reapply annually if your Pro membership doesn't renew automatically.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EbDQRt",
+        "text_wjBref"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_EWqUTV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hR4Vpt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Personal use",
+            "heading_size": "h2"
+          }
+        },
+        "text_3EHaaT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Products purchased through the YES Pro program are for your personal use only. Any person found to be attempting to resell or otherwise re-distribute products purchased through the YES Pro program will have future access privileges revoked. All YES Pro program orders are monitored.</p><p>If you have friends or family interested in YES product, please refer them to <a href=\"/pages/dealer-locator\" target=\"_blank\" title=\"/pages/dealer-locator\">their local YES dealer</a> or yessnowboards.com</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hR4Vpt",
+        "text_3EHaaT"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_L6pzNt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KXGNMr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Code limitations",
+            "heading_size": "h2"
+          }
+        },
+        "text_kkCTTQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Each code has a defined value, which is visible at checkout. The code is valid throughout the season.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KXGNMr",
+        "text_kkCTTQ"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_NAqd8x": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Y9aE7M": {
+          "type": "heading",
+          "settings": {
+            "heading": "Eligibility",
+            "heading_size": "h2"
+          }
+        },
+        "text_8keeGL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your profession should be on the list and your rate of employment must be at least 80%.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y9aE7M",
+        "text_8keeGL"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_Jr8Pc7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hE7eFJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Returns",
+            "heading_size": "h2"
+          }
+        },
+        "text_YmBKwX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>New, unused items in the original packaging may be returned for a full refund within 30 days of delivery.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hE7eFJ",
+        "text_YmBKwX"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_PA66Ln": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WgLT8Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "Warranty",
+            "heading_size": "h2"
+          }
+        },
+        "text_k4gca7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Products purchased on YES Pro program are covered by standard product warranties. The warranty period varies by product category and starts on the date of product delivery. <a href=\"/pages/warranty\" target=\"_blank\" title=\"#YES Warranty Program\">See complete warranty policy</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WgLT8Y",
+        "text_k4gca7"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner_faFj6z",
+    "rich_text_YBKzhG",
+    "rich_text_jwedxm",
+    "rich_text_pCFTFh",
+    "rich_text_XHQVAT",
+    "rich_text_ifJ6EE",
+    "rich_text_EWqUTV",
+    "rich_text_L6pzNt",
+    "rich_text_NAqd8x",
+    "rich_text_Jr8Pc7",
+    "rich_text_PA66Ln"
+  ]
+}

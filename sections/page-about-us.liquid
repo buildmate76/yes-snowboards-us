@@ -1,0 +1,123 @@
+{{ 'card-profile.css' | asset_url | stylesheet_tag }}
+{{ 'page-about-us.css' | asset_url | stylesheet_tag }}
+
+<div class="page-about-us founders card-profile">
+	<h3>The Founders</h3>
+	<div class="page-width">
+		<div class="container">
+			{%- for block in section.blocks -%}
+				<div class="card">
+					{%- assign img = block.settings.image_default | image_url: width: 400 -%}
+					{%- assign img_hover = block.settings.image_hover | image_url: width: 400 -%}
+					{%- assign name = block.settings.name -%}
+
+					{%- if img -%}
+						<img
+							alt="{{ name }}"
+							class="image default"
+							loading="lazy"
+							src="{{ img }}"
+							title="{{ name }}"
+						>
+					{%- else -%}
+						<div class="image default">
+							{% render 'card-profile-placeholder' %}
+						</div>
+					{%- endif -%}
+					{%- if img_hover -%}
+						<img
+							alt="{{ name }}"
+							class="image hover"
+							loading="lazy"
+							src="{{ img_hover }}"
+							title="{{ name }}"
+						>
+					{%- else -%}
+						<div class="image hover">
+							{% render 'card-profile-placeholder' %}
+						</div>
+					{%- endif -%}
+
+					<div class="info">
+						<div class="name">{{ name }}</div>
+						<div class="details">
+							{%- assign url = block.settings.url_instagram -%}
+							{%- assign alias = url | split: '/' | last -%}
+							<a
+								class="link"
+								href="{{ url }}"
+							>
+								{% render 'icon-instagram-custom' %}
+								<p class="alias">{{ alias }}</p>
+							</a>
+							<p class="country">{{ block.settings.country }}</p>
+						</div>
+					</div>
+					<div class="description">
+						<p>{{ block.settings.description_text }}</p>
+					</div>
+				</div>
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "About us",
+	"tag": "section",
+	"class": "section",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"blocks": [
+		{
+			"type": "founder",
+			"name": "founder",
+			"limit": 40,
+			"settings": [
+				{
+					"type": "text",
+					"id": "name",
+					"label": "Name"
+				},
+				{
+					"type": "url",
+					"id": "url_instagram",
+					"label": "Instagram URL"
+				},
+				{
+					"type": "text",
+					"id": "country",
+					"label": "Country"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_default",
+					"label": "Photo - default"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_hover",
+					"label": "Photo - hover"
+				},
+				{
+					"type": "richtext",
+					"id": "description_text",
+					"label": "description_text"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "The Founders",
+			"blocks": [
+				{
+					"type": "founder"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

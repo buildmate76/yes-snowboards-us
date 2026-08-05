@@ -1,0 +1,128 @@
+{{ 'tab-system.css' | asset_url | stylesheet_tag }}
+{{ 'card-profile.css' | asset_url | stylesheet_tag }}
+{{ 'page-team.css' | asset_url | stylesheet_tag }}
+
+<div class="page-team card-profile">
+	<div class="page-width">
+		<div class="tab-system-container">
+			<div
+				class="tabs"
+				role="tablist"
+			>
+				<button
+					class="tab-button"
+					role="tab"
+					aria-selected="true"
+					aria-controls="panel-1"
+					id="tab-1"
+				>
+					Creamers
+				</button>
+				<button
+					class="tab-button"
+					role="tab"
+					aria-selected="false"
+					aria-controls="panel-2"
+					id="tab-2"
+				>
+					Dreamers
+				</button>
+			</div>
+
+			<div class="tab-panels">
+				<div
+					class="tab-panel"
+					role="tabpanel"
+					id="panel-1"
+					aria-labelledby="tab-1"
+				>
+					{% render 'card-profile', card_boolean: false %}
+				</div>
+				<div
+					class="tab-panel"
+					role="tabpanel"
+					id="panel-2"
+					aria-labelledby="tab-2"
+					hidden
+				>
+					{% render 'card-profile', card_boolean: true %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const myTabs = createTabSystem({
+			tabListSelector: '.page-team .tabs',
+			tabButtonSelector: '.page-team .tab-button',
+			tabPanelSelector: '.page-team .tab-panel',
+			activeTabClass: 'is-active',
+		})
+	})
+</script>
+
+{% schema %}
+{
+	"name": "Team",
+	"tag": "section",
+	"class": "section",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"blocks": [
+		{
+			"type": "team_member",
+			"name": "Team Member",
+			"limit": 40,
+			"settings": [
+				{
+					"type": "checkbox",
+					"id": "card_boolean",
+					"label": "DREAMER",
+					"default": false
+				},
+				{
+					"type": "text",
+					"id": "name",
+					"label": "Name"
+				},
+				{
+					"type": "url",
+					"id": "url_instagram",
+					"label": "Instagram URL"
+				},
+				{
+					"type": "text",
+					"id": "country",
+					"label": "Country"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_default",
+					"label": "Photo - default"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_hover",
+					"label": "Photo - hover"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Team members",
+			"blocks": [
+				{
+					"type": "team_member"
+				},
+				{
+					"type": "team_member"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

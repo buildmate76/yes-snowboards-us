@@ -1,0 +1,40 @@
+{{ 'page-dealer-locator.css' | asset_url | stylesheet_tag }}
+
+<div class="page-dealer-locator">
+	<h1>The #YES Dealer Locator</h1>
+	<div class="dealer-container">
+		<iframe
+			src="https://hub.ndk.group/widgets/map/yes"
+			allow="geolocation"
+			height="800px"
+			class="ndk-dealer-locator"
+		></iframe>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "dealer-locator",
+	"tag": "section",
+	"class": "section",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"blocks": [
+		{
+			"type": "dealer-locator",
+			"name": "dealer-locator"
+		}
+	],
+	"presets": [
+		{
+			"name": "dealer-locator",
+			"blocks": [
+				{
+					"type": "dealer-locator"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

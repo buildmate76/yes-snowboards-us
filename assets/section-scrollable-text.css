@@ -1,0 +1,41 @@
+.scrollable-text {
+	background: var(--color-black);
+	padding-top: var(--space-s);
+	text-align: center;
+	position: relative;
+	color: var(--color-white);
+	height: var(--size-180);
+	overflow: hidden;
+}
+
+.scrollable-text .item {
+	color: #fff;
+	display: block;
+	padding: 0 var(--space-xxs);
+	position: absolute;
+	top: var(--space-7xl);
+	left: 0;
+	white-space: nowrap;
+	font-size: var(--typo-140);
+	font-weight: 900;
+	font-style: italic;
+	animation: scroll-left 80s linear infinite;
+	animation-delay: -40s;
+	text-transform: uppercase;
+	line-height: 0;
+}
+
+.scrollable-text .item:last-child {
+	animation-delay: 0s;
+	display: block;
+	transform: translateX(100%);
+}
+
+@keyframes scroll-left {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}

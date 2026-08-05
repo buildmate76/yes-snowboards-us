@@ -1,0 +1,7 @@
+.page-about-us h3 {
+	text-align: center;
+}
+
+.page-about-us .container {
+	margin: 0 auto var(--size-4xl) auto;
+}

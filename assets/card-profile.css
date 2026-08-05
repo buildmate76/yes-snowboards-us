@@ -1,0 +1,108 @@
+/* Cards with people's information */
+/* Originally for Team and About Us page*/
+.card-profile .container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-xs);
+	margin: 0;
+	width: 100%;
+}
+
+.card-profile .card {
+	display: grid;
+	margin: 0 auto;
+	max-width: var(--size-380);
+	position: relative;
+	width: 100%;
+}
+
+.card-profile .card .image,
+.card-profile .card .info {
+	grid-area: 1 / 1;
+}
+
+.card-profile .card .image {
+	max-width: 100%;
+	pointer-events: none;
+}
+
+.card-profile .card .image.hover,
+.card-profile .card:hover .image:not(.hover) {
+	opacity: 0;
+}
+
+.card-profile .card:hover .image.hover {
+	opacity: 1;
+}
+
+.card-profile .card .info {
+	align-self: end;
+	background: var(--gradient-bottom-black);
+	color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	justify-self: start;
+	padding: var(--space-xl);
+	width: 100%;
+}
+
+.card-profile .card .info .name {
+	font-size: var(--typo-heading-3);
+	text-transform: uppercase;
+}
+
+.card-profile .card .info .details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.card-profile .card .info .link {
+	align-items: center;
+	color: var(--color-white);
+	display: flex;
+	font-size: var(--typo-heading-4);
+	flex-direction: row;
+	gap: var(--space-xs);
+	justify-content: space-evenly;
+	text-decoration: underline;
+}
+
+.card-profile .card .info .alias,
+.card-profile .card .info .country {
+	font-size: var(--typo-heading-4);
+	margin: 0;
+}
+
+.card-profile .card .description {
+	min-height: auto;
+}
+
+.card-profile .card .description p {
+	font-size: var(--typo-body-xs);
+}
+
+@media only screen and (min-width: 750px) {
+	.card-profile .container {
+		gap: var(--space-xl);
+		grid-template-columns: 1fr 1fr;
+		max-width: calc(2 * var(--size-380) + var(--space-xl));
+	}
+
+	.card-profile .card {
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 823px) {
+	.card-profile .card .description {
+		min-height: var(--size-248);
+	}
+}
+
+@media only screen and (min-width: 1268px) {
+	.card-profile .container {
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--size-380)), 1fr));
+		max-width: calc(3 * var(--size-380) + 2 * var(--space-xl));
+	}
+}

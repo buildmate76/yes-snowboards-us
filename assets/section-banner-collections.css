@@ -1,0 +1,65 @@
+.banner-collections {
+	display: block;
+}
+
+.banner-collections .page-width {
+	/* Make section fluid */
+	max-width: 100%;
+	padding: 0;
+}
+
+.banner-collections .container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.banner-collections .container img {
+	max-height: calc(100vh - var(--size-110));
+	object-fit: cover;
+	width: 100%;
+}
+
+.banner-collections .container::before {
+	position: absolute;
+	content: "";
+	background: linear-gradient(to bottom, transparent, black);
+	bottom: 0;
+	width: 100%;
+	height: 150px;
+}
+
+.banner-collections .btn-text-container {
+	bottom: 0;
+	left: var(--space-xs);
+	position: absolute;
+	width: calc(100% - var(--space-xxs));
+}
+
+.banner-collections .btn-text-container .button {
+	margin: var(--space-xs) var(--space-xs) 0 0;
+}
+
+.banner-collections .title {
+	color: white;
+	margin: calc(var(--space-xs-xs) * 2) 0;
+}
+
+@media only screen and (min-width: 750px) {
+	.banner-collections {
+		display: flex;
+	}
+
+	.banner-collections .flex {
+		flex-direction: row;
+	}
+
+	.banner-collections .btn-text-container {
+		left: var(--space-m);
+		width: calc(100% - var(--space-3xl));
+	}
+
+	.banner-collections .container--half {
+		width: 50%;
+	}
+}

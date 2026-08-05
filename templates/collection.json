@@ -1,0 +1,151 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [],
+      "settings": {
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "multicolumn_F6cjx9": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_xz6nyF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Frame1551-ezgif.com-jpg-to-webp-converter.webp",
+            "title": "All-Mountain Boards",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/womens-snowboards"
+          }
+        },
+        "column_4Qw986": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ES_2_-min.webp",
+            "title": "Freeride Boards",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/mens-snowboards"
+          }
+        },
+        "column_eCxwVJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BF_1.webp",
+            "title": "Freestyle Boards",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/mens-snowboards"
+          }
+        },
+        "column_aWJKUR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Bindings.webp",
+            "title": "BINDINGS",
+            "text": "",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/womens-snowboards"
+          }
+        }
+      },
+      "block_order": [
+        "column_xz6nyF",
+        "column_4Qw986",
+        "column_eCxwVJ",
+        "column_aWJKUR"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "landscape",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collection_list_ATmYNK": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_djbjk3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-snowboards"
+          }
+        },
+        "featured_collection_cdmJtU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-snowboards"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_djbjk3",
+        "featured_collection_cdmJtU"
+      ],
+      "disabled": true,
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "multicolumn_F6cjx9",
+    "collection_list_ATmYNK",
+    "product-grid"
+  ]
+}

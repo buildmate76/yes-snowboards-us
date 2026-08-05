@@ -1,0 +1,6 @@
+{% include 'global-variables' %}
+<span class="cart-elements {% if current_url_path == '/cart' %}header__active-menu-item{% endif %}">
+	<span class="small-hide">CART</span>
+	<span class="medium-hide large-up-hide">{% render 'icon-custom-cart' %}</span>
+	<span class="cart__items-number"> ({{ cart.item_count }})</span>
+</span>

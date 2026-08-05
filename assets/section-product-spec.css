@@ -1,0 +1,268 @@
+.tabs-wrapper .desktop {
+	display: flex;
+	flex-direction: row;
+	margin: var(--space-3xl) 0 0;
+}
+
+.tabs-wrapper img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 620px;
+	margin: 5px auto;
+}
+
+.tabs-wrapper .desktop .tabs-container {
+	position: relative;
+	width: 400px;
+	text-transform: uppercase;
+	margin: 0;
+	padding-right: var(--space-xl);
+}
+
+/* tabs names */
+.tabs-wrapper .desktop .tabs-container label {
+	position: relative;
+	padding: var(--space-s) var(--space-xs);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	display: block;
+	cursor: pointer;
+	user-select: none;
+	transition: var(--transition-duration-03s);
+}
+
+.tabs-wrapper .desktop .tabs-container label:first-child {
+	border-top: 1px solid rgb(0, 0, 0);
+}
+
+/* Hover effect on tabs names */
+.tabs-wrapper .desktop .tabs-container label:hover {
+	padding-left: var(--space-xl);
+}
+
+/* Content area for tabs */
+.tabs-wrapper .desktop .tab-content {
+	position: relative;
+	width: calc(100% - 400px);
+	min-height: 50vh;
+	padding: 0;
+	/*float: left;*/
+	box-sizing: border-box;
+	display: none;
+	max-width: var(--size-800);
+}
+
+.tabs-wrapper .desktop .tab-content h3 {
+	margin-top: 0;
+}
+
+.tabs-wrapper .desktop .tab-content:after {
+	content: "";
+	clear: both;
+}
+
+/* Hide input radio from users */
+.tabs-wrapper .desktop input[name="tab"] {
+	display: none;
+}
+
+.tabs-wrapper .desktop #contentConstruction > div,
+.tabs-wrapper .desktop #contentFeatures > div {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.tabs-wrapper .desktop .tab-content > div:not(:last-child) {
+	border-bottom: 1px solid var(--color-black);
+}
+
+.tabs-wrapper .desktop .tab-content#contentShape > div {
+	border-width: 2px;
+}
+
+.tabs-wrapper .desktop .tab-content > div:first-child {
+	padding-top: 0;
+}
+
+.tabs-wrapper .desktop .tab-content > div {
+	padding: var(--space-2xl) 0 var(--space-2xl) 0;
+}
+
+.tabs-wrapper .desktop #contentConstruction img,
+.tabs-wrapper .desktop #contentFeatures img {
+	padding: var(--space-s) var(--space-xl) var(--space-l) var(--space-m);
+	min-width: var(--size-180);
+}
+
+.tabs-wrapper .desktop #tabShape:checked ~ .tabs-container ~ #contentShape,
+.tabs-wrapper .desktop #tabConstruction:checked ~ .tabs-container ~ #contentConstruction,
+.tabs-wrapper .desktop #tabCharacteristics:checked ~ .tabs-container ~ #contentCharacteristics,
+.tabs-wrapper .desktop #tabTechnology:checked ~ .tabs-container ~ #contentTechnology,
+.tabs-wrapper
+	.desktop
+	#tabBindingsConstruction:checked
+	~ .tabs-container
+	~ #contentBindingsConstruction,
+.tabs-wrapper .desktop #tabFeatures:checked ~ .tabs-container ~ #contentFeatures {
+	display: block;
+}
+
+/* Active Tab Name */
+.tabs-wrapper .desktop #tabShape:checked ~ .tabs-container #labelShape,
+.tabs-wrapper .desktop #tabConstruction:checked ~ .tabs-container #labelConstruction,
+.tabs-wrapper .desktop #tabCharacteristics:checked ~ .tabs-container #labelCharacteristics,
+.tabs-wrapper .desktop #tabTechnology:checked ~ .tabs-container #labelTechnology,
+.tabs-wrapper
+	.desktop
+	#tabBindingsConstruction:checked
+	~ .tabs-container
+	#labelBindingsConstruction,
+.tabs-wrapper .desktop #tabFeatures:checked ~ .tabs-container #labelFeatures {
+	padding-left: var(--space-xl);
+}
+
+/* Active Tab Name */
+.tabs-wrapper .desktop #tabShape:checked ~ .tabs-container #labelShape:after,
+.tabs-wrapper .desktop #tabConstruction:checked ~ .tabs-container #labelConstruction:after,
+.tabs-wrapper .desktop #tabCharacteristics:checked ~ .tabs-container #labelCharacteristics:after,
+.tabs-wrapper .desktop #tabTechnology:checked ~ .tabs-container #labelTechnology:after,
+.tabs-wrapper
+	.desktop
+	#tabBindingsConstruction:checked
+	~ .tabs-container
+	#labelBindingsConstruction:after,
+.tabs-wrapper .desktop #tabFeatures:checked ~ .tabs-container #labelFeatures:after {
+	content: "";
+	background-image: url("data:image/svg+xml,%3Csvg class='icon icon-arrow' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7.46574V9.38117H12L6.5 14.6486L7.92 16.0085L15.84 8.42345L7.92 0.838379L6.5 2.19833L12 7.46574H0Z' fill='currentColor'/%3E%3C/svg%3E%0A");
+	background-size: contain;
+	background-repeat: no-repeat;
+	/*vertical-align: middle; !* Adjust alignment as needed *!*/
+	display: inline-block;
+	width: 18px; /* Adjust the size as needed */
+	height: 24px; /* Adjust the size as needed */
+	position: absolute;
+	right: 0;
+	margin-top: 4px;
+	margin-right: var(--space-s);
+}
+
+/* Slide animation for tab contents */
+@keyframes slide {
+	from {
+		left: -100%;
+		opacity: 0;
+	}
+	to {
+		left: 0;
+		opacity: 1;
+	}
+}
+
+/* mobile */
+.tabs-wrapper .mobile #contentMobileConstruction img,
+.tabs-wrapper #contentMobileFeatures img {
+	width: 33%;
+}
+
+.tabs-wrapper .mobile #contentMobileConstruction > div:not(:first-child),
+.tabs-wrapper #contentMobileFeatures > div:not(:first-child) {
+	border-top: 1px solid;
+}
+
+.tabs-wrapper .accordion details:not(:first-child) {
+	border-top: 2px solid var(--color-black);
+}
+
+#contentMobileFlex > div,
+#contentCharacteristics > div > div {
+	margin: 40px 10% 0;
+}
+
+.bar-chart-wrapper .bar-chart-indice {
+	position: relative;
+	display: block;
+	transform: translate(-50%);
+	width: fit-content;
+	text-align: right;
+	margin-top: -35px;
+}
+
+.bar-chart-wrapper .bar-chart {
+	border: 1px solid black;
+	border-radius: 20px;
+	position: relative;
+}
+
+.bar-chart-wrapper .bar-chart--inner {
+	height: 12px;
+	display: block;
+	background-color: black;
+	border-radius: 20px;
+}
+
+.bar-chart-wrapper .bar-chart-legend {
+	display: flex;
+	justify-content: space-between;
+	text-transform: capitalize;
+	margin-top: 10px;
+}
+
+.bar-chart-wrapper .limiter {
+	background: #fff;
+	height: 12px;
+	position: absolute;
+	top: 0;
+	transform: translate(-50%);
+	width: 4px;
+	z-index: 3;
+}
+
+.bar-chart-wrapper .limiter:first-child {
+	left: calc(10% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(2) {
+	left: calc(20% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(3) {
+	left: calc(30% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(4) {
+	left: calc(40% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(5) {
+	left: calc(50% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(6) {
+	left: calc(60% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(7) {
+	left: calc(70% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(8) {
+	left: calc(80% - 2px);
+}
+
+.bar-chart-wrapper .limiter:nth-child(9) {
+	left: calc(90% - 2px);
+}
+
+/* Accordion - mobile product specs */
+
+.tabs-wrapper .accordion .content {
+	padding: 0;
+}
+
+.tabs-wrapper .accordion img {
+	margin: 0;
+}
+
+.tabs-wrapper .mobile #contentMobileConstruction > div:not(:first-child) {
+	padding: var(--space-xs) 0;
+}

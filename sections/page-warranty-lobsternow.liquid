@@ -1,0 +1,124 @@
+{{ 'section-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'page-warranty.css' | asset_url | stylesheet_tag }}
+
+{% include 'global-variables' %}
+
+<div class="page-warranty page-spacing-bottom">
+	<div class="page-width">
+		<div class="container">
+			<section class="menu">
+				<ul>
+					<li>
+						<a href="/pages/warranty"><h4 class="h3">Warranty</h4></a>
+					</li>
+
+					<li class="mobile">
+						<div class="accordion">
+							<details open>
+								<summary id="warranty-lobster-now">
+									<h3 class="menu-accordion-title">WARRANTY LOBSTER & NOW</h3>
+								</summary>
+
+								<div class="content">
+									<a
+										href="/pages/warranty-lobster-now-bindings"
+										class="{% if current_url_path == '/pages/warranty-lobster-now-bindings' %}active{% endif %}"
+									>
+										<h4 class="subtitle">Warranty Lobster & Now Introduction</h4>
+									</a>
+									<a
+										href="/pages/warranty-lobster-policy"
+										class="{% if current_url_path == '/pages/warranty-lobster-policy' %}active{% endif %}"
+									>
+										<h4 class="subtitle">Lobster Warranty Policy</h4>
+									</a>
+									<a
+										href="/pages/warranty-now-bindings-policy"
+										class="{% if current_url_path == '/pages/warranty-now-bindings-policy' %}active{% endif %}"
+									>
+										<h4 class="subtitle">NOW Bindings Warranty Policy</h4>
+									</a>
+									<a
+										href="/pages/warranty-additional-information"
+										class="{% if current_url_path == '/pages/warranty-additional-information' %}active{% endif %}"
+									>
+										<h4 class="subtitle">Additional information</h4>
+									</a>
+								</div>
+
+								<div class="content-text large-up-hide">
+									<h1 class="main-page-title page-title">
+										{{ page.title | escape }}
+									</h1>
+									<div class="rte">
+										{{ page.content }}
+									</div>
+								</div>
+							</details>
+						</div>
+					</li>
+          <li class="desktop">
+
+            <div class="content">
+              <a
+                href="/pages/warranty-lobster-now-bindings"
+                class="{% if current_url_path == '/pages/warranty-lobster-now-bindings' %}active{% endif %}"
+              >
+                <h3>Warranty Lobster & Now {% render 'icon-arrow' %}</h3>
+              </a>
+              <a
+                href="/pages/warranty-lobster-policy"
+                class="{% if current_url_path == '/pages/warranty-lobster-policy' %}active{% endif %}"
+              >
+                <h4 class="subtitle">Lobster Warranty Policy</h4>
+              </a>
+              <a
+                href="/pages/warranty-now-bindings-policy"
+                class="{% if current_url_path == '/pages/warranty-now-bindings-policy' %}active{% endif %}"
+              >
+                <h4 class="subtitle">NOW Bindings Warranty Policy</h4>
+              </a>
+              <a
+                href="/pages/warranty-additional-information"
+                class="{% if current_url_path == '/pages/warranty-additional-information' %}active{% endif %}"
+              >
+                <h4 class="subtitle">Additional information</h4>
+              </a>
+            </div>
+          </li>
+					<li>
+						<a href="/pages/ordering-returns-policies"><h4 class="h3">Shipping & Returns</h4></a>
+					</li>
+					<li>
+						<a href="/pages/contact"><h4 class="h3">Contact Us</h4></a>
+					</li>
+				</ul>
+			</section>
+
+			<section class="page-content small-hide medium-hide">
+				<div>
+					<h1 class="main-page-title page-title">
+						{{ page.title | escape }}
+					</h1>
+					<div>
+						{{ page.content }}
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Warranty Lobster Now",
+	"tag": "section",
+	"class": "section",
+	"settings": [
+		{
+			"type": "header",
+			"content": "Warranty Lobster Now"
+		}
+	]
+}
+{% endschema %}

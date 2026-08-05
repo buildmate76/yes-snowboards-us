@@ -1,0 +1,107 @@
+{{ 'section-reassurance.css' | asset_url | stylesheet_tag }}
+
+<div class="reassurance">
+	<div class="page-width">
+		<div class="items-container">
+			{%- for block in section.blocks -%}
+				<div class="item">
+					{%- case block.settings.icon -%}
+						{%- when 'icon-shipping' -%}
+							{%- render 'icon-shipping' -%}
+						{%- when 'icon-award' -%}
+							{%- render 'icon-award' -%}
+						{%- when 'icon-warranty' -%}
+							{%- render 'icon-warranty' -%}
+						{%- else -%}
+							{%- render 'icon-return' -%}
+					{%- endcase -%}
+
+					<h4>{{- block.settings.headline -}}</h4>
+
+					<p>{{- block.settings.item_text -}}</p>
+				</div>
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Reassurance",
+	"class": "section",
+	"disabled_on": {
+		"groups": ["header"]
+	},
+	"settings": [
+		{
+			"type": "color_scheme",
+			"id": "color_scheme",
+			"label": "Color Scheme",
+			"default": "scheme-4"
+		}
+	],
+	"blocks": [
+		{
+			"type": "reassurance_item",
+			"name": "Reassurance item",
+			"limit": 4,
+			"settings": [
+				{
+					"type": "text",
+					"id": "headline",
+					"default": "Headline",
+					"label": "Headline"
+				},
+				{
+					"type": "text",
+					"id": "item_text",
+					"default": "Text",
+					"label": "Text"
+				},
+				{
+					"type": "select",
+					"id": "icon",
+					"options": [
+						{
+							"value": "icon-shipping",
+							"label": "Shipping"
+						},
+						{
+							"value": "icon-award",
+							"label": "Award"
+						},
+						{
+							"value": "icon-warranty",
+							"label": "Warranty"
+						},
+						{
+							"value": "icon-return",
+							"label": "Return"
+						}
+					],
+					"label": "Icon"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Reassurance",
+			"blocks": [
+				{
+					"type": "reassurance_item"
+				},
+				{
+					"type": "reassurance_item"
+				},
+				{
+					"type": "reassurance_item"
+				},
+				{
+					"type": "reassurance_item"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

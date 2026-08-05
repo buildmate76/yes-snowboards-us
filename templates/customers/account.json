@@ -1,0 +1,34 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-account",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_MiPP6b": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<div class=\"limoniapps-discountninja-cartdiscountfield-placeholder\"></div>\n<div class=\"discountninja-custombloc\">\n<p class=\"info\">Discount will be shown in the cart and checkout page.</p>\n<p class=\"info\">Your Pro Program access for the season will be validated with your first purchase. If you do not purchase right away, you will be able to reuse your code on your next visit.</p>\n</div>",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_MiPP6b"
+  ]
+}

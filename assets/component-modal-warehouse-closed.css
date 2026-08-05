@@ -1,0 +1,35 @@
+.PopupModal-warehouse p, .PopupModal-warehouse h2, .PopupModal-warehouse ul {
+    margin-bottom: var(--space-xs);
+}
+
+.PopupModal-warehouse h2 {
+    margin-bottom: var(--space-xxs);
+    text-align: center;
+}
+
+.PopupModal-warehouse div[role="dialog"] {
+    max-width: 680px;
+    max-height: fit-content;
+}
+
+.PopupModal-warehouse p {
+    text-align: center;
+}
+
+.PopupModal-warehouse .product-popup-modal__content-info {
+    padding: 0;
+}
+
+.cart-footer-button-holiday-shipping {
+    text-align: center;
+}
+
+.cart__blocks .info-delivery {
+    text-align: end;
+}
+
+.announcement-bar__message .product-popup-modal__button {
+    padding: 0;
+    min-height: auto;
+    font-size: var(--typo-body-s);
+}

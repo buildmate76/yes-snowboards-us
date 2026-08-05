@@ -1,0 +1,12 @@
+.page-dealer-locator h1 {
+	text-align: center;
+}
+
+.page-dealer-locator .dealer-container {
+	margin: 10px 25px;
+}
+
+.page-dealer-locator .dealer-container iframe {
+	width: 100%;
+	border: none;
+}

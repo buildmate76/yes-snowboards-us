@@ -1,0 +1,406 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "two_column_hero_FDPw6L": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_LV3EYz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Team_2.webp",
+            "image_mobile": "shopify://shop_images/Team_1_1.webp",
+            "title": "Meet our team",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_secondary_text": "",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_LV3EYz"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "main": {
+      "type": "page-team",
+      "blocks": {
+        "team_member_QbhUY3": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "HALLDOR HELGASON",
+            "url_instagram": "https://www.instagram.com/halldor_helgason/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/HALLDOR_HELGASON.png",
+            "image_hover": "shopify://shop_images/HALLDOR_HELGASON_HOVER.png"
+          }
+        },
+        "team_member_xDnVDh": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Fridge",
+            "url_instagram": "https://www.instagram.com/fridge_st/",
+            "country": "Norway",
+            "image_default": "shopify://shop_images/FRIDGE.png",
+            "image_hover": "shopify://shop_images/FRIDGE_HOVER.png"
+          }
+        },
+        "team_member_nzVjDj": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Pat Fava",
+            "url_instagram": "https://www.instagram.com/_project_pat_/",
+            "country": "US",
+            "image_default": "shopify://shop_images/PatFava_Profile.png",
+            "image_hover": "shopify://shop_images/card-profile-placeholder.svg"
+          }
+        },
+        "team_member_BrCiWU": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Dustin Craven",
+            "url_instagram": "https://www.instagram.com/dustincraven/",
+            "country": "Canada",
+            "image_default": "shopify://shop_images/Dustin_Profile.png",
+            "image_hover": "shopify://shop_images/Dustin_Action.png"
+          }
+        },
+        "team_member_QVj6H9": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Hundi",
+            "url_instagram": "https://www.instagram.com/hrundur/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/HUNDI.png",
+            "image_hover": "shopify://shop_images/HUNDI_HOVER.png"
+          }
+        },
+        "team_member_gttzAk": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Sparrow Knox",
+            "url_instagram": "https://www.instagram.com/sparrowknox/",
+            "country": "UK",
+            "image_default": "shopify://shop_images/Sparrow_Knox.png",
+            "image_hover": "shopify://shop_images/Sparrow_Knox_HOVER.png"
+          }
+        },
+        "team_member_iapyfd": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Frank Bourgeois",
+            "url_instagram": "https://www.instagram.com/frankbourg/",
+            "country": "Canada",
+            "image_default": "shopify://shop_images/Frank_Bourgeois.png",
+            "image_hover": "shopify://shop_images/Frank_Bourgeois_HOVER.png"
+          }
+        },
+        "team_member_phkpKa": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "EMERAUDE MAHEUX",
+            "url_instagram": "https://www.instagram.com/momo.maheux/",
+            "country": "Canada",
+            "image_default": "shopify://shop_images/Momo_Profile.png",
+            "image_hover": "shopify://shop_images/Momo_Action.png"
+          }
+        },
+        "team_member_gphbnX": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Bucky",
+            "url_instagram": "",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/BUCKY_1.png",
+            "image_hover": "shopify://shop_images/BUCKY_HOVER_1.png"
+          }
+        },
+        "team_member_9qR3ME": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "",
+            "url_instagram": "",
+            "country": ""
+          }
+        },
+        "team_member_RiJfGa": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Colton Carroll",
+            "url_instagram": "https://www.instagram.com/coltoncarroll_/",
+            "country": "USA",
+            "image_default": "shopify://shop_images/Colton_Carroll.png",
+            "image_hover": "shopify://shop_images/card-profile-placeholder.svg"
+          }
+        },
+        "team_member_7zGrwB": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Juho Laine",
+            "url_instagram": "https://www.instagram.com/juho_laine/",
+            "country": "Finland",
+            "image_default": "shopify://shop_images/Juho_Laine.png",
+            "image_hover": "shopify://shop_images/Juho_Laine_HOVER.png"
+          }
+        },
+        "team_member_Fan6fB": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Liam Brearley",
+            "url_instagram": "https://www.instagram.com/liam_brearley/",
+            "country": "Canada",
+            "image_default": "shopify://shop_images/Liam_Brearley.png",
+            "image_hover": "shopify://shop_images/Liam_Brearley_HOVER.png"
+          }
+        },
+        "team_member_jiRVzx": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Eiki Helgason",
+            "url_instagram": "https://www.instagram.com/eiki.helgason/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/Eiki_Helgason.png",
+            "image_hover": "shopify://shop_images/Eiki_Helgason_HOVER.png"
+          }
+        },
+        "team_member_hmMGNq": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": false,
+            "name": "Marko Malsub",
+            "url_instagram": "https://www.instagram.com/marko.malsub/",
+            "country": "Estonia",
+            "image_default": "shopify://shop_images/Marko_Profile.png",
+            "image_hover": "shopify://shop_images/Marko_Action.png"
+          }
+        },
+        "team_member_ypBEKk": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Siffi",
+            "url_instagram": "https://www.instagram.com/siffi____/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/card-profile-placeholder.svg",
+            "image_hover": "shopify://shop_images/Siff.png"
+          }
+        },
+        "team_member_TgbWb3": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Marinó Kristjánsson",
+            "url_instagram": "",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/card-profile-placeholder.svg",
+            "image_hover": "shopify://shop_images/Marino_Kristjansson.png"
+          }
+        },
+        "team_member_KNRbXc": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Max de Vries",
+            "url_instagram": "https://www.instagram.com/max.de.vries/",
+            "country": "Netherlands",
+            "image_default": "shopify://shop_images/Max_Profile.png",
+            "image_hover": "shopify://shop_images/Max_Action.png"
+          }
+        },
+        "team_member_mJ4jkc": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Baldur Vilhelmsson",
+            "url_instagram": "https://www.instagram.com/baldurvilhelmsson/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/card-profile-placeholder.svg",
+            "image_hover": "shopify://shop_images/Baldur_Vilhelmsson.png"
+          }
+        },
+        "team_member_fErGcr": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Kasper de Zoete",
+            "url_instagram": "https://www.instagram.com/kasperdezoete/",
+            "country": "Netherlands",
+            "image_default": "shopify://shop_images/Kasper_Profile.png",
+            "image_hover": "shopify://shop_images/Kasper_Action.png"
+          }
+        },
+        "team_member_6mVF7h": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Kam Henriet",
+            "url_instagram": "https://www.instagram.com/kam_henriet/",
+            "country": "France",
+            "image_default": "shopify://shop_images/Kam_Profile.png",
+            "image_hover": "shopify://shop_images/Kam_Action.png"
+          }
+        },
+        "team_member_pr9kxX": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Braxton Jensen",
+            "url_instagram": "",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/Braxton_profile.png",
+            "image_hover": "shopify://shop_images/Braxton_action.png"
+          }
+        },
+        "team_member_BYAGgX": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Pauli",
+            "url_instagram": "https://www.instagram.com/mentalerror.rr/",
+            "country": "Sweden",
+            "image_default": "shopify://shop_images/Pauli_Profile.png",
+            "image_hover": "shopify://shop_images/Pauli_Action.png"
+          }
+        },
+        "team_member_HcdKYM": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Sofianna Oikarinen",
+            "url_instagram": "https://www.instagram.com/sofiannaoikarinen/",
+            "country": "Finland",
+            "image_default": "shopify://shop_images/Sofianna_Profile.png",
+            "image_hover": "shopify://shop_images/Sofianna_Action.png"
+          }
+        },
+        "team_member_gHkq8L": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Benni F",
+            "url_instagram": "https://www.instagram.com/bennifb/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/card-profile-placeholder.svg",
+            "image_hover": "shopify://shop_images/Benni_F.png"
+          }
+        },
+        "team_member_XxkKmd": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Marc Zimmerman",
+            "url_instagram": "",
+            "country": "",
+            "image_default": "shopify://shop_images/Marc_Profile.png",
+            "image_hover": "shopify://shop_images/Marc_Action.png"
+          }
+        },
+        "team_member_gejCbh": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Illas Van Hoof",
+            "url_instagram": "https://www.instagram.com/ilias_vh/",
+            "country": "",
+            "image_default": "shopify://shop_images/Ilias_profile.png",
+            "image_hover": "shopify://shop_images/Ilias_Action.png"
+          }
+        },
+        "team_member_FgjG4R": {
+          "type": "team_member",
+          "settings": {
+            "card_boolean": true,
+            "name": "Mia Langridge",
+            "url_instagram": "https://www.instagram.com/mia_langridge_/",
+            "country": "UK",
+            "image_default": "shopify://shop_images/Mia_Profile.png",
+            "image_hover": "shopify://shop_images/Mia_Langridge.png"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_QbhUY3",
+        "team_member_xDnVDh",
+        "team_member_nzVjDj",
+        "team_member_BrCiWU",
+        "team_member_QVj6H9",
+        "team_member_gttzAk",
+        "team_member_iapyfd",
+        "team_member_phkpKa",
+        "team_member_gphbnX",
+        "team_member_9qR3ME",
+        "team_member_RiJfGa",
+        "team_member_7zGrwB",
+        "team_member_Fan6fB",
+        "team_member_jiRVzx",
+        "team_member_hmMGNq",
+        "team_member_ypBEKk",
+        "team_member_TgbWb3",
+        "team_member_KNRbXc",
+        "team_member_mJ4jkc",
+        "team_member_fErGcr",
+        "team_member_6mVF7h",
+        "team_member_pr9kxX",
+        "team_member_BYAGgX",
+        "team_member_HcdKYM",
+        "team_member_gHkq8L",
+        "team_member_XxkKmd",
+        "team_member_gejCbh",
+        "team_member_FgjG4R"
+      ],
+      "settings": {}
+    },
+    "two_column_hero_Ji4MWr": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_eQxdJg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/home-about-us-desktop-1.png",
+            "image_mobile": "shopify://shop_images/home-about-us-mobile-1-1-0.png",
+            "title": "ABOUT US",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_secondary_text": "READ MORE",
+            "btn_secondary_url": "shopify://pages/about-us"
+          }
+        }
+      },
+      "block_order": [
+        "column_eQxdJg"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "two_column_hero_FDPw6L",
+    "main",
+    "two_column_hero_Ji4MWr"
+  ]
+}

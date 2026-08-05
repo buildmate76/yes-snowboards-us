@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "two_column_hero_QFxGyK": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_8Egb4k": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/YES_snowboarding_Homepage_about_us.webp",
+            "image_mobile": "shopify://shop_images/YES_snowboarding_Homepage_about_us_mobile.webp",
+            "title": "About us",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_secondary_text": "",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_8Egb4k"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "rich_text_rNJzPP": {
+      "type": "rich-text",
+      "blocks": {
+        "text_yhQBQY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>YES it's happening!! Super exciting times ahead as Lobster, NOW and YES have joined forces under one brand with a mission to empower freestyle snowboard enthusiasts in this universe to reach new levels of fun and creativity.</p><p>YES, we want to ignite that stoke-fire within and inspire you to have as much fun as humanly possible while riding sideways. Snowboarding should be fun and that's at the core of everything we do.</p><p>YES you can join us on our new journey by sending it each and every day. Dream big, cream big and never forget that take offs are always mandatory and landings are most definitely optional.</p><p>YES, LET'S GO SNOWBOARDING!!!\"</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_yhQBQY"
+      ],
+      "custom_css": [
+        "p {font-size: 20px; font-weight: 400;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "page-about-us",
+      "blocks": {
+        "founder_zCBn8Y": {
+          "type": "founder",
+          "settings": {
+            "name": "DCP",
+            "url_instagram": "https://www.instagram.com/cholulaindahole/",
+            "country": "Canada",
+            "image_default": "shopify://shop_images/dcp.jpg",
+            "image_hover": "shopify://shop_images/dcp.jpg",
+            "description_text": "<p>Snowboarding to me is an expression of Freedom, it’s a form of creativity, it’s a way for me to learn about myself and create a relationship within and with the spirit of the mountains. Snowboarding is an expansion of friendship and kinship, it connects me with the people I love. Snowboarding brings me Joy, snowboarding challenges me, snowboarding calms me and excites me all at once. I love snowboarding to my core as it’s my roots and allows me to grow. I’m beyond grateful to be in a position to share snowboarding and help a community to discover its essence through YES.</p>"
+          }
+        },
+        "founder_mVez9z": {
+          "type": "founder",
+          "settings": {
+            "name": "Eiki Helgason",
+            "url_instagram": "https://www.instagram.com/eiki.helgason/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/eiki-helgason.jpg",
+            "image_hover": "shopify://shop_images/eiki-helgason.jpg",
+            "description_text": "<p>Snowboarding, to me, has always been about hanging out with good friends and like-minded people, making something happen out of nothing! Even today, my favorite part of the season is riding behind the local ice rink. I really look forward to working with everyone on The #YES Brand and seeing what our brains will create together.</p>"
+          }
+        },
+        "founder_RDxUkx": {
+          "type": "founder",
+          "settings": {
+            "name": "Halldor Helgason",
+            "url_instagram": "https://www.instagram.com/halldor_helgason/",
+            "country": "Iceland",
+            "image_default": "shopify://shop_images/halldor-helgason.jpg",
+            "image_hover": "shopify://shop_images/halldor-helgason.jpg",
+            "description_text": "<p>Snowboarding has been my favourite thing to do since I was 9 years old, It has definitely had its ups anddowns but when it comes down to it, as cheezZzy as it sounds, just cruising with friends and having a good time is what it’s all about.</p><p> I’m so hyped on this new chapter with #YES, it’s an absolute honour to be involved in this with the rest of the founders, making next level boards, bindings, events and projects together.</p><p> #YES let’s make snowboarding Fun again.</p>"
+          }
+        },
+        "founder_NrY4GP": {
+          "type": "founder",
+          "settings": {
+            "name": "JF Pelchat",
+            "url_instagram": "https://www.instagram.com/wildcatsog/",
+            "country": "Canada",
+            "image_default": "shopify://shop_images/jf-pelchat.jpg",
+            "image_hover": "shopify://shop_images/jf-pelchat.jpg",
+            "description_text": "<p>Snowboarding is fucking RAD!!! The energy is so contagious, the fun factor is off the chart and the community is all time but the most important aspect for me is the people, the connections and friends you make along the way.</p><p> This new chapter of YES is nothing short of that with this group of founders and all the people behind the scene making it happen, it will be one for the books I promised so come along for the ride and let’s create, innovate and elevate the game while having the best of times.</p>"
+          }
+        },
+        "founder_zeMUhT": {
+          "type": "founder",
+          "settings": {
+            "name": "JP Solberg",
+            "url_instagram": "https://www.instagram.com/soulburger/",
+            "country": "Norway",
+            "image_default": "shopify://shop_images/jp-solberg.jpg",
+            "image_hover": "shopify://shop_images/jp-solberg.jpg",
+            "description_text": "<p>My feelings on this venture is that everything in snowboarding is moving so fast and constantly changing we come together and focus on fundamentals that makes snowboarding so fucking awesome. Focusing on bringing the best gear to market only translates into a better time on the mountain and accelerates your skills.That’s always been what it’s about for me. The stoke is real and I’m honored to partner with a crew and generation that changed snowboarding for the better. Good times on the horizon!</p>"
+          }
+        },
+        "founder_JpjV6T": {
+          "type": "founder",
+          "settings": {
+            "name": "RDM",
+            "url_instagram": "https://www.instagram.com/rdmyes/",
+            "country": "Switzerland",
+            "image_default": "shopify://shop_images/rdm.jpg",
+            "image_hover": "shopify://shop_images/rdm.jpg",
+            "description_text": "<p>For me, snowboarding is a constantly evolving lifestyle that we are a part of. Teaming up with the Helgason brothers is a natural progression of what we are going through. We share the same values and embrace snowboarding in the same way. We eat, sleep, and breathe snowboarding. Our passion for this lifestyle and sport will drive us to create the next generation of products for Yes.</p><p> I am so proud of who we have become individually as people and as snowboarders, and I am excited to show how like-minded people can revolutionize a snowboard product.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "founder_zCBn8Y",
+        "founder_mVez9z",
+        "founder_RDxUkx",
+        "founder_NrY4GP",
+        "founder_zeMUhT",
+        "founder_JpjV6T"
+      ],
+      "settings": {}
+    },
+    "video_LxNL4a": {
+      "type": "video",
+      "custom_css": [
+        "h2 {display: none;}"
+      ],
+      "settings": {
+        "heading": "Video",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=MNOdwuxavcU",
+        "cover_image": "shopify://shop_images/about-us-page.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "two_column_hero_BNRpzb": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_axgYKK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/home-team-desktop-1.png",
+            "image_mobile": "shopify://shop_images/home-team-mobile-1.png",
+            "title": "Meet our Team",
+            "btn_primary_text": "Explore",
+            "btn_primary_url": "shopify://pages/team",
+            "btn_secondary_text": "",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_axgYKK"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "two_column_hero_QFxGyK",
+    "rich_text_rNJzPP",
+    "main",
+    "video_LxNL4a",
+    "two_column_hero_BNRpzb"
+  ]
+}

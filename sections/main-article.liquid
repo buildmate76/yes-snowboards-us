@@ -1,0 +1,259 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'section-product-video.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+{{ 'article.css' | asset_url | stylesheet_tag }}
+
+{%- assign title = article.title | escape -%}
+{%- assign video_url = article.metafields.custom.video_url -%}
+{%- assign banner_mobile = article.metafields.custom.banner_image_mobile -%}
+{%- assign banner_mobile_val = banner_mobile.value -%}
+{%- assign banner_desktop = article.metafields.custom.banner_image_desktop -%}
+{%- assign banner_desktop_val = banner_desktop.value -%}
+{%- assign content = article.content -%}
+{%- assign title_products_you_might_like = article.metafields.custom.title_you_might_like -%}
+{%- assign products_you_might_like = article.metafields.custom.products_you_might_like -%}
+{%- assign image_gallery = article.metafields.custom.image_gallery -%}
+
+<article class="page-article">
+	<div class="medium-hide large-up-hide">
+		{% render 'breadcrumbs' %}
+	</div>
+	<section class="banner">
+		<div class="banner-container">
+			{%- if banner_mobile -%}
+				<img
+					alt="{{ banner_mobile.alt | escape }}"
+					class="banner medium-hide large-up-hide"
+					srcset="
+						{% if banner_mobile_val.width >= 350 %}{{ banner_mobile_val | image_url: width: 350 }} 350w,{% endif %}
+						{% if banner_mobile_val.width >= 750 %}{{ banner_mobile_val | image_url: width: 750 }} 750w,{% endif %}
+						{% if banner_mobile_val.width >= 1100 %}{{ banner_mobile_val | image_url: width: 1100 }} 1100w,{% endif %}
+						{% if banner_mobile_val.width >= 1500 %}{{ banner_mobile_val | image_url: width: 1500 }} 1500w,{% endif %}
+						{% if banner_mobile_val.width >= 2200 %}{{ banner_mobile_val | image_url: width: 2200 }} 2200w,{% endif %}
+						{% if banner_mobile_val.width >= 3000 %}{{ banner_mobile_val | image_url: width: 3000 }} 3000w,{% endif %}
+						{{ banner_mobile | image_url }} {{ banner_mobile_val.width }}w
+					"
+					src="{{ banner_mobile | image_url: width: 1100 }}"
+					loading="eager"
+					width="{{ banner_mobile.width }}"
+					height="{{ banner_mobile.height }}"
+				>
+			{%- endif -%}
+
+			{%- if banner_desktop -%}
+				<img
+					alt="{{ banner_desktop.alt | escape }}"
+					class="banner small-hide"
+					srcset="
+						{% if banner_desktop_val.width >= 350 %}{{ banner_desktop_val | image_url: width: 350 }} 350w,{% endif %}
+						{% if banner_desktop_val.width >= 750 %}{{ banner_desktop_val | image_url: width: 750 }} 750w,{% endif %}
+						{% if banner_desktop_val.width >= 1100 %}{{ banner_desktop_val | image_url: width: 1100 }} 1100w,{% endif %}
+						{% if banner_desktop_val.width >= 1500 %}{{ banner_desktop_val | image_url: width: 1500 }} 1500w,{% endif %}
+						{% if banner_desktop_val.width >= 2200 %}{{ banner_desktop_val | image_url: width: 2200 }} 2200w,{% endif %}
+						{% if banner_desktop_val.width >= 3000 %}{{ banner_desktop_val | image_url: width: 3000 }} 3000w,{% endif %}
+						{{ banner_desktop_val | image_url }} {{ banner_desktop.width }}w
+					"
+					src="{{ banner_desktop | image_url: width: 1100 }}"
+					loading="eager"
+					width="{{ banner_desktop.width }}"
+					height="{{ banner_desktop.height }}"
+				>
+			{%- endif -%}
+			<div class="info">
+				<h1 class="title-article">
+					{{ title }}
+				</h1>
+			</div>
+		</div>
+	</section>
+
+	<div class="page-width">
+		<div class="small-hide">
+			{% render 'breadcrumbs' %}
+		</div>
+
+		<div class="container">
+			{%- if video_url -%}
+				{%- assign video_id = video_url | split: 'v=' | last -%}
+				{%- if video_url -%}
+					<section class="video-container">
+						<iframe
+							width="560"
+							height="315"
+							src="{{ "https://www.youtube.com/embed/" | append: video_id }}"
+							title="Video player for {{ title }}"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+					</section>
+				{% endif %}
+			{%- endif -%}
+
+			{%- if image_gallery -%}
+				{%- assign image_gallery_val = article.metafields.custom.image_gallery.value -%}
+
+				{%- if image_gallery_val -%}
+					<slider-component class="image-gallery-container slider-mobile-gutter">
+						<ul
+							class="slider slider--everywhere grid grid--1-col"
+							id="Slider-{{ section.id }}"
+							role="list"
+						>
+							{%- for image in image_gallery_val -%}
+								<li
+									class="slider__slide grid__item"
+									id="Slide-{{ forloop.index }}"
+								>
+									<div class="media media--transparent">
+										<img
+											srcset="
+												{{ image | image_url: width: 375 }} 375w,
+												{{ image | image_url: width: 550 }} 550w,
+												{{ image | image_url: width: 750 }} 750w,
+												{{ image | image_url: width: 1100 }} 1100w,
+												{{ image | image_url: width: 1500 }} 1500w,
+												{{ image | image_url: width: 2200 }} 2200w,
+												{{ image | image_url: width: 3000 }} 3000w
+											"
+											src="{{ image | image_url: width: 1500 }}"
+											sizes="(min-width: 990px) 1100px, (min-width: 750px) calc(100vw - 10rem), 100vw"
+											alt="{{ image.alt | escape }}"
+											height="{{ image.height }}"
+											width="{{ image.width }}"
+											loading="lazy"
+										>
+									</div>
+								</li>
+							{%- endfor -%}
+						</ul>
+
+						<div class="slider-buttons no-js-hidden">
+							<button
+								type="button"
+								class="slider-button slider-button--prev"
+								name="previous"
+								aria-label="{{ 'general.slider.previous_slide' | t }}"
+							>
+								{% render 'icon-arrow-slider-custom' %}
+							</button>
+							<button
+								type="button"
+								class="slider-button slider-button--next"
+								name="next"
+								aria-label="{{ 'general.slider.next_slide' | t }}"
+							>
+								{% render 'icon-arrow-slider-custom' %}
+							</button>
+						</div>
+					</slider-component>
+				{%- endif -%}
+			{%- endif -%}
+
+			<section class="text-container">
+				{{ content }}
+			</section>
+
+			<div class="back-to-files">
+				<a
+					href="{{ blog.url }}"
+					class="article-template__link link animate-arrow"
+				>
+					<span class="icon-wrap">{% render 'icon-arrow' %}</span>
+					YES FILES
+				</a>
+			</div>
+
+			{% render 'blog-comments' %}
+		</div>
+	</div>
+</article>
+
+{%- if products_you_might_like -%}
+	<section
+		aria-labelledby="related-products-heading"
+		class="selected-products"
+	>
+		<div class="page-width">
+			<h2
+				class="h3"
+				id="related-products-heading"
+			>
+				{{ title_products_you_might_like }}
+			</h2>
+
+			<slider-component class="slider-mobile-gutter">
+				<ul
+					id="Slider-{{ section.id }}"
+					class="grid product-grid contains-card contains-card--product grid--4-col-desktop grid--2-col-tablet-down grid--1-col-mobile slider slider--mobile"
+					role="list"
+				>
+					{%- for product in products_you_might_like.value -%}
+						{%- if product.id != blank -%}
+							<li class="grid__item slider__slide">
+								{%- render 'card-product',
+									card_product: product,
+									media_aspect_ratio: 'portrait',
+									show_secondary_image: false,
+									show_vendor: false,
+									show_rating: false,
+									show_quick_add: false
+								-%}
+							</li>
+						{%- endif -%}
+					{%- endfor -%}
+				</ul>
+			</slider-component>
+		</div>
+	</section>
+{%- endif -%}
+
+{%- for block in section.blocks -%}
+	{%- case block.type -%}
+		{%- when '@app' -%}
+			<section>
+				{% render block %}
+			</section>
+	{%- endcase -%}
+{%- endfor -%}
+
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "articleBody": {{ article.content | strip_html | json }},
+	  "mainEntityOfPage": {
+	    "@type": "WebPage",
+	    "@id": {{ request.origin | append: page.url | json }}
+	  },
+	  "headline": {{ article.title | json }},
+	  {% if article.excerpt != blank %}
+	    "description": {{ article.excerpt | strip_html | json }},
+	  {% endif %}
+	  {% if img %}
+	    "image": [
+	      {{ article | image_url: width: 1920 | prepend: "https:" | json }}
+	    ],
+	  {% endif %}
+	  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+	  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+	  "author": {
+	    "@type": "Person",
+	    "name": {{ article.author | json }}
+	  },
+	  "publisher": {
+	    "@type": "Organization",
+	    "name": {{ shop.name | json }}
+	  }
+	}
+</script>
+
+{% schema %}
+{
+	"name": "t:sections.main-article.name",
+	"tag": "section",
+	"class": "section"
+}
+{% endschema %}

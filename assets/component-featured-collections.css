@@ -1,0 +1,106 @@
+/* Mobile, tablet - default */
+.featured-collections {
+	max-width: 100%;
+	overflow: hidden;
+	padding: var(--space-s) 0;
+}
+
+.featured-collections .collection-two-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+.featured-collections .item {
+	display: flex;
+	flex-direction: column;
+	padding: var(--space-xxs) 0;
+	width: 100%;
+}
+
+.featured-collections .item:first-child {
+	border-bottom: 1px solid var(--color-gray-2);
+	margin-bottom: var(--space-s);
+}
+
+.featured-collections .item .grid {
+	column-gap: var(--space-xs);
+}
+
+.featured-collections .item h2 {
+	margin: 0 0 var(--space-xxs) 0;
+}
+
+.featured-collections .item .slider-buttons {
+	justify-content: start;
+	margin-top: var(--space-xxs);
+}
+
+.featured-collections .item .slider-buttons .slider-button {
+	padding: 0;
+}
+
+.featured-collections .item .collection__view-all {
+	margin-bottom: var(--space-m);
+}
+
+.featured-collections .item .collection__view-all .button {
+	padding: var(--space-xxs);
+}
+
+.featured-collections .item .collection__view-all .button:before {
+	box-shadow: none;
+}
+
+.featured-collections .item .grid.slider--tablet.grid--peek .grid__item:first-of-type {
+	margin-left: 0;
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 750px) and (max-width: 989px) {
+	.featured-collections .item {
+		margin: 0 var(--space-xs);
+	}
+
+	.featured-collections .item .grid {
+		column-gap: var(--space-s);
+	}
+}
+
+@media only screen and (min-width: 750px) {
+	.featured-collections .item .grid {
+		column-gap: var(--space-s);
+	}
+}
+
+@media only screen and (min-width: 990px) {
+	.featured-collections {
+		padding: var(--space-l) 0;
+	}
+
+	.featured-collections .collection-two-column {
+		flex-direction: row;
+	}
+
+	.featured-collections .item {
+		flex-direction: column;
+		width: calc(50% - var(--space-s));
+	}
+
+	.featured-collections .item:first-child {
+		border-right: 1px solid var(--color-gray-2);
+		border-bottom: none;
+		padding-right: var(--space-s);
+		margin: 0;
+	}
+
+	.featured-collections .item:last-child {
+		padding-left: var(--space-s);
+	}
+
+	.featured-collections .item h2 {
+		margin: 0 0 var(--space-2xl) 0;
+	}
+}

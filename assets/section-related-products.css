@@ -1,0 +1,11 @@
+.related-products {
+	display: block;
+}
+
+.related-products__heading {
+	margin: 0 0 3rem;
+}
+
+.related-products-container product-recommendations.related-products.page-width {
+	padding: var(--space-m) var(--space-xs);
+}

@@ -1,0 +1,52 @@
+{% comment %}
+	Renders an article card for a given blog
+
+	Accepts:
+	- article: {Object} Article object
+
+	Usage:
+	{% render 'article-card', article: article %}
+{% endcomment %}
+
+{%- if article and article != empty -%}
+	{%- assign img = article.image -%}
+	{%- assign img_width = img.width -%}
+	{%- assign article_url = article.url -%}
+	{%- assign short_title = article.metafields.custom.short_title -%}
+	{%- assign excerpt = article.excerpt | strip_html -%}
+	{% assign read_more = 'Read more' %}
+	<a
+		class="card"
+		href="{{ article_url }}"
+	>
+		{%- if img -%}
+			<img
+				class="image"
+				srcset="
+					{%- if img_width >= 165 -%}{{ img | image_url: width: 165 }} 165w,{%- endif -%}
+					{%- if img_width >= 360 -%}{{ img | image_url: width: 360 }} 360w,{%- endif -%}
+					{%- if img_width >= 533 -%}{{ img | image_url: width: 533 }} 533w,{%- endif -%}
+					{%- if img_width >= 720 -%}{{ img | image_url: width: 720 }} 720w,{%- endif -%}
+					{%- if img_width >= 1000 -%}{{ img | image_url: width: 1000 }} 1000w,{%- endif -%}
+					{%- if img_width >= 1500 -%}{{ img | image_url: width: 1500 }} 1500w,{%- endif -%}
+					{{ img | image_url }} {{ img_width }}w
+				"
+				src="{{ img | image_url: width: 1100 }}"
+				alt="{{ img.alt | escape }}"
+				loading="lazy"
+				width="{{ article.image.width }}"
+				height="{{ article.image.height }}"
+			>
+		{%- endif -%}
+
+		<div class="info">
+			<h3 class="name">{{ short_title }}</h3>
+			<div class="details">
+				{% if excerpt %}
+					<p class="excerpt">{{ excerpt }}</p>
+				{% endif %}
+				<p class="more">{{ read_more }}</p>
+			</div>
+		</div>
+	</a>
+{%- endif -%}
