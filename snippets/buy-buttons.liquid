@@ -111,7 +111,13 @@
 							{% endif %}
 						>
 							<span>
-								{{ 'products.product.add_to_cart' | t }}
+								{% comment %} {%- if product.selected_or_first_available_variant.available == false
+									or quantity_rule_soldout
+								-%}
+									{{ 'products.product.sold_out' | t }}
+								{%- else -%} {% endcomment %}
+									{{ 'products.product.add_to_cart' | t }}
+								{% comment %} {%- endif -%} {% endcomment %}
 							</span>
 							{%- render 'loading-spinner' -%}
 						</button>

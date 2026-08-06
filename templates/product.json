@@ -27,16 +27,6 @@
           "type": "price",
           "settings": {}
         },
-        "alliance_pro_membership_price_fGeRYn": {
-          "type": "shopify://apps/alliance-pro/blocks/membership-price/da1619d2-ddc8-4b5b-b988-31a93f9fda3a",
-          "settings": {
-            "adapt_to_theme": false,
-            "price_selector": "",
-            "background": "",
-            "border_color": "#ee3123",
-            "color": "#ee3123"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {}
@@ -48,7 +38,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown",
+            "picker_type": "button",
             "swatch_shape": "circle"
           }
         },
@@ -62,7 +52,7 @@
         "reassurance_product_page_cqbc6p": {
           "type": "reassurance_product_page",
           "settings": {
-            "color_scheme": ""
+            "color_scheme": "scheme-1"
           }
         }
       },
@@ -70,7 +60,6 @@
         "vendor",
         "title",
         "price",
-        "alliance_pro_membership_price_fGeRYn",
         "description",
         "size_chart",
         "variant_picker",
@@ -83,7 +72,7 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "thumbnail",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "hover",
         "mobile_thumbnails": "show",
@@ -100,7 +89,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
-            "max_width": 1200
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },

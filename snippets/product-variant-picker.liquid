@@ -9,6 +9,28 @@
 	Usage:
 	{% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
+{% style %}
+	.form__label {
+      	font-family: 'The Wave', Arial, sans-serif;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1;
+		letter-spacing: 0;
+		color: #000000;
+		display: flex;
+		align-items: center;
+		margin-bottom: 0 !important;
+	}
+	.product-popup-modal__button {
+		font-family: 'The Wave', Arial, sans-serif;
+		font-size: 12px;
+		line-height: 1;
+		letter-spacing: 0;
+		color: #000000;
+	}
+{% endstyle %}
+
 {%- unless product.has_only_default_variant -%}
 	<variant-selects
 		id="variant-selects-{{ section.id }}"
@@ -49,13 +71,43 @@
 				</fieldset>
 			{%- elsif picker_type == 'button' -%}
 				<fieldset class="js product-form__input product-form__input--pill">
-					<legend class="form__label">{{ option.name }}</legend>
-					{% render 'product-variant-options',
-						product: product,
-						option: option,
-						block: block,
-						picker_type: picker_type
-					%}
+					{% if option.name == 'Size' or option.name == 'size' %}
+						<div style="display: flex; aligh-items: center;">
+							<legend class="form__label">{{ option.name }}</legend>
+							{% for collection in product.collections %}
+								{% if collection.handle == 'snowboards' or collection.handle == 'bindings' %}
+									<modal-opener
+										class="product-popup-modal__opener quick-add-hidden"
+										data-modal="#PopupModal-sc"
+										id="size-chart-button"
+										{{ block.shopify_attributes }}
+									>
+										<button
+											id="ProductPopup-sc"
+											class="product-popup-modal__button link"
+											type="button"
+											aria-haspopup="dialog"
+										>
+											<span>size chart</span>
+										</button>
+									</modal-opener>
+								{% endif %}
+							{% endfor %}
+						</div>
+						{% render 'product-variant-options',
+							product: product,
+							option: option,
+							block: block,
+							picker_type: picker_type
+						%}
+					{% elsif option.name == 'Color' or option.name == 'color' %}
+						{% render 'product-color-picker',
+							product: product,
+							option: option,
+							block: block,
+							picker_type: picker_type
+						%}
+					{% endif %}
 				</fieldset>
 			{%- else -%}
 				<div class="product-form__input product-form__input--dropdown">

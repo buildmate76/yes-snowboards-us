@@ -1,0 +1,80 @@
+{% comment %}
+  Key Benefits block — renders a 2-column grid of benefit pills below product description.
+  Add to main-product section as a block.
+{% endcomment %}
+
+{%- if block.settings.benefit_1 != blank
+  or block.settings.benefit_2 != blank
+  or block.settings.benefit_3 != blank
+  or block.settings.benefit_4 != blank -%}
+
+  <div class="key-benefits" {{ block.shopify_attributes }}>
+    {%- assign benefits = block.settings.benefit_1 | append: '||'
+      | append: block.settings.benefit_2 | append: '||'
+      | append: block.settings.benefit_3 | append: '||'
+      | append: block.settings.benefit_4
+      | split: '||' -%}
+
+    {%- for benefit in benefits -%}
+      {%- if benefit != blank -%}
+        <span class="key-benefits__pill">{{ benefit }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+{%- endif -%}
+
+<style>
+  .key-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+  .key-benefits__pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: 1.5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 999px;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    line-height: 1.3;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Key Benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "benefit_1",
+      "label": "Benefit 1",
+      "default": "Key Benefit Lorem Ipsum"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2",
+      "label": "Benefit 2",
+      "default": "Key Benefit Lorem Ipsum"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3",
+      "label": "Benefit 3",
+      "default": "Key Benefit Lorem Ipsum"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4",
+      "label": "Benefit 4",
+      "default": "Key Benefit Lorem Ipsum"
+    }
+  ]
+}
+{% endschema %}

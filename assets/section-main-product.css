@@ -195,7 +195,6 @@
 	font-weight: 700;
 }
 
-/* Klaviyo back-in-stock CTA: available in the normal product flow on every screen size. */
 [id^="MainProduct-"] .klaviyo-bis-trigger {
 	box-sizing: border-box;
 	display: block;
@@ -216,9 +215,7 @@
 	text-decoration: none;
 }
 
-/* Full-viewport mobile add-to-cart bar. */
 @media screen and (max-width: 749px) {
-	/* Dawn's reveal animation transforms this ancestor, which otherwise traps fixed descendants. */
 	[id^="MainProduct-"] .product__info-wrapper.scroll-trigger.animate--slide-in {
 		transform: none;
 		animation: none;

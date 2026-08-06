@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   }
 
-	const productSection = document.querySelector('[id^="MainProduct-"]')
+  const productSection = document.querySelector('[id^="MainProduct-"]')
 	if (!productSection) return
 
 	const updateBackInStockState = () => {
