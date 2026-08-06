@@ -1,0 +1,370 @@
+{%- assign speed = section.settings.speed | default: 20 -%}
+{%- assign repeat = section.settings.repeat_count | default: 8 -%}
+{%- assign image_height = section.settings.image_height | default: 12 -%}
+{%- assign item_gap = section.settings.item_gap | default: 24 -%}
+
+<div
+	class="marquee-section"
+	id="Marquee-{{ section.id }}"
+	data-speed="{{ speed }}"
+	style="
+		background-color: {{ section.settings.bg_color }};
+		padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+		margin: {{ section.settings.margin_top }}px 0 {{ section.settings.margin_bottom }}px;
+	"
+>
+	<div class="marquee-track" data-marquee-track>
+		<div class="marquee-content" data-marquee-content>
+			<div class="marquee-set" data-marquee-set style="gap: {{ item_gap }}px;">
+				{%- for i in (1..repeat) -%}
+					<span class="marquee-item">
+						{%- if section.settings.image != blank -%}
+							{{
+								section.settings.image
+								| image_url: height: image_height
+								| image_tag:
+									loading: 'eager',
+									height: image_height,
+									alt: section.settings.image.alt | default: '',
+									style: 'display:block;'
+							}}
+						{%- else -%}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="31"
+								height="12"
+								viewBox="0 0 31 12"
+								fill="none"
+								aria-hidden="true"
+								focusable="false"
+							>
+								<g clip-path="url(#marquee-clip-{{ section.id }}-{{ i }})">
+									<path d="M17.5687 1.75874H12.3629V5.08914H16.5039V6.63354C16.5039 6.64021 16.4215 6.7246 16.415 6.7246H12.3623V10.2371H17.6866V11.7815C17.6866 11.7882 17.6043 11.8726 17.5978 11.8726H10.6172C10.6107 11.8726 10.5283 11.7882 10.5283 11.7815V0.214352C10.5283 0.168821 10.6931 0.123291 10.7351 0.123291H17.4792C17.4858 0.123291 17.5681 0.207674 17.5681 0.214352V1.75874H17.5687Z" fill="black"/>
+									<path d="M20.5194 8.9726C20.5294 8.97867 20.5656 9.09765 20.6124 9.14743C21.3531 9.93481 22.3528 10.4684 23.455 10.3573C25.0093 10.2007 25.9095 8.33578 24.3919 7.34079C22.7735 6.28023 19.5985 6.13211 19.4012 3.54719C19.0812 -0.644644 24.6964 -0.94818 26.6804 1.72719L25.1444 2.64144C25.0544 2.65601 24.8517 2.3895 24.7474 2.31362C24.1596 1.88624 23.4183 1.62581 22.6876 1.69805C21.1955 1.84617 20.5994 3.29768 21.9528 4.20526C23.5741 5.29313 26.6241 5.37994 26.9607 7.91993C27.4715 11.7767 22.9098 12.9101 20.1775 11.169C19.9197 11.0045 18.9929 10.2814 18.933 10.018C18.9129 9.92934 19.6115 9.48072 19.7395 9.39876C19.8675 9.31681 20.4281 8.91675 20.5194 8.97138V8.9726Z" fill="black"/>
+									<path d="M0.797016 11.8713C0.779831 11.867 0.684426 11.7832 0.73361 11.748L3.5845 6.63343L0 0.214245C0.0426655 0.149896 0.0634057 0.14686 0.132145 0.138361C0.553467 0.0867602 1.3807 0.0812965 1.80558 0.121363C1.92706 0.132898 2.02543 0.128648 2.12617 0.217281L4.64225 4.72661L7.153 0.22578C7.17907 0.194819 7.33847 0.123792 7.36395 0.123792H9.28687L2.74956 11.8713C2.22157 11.7814 1.26811 11.9921 0.797016 11.8713Z" fill="black"/>
+									<path d="M29.2067 9.52441C30.6419 9.27308 31.3317 11.0894 30.1412 11.8131C29.0266 12.4906 27.7987 11.1896 28.463 10.0951C28.6047 9.86133 28.9383 9.57176 29.2073 9.52441H29.2067Z" fill="black"/>
+								</g>
+								<defs>
+									<clipPath id="marquee-clip-{{ section.id }}-{{ i }}">
+										<rect width="30.75" height="12" fill="white"/>
+									</clipPath>
+								</defs>
+							</svg>
+						{%- endif -%}
+					</span>
+				{%- endfor -%}
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	#Marquee-{{ section.id }}.marquee-section {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	#Marquee-{{ section.id }} .marquee-track {
+		display: flex;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	#Marquee-{{ section.id }} .marquee-content {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		width: max-content;
+		will-change: transform;
+		backface-visibility: hidden;
+	}
+
+	#Marquee-{{ section.id }} .marquee-set {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		width: max-content;
+    margin-right: {{ item_gap }}px;
+	}
+
+	#Marquee-{{ section.id }} .marquee-item {
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	#Marquee-{{ section.id }} .marquee-item img,
+	#Marquee-{{ section.id }} .marquee-item svg {
+		display: block;
+		height: {{ image_height }}px;
+		width: auto;
+	}
+
+	@media screen and (max-width: 768px) {
+		#Marquee-{{ section.id }}.marquee-section {
+			padding-top: {{ section.settings.padding_top_mobile }}px !important;
+			padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+			margin-top: {{ section.settings.margin_top_mobile }}px !important;
+			margin-bottom: {{ section.settings.margin_bottom_mobile }}px !important;
+		}
+
+		#Marquee-{{ section.id }} .marquee-item svg {
+			opacity: 0.55;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#Marquee-{{ section.id }} .marquee-content {
+			transform: none !important;
+		}
+	}
+</style>
+
+<script>
+	(function () {
+		const root = document.getElementById('Marquee-{{ section.id }}');
+		if (!root) return;
+
+		const track = root.querySelector('[data-marquee-track]');
+		const content = root.querySelector('[data-marquee-content]');
+		const originalSet = root.querySelector('[data-marquee-set]');
+		if (!track || !content || !originalSet) return;
+
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const durationSec = Math.max(parseFloat(root.dataset.speed) || 20, 1);
+
+		let rafId = null;
+		let resizeTimer = null;
+		let offset = 0;
+		let setWidth = 0;
+		let lastTs = 0;
+
+		function clearClones() {
+			content.querySelectorAll('[data-marquee-clone]').forEach((node) => node.remove());
+		}
+
+		function fillTrack() {
+			clearClones();
+			offset = 0;
+			content.style.transform = 'translate3d(0,0,0)';
+
+			/* Force layout, then measure one full set (items + flex gap) */
+			setWidth = originalSet.getBoundingClientRect().width;
+			if (!setWidth) return;
+
+			const viewport = track.clientWidth;
+			/*
+			 * Clone whole sets until we cover at least 2× viewport.
+			 * Wrapping by exactly setWidth then looks identical → no empty gap.
+			 */
+			const copiesNeeded = Math.max(2, Math.ceil((viewport * 2) / setWidth) + 1);
+
+			for (let i = 1; i < copiesNeeded; i++) {
+				const clone = originalSet.cloneNode(true);
+				clone.removeAttribute('data-marquee-set');
+				clone.setAttribute('data-marquee-clone', '');
+				clone.setAttribute('aria-hidden', 'true');
+				/* Unique clipPath ids so SVG fills don't collide */
+				clone.querySelectorAll('[id]').forEach((el) => {
+					el.id = el.id + '-c' + i;
+				});
+				clone.querySelectorAll('[clip-path]').forEach((el) => {
+					const val = el.getAttribute('clip-path');
+					if (val && val.indexOf('url(#') === 0) {
+						el.setAttribute('clip-path', val.replace(/\)$/, '-c' + i + ')'));
+					}
+				});
+				content.appendChild(clone);
+			}
+		}
+
+		function tick(ts) {
+			if (reduceMotion.matches || !setWidth) {
+				rafId = requestAnimationFrame(tick);
+				return;
+			}
+
+			if (!lastTs) lastTs = ts;
+			const delta = Math.min((ts - lastTs) / 1000, 0.064);
+			lastTs = ts;
+
+			offset += (setWidth / durationSec) * delta;
+			if (offset >= setWidth) offset -= setWidth;
+
+			content.style.transform = 'translate3d(' + -offset.toFixed(2) + 'px,0,0)';
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function start() {
+			cancelAnimationFrame(rafId);
+			lastTs = 0;
+			fillTrack();
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function onResize() {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(start, 150);
+		}
+
+		if (document.readyState === 'complete') {
+			start();
+		} else {
+			window.addEventListener('load', start, { once: true });
+		}
+
+		window.addEventListener('resize', onResize);
+
+		document.addEventListener('shopify:section:load', (event) => {
+			if (event.target.contains(root) || event.target === root) start();
+		});
+	})();
+</script>
+
+{% schema %}
+{
+	"name": "Marquee",
+	"tag": "section",
+	"class": "section-marquee",
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "image",
+			"label": "Marquee image",
+			"info": "Falls back to the YES mark if empty"
+		},
+		{
+			"type": "range",
+			"id": "image_height",
+			"min": 8,
+			"max": 80,
+			"step": 1,
+			"unit": "px",
+			"label": "Image height",
+			"default": 12
+		},
+		{
+			"type": "range",
+			"id": "repeat_count",
+			"min": 2,
+			"max": 100,
+			"step": 1,
+			"label": "Base item count",
+			"default": 50,
+			"info": "Script clones these until the track is filled — no empty gap"
+		},
+		{
+			"type": "range",
+			"id": "speed",
+			"min": 5,
+			"max": 60,
+			"step": 1,
+			"unit": "s",
+			"label": "Seconds per loop",
+			"default": 20,
+			"info": "Lower = faster"
+		},
+		{
+			"type": "range",
+			"id": "item_gap",
+			"min": 8,
+			"max": 80,
+			"step": 2,
+			"unit": "px",
+			"label": "Gap between items",
+			"default": 24
+		},
+		{
+			"type": "color",
+			"id": "bg_color",
+			"label": "Background",
+			"default": "#ffffff"
+		},
+		{
+			"type": "range",
+			"id": "padding_top",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Padding top",
+			"default": 24
+		},
+		{
+			"type": "range",
+			"id": "padding_bottom",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Padding bottom",
+			"default": 24
+		},
+    {
+			"type": "range",
+			"id": "padding_top_mobile",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Padding top on mobile",
+			"default": 24
+		},
+		{
+			"type": "range",
+			"id": "padding_bottom_mobile",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Padding bottom on mobile",
+			"default": 24
+		},
+		{
+			"type": "range",
+			"id": "margin_top",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Margin top",
+			"default": 60
+		},
+		{
+			"type": "range",
+			"id": "margin_bottom",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Margin bottom",
+			"default": 0
+		},
+    {
+			"type": "range",
+			"id": "margin_top_mobile",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Margin top on mobile",
+			"default": 60
+		},
+		{
+			"type": "range",
+			"id": "margin_bottom_mobile",
+			"min": 0,
+			"max": 100,
+			"step": 2,
+			"unit": "px",
+			"label": "Margin bottom on mobile",
+			"default": 0
+		}
+	],
+	"presets": [
+		{
+			"name": "Marquee"
+		}
+	]
+}
+{% endschema %}

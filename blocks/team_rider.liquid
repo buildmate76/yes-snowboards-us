@@ -1,0 +1,371 @@
+{% assign fetaures_block_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .team-rider-section-{{ fetaures_block_id }} {
+    display: block;
+    background-color: {{ block.settings.section_background }};
+    width: 100%;
+  }
+
+  .team-rider-container-{{ fetaures_block_id }} {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.padding_top }}px 70px {{ block.settings.padding_bottom }}px;
+  }
+
+  .team-rider-header-{{ fetaures_block_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    user-select: none;
+  }
+
+  .team-rider-title-{{ fetaures_block_id }} {
+    font-family: "The Wave", Wave, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 24px;
+    margin: 0;
+    color: #000000;
+  }
+
+  .team-rider-toggle-{{ fetaures_block_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+
+  .team-rider-toggle-{{ fetaures_block_id }} svg {
+    width: 20px;
+    height: 20px;
+    stroke: #000000;
+  }
+
+  .team-rider-toggle-{{ fetaures_block_id }}.collapsed {
+    transform: rotate(-90deg);
+  }
+
+  .team-rider-content-{{ fetaures_block_id }} {
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  .team-rider-content-{{ fetaures_block_id }}.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .team-rider-content-inner-{{ fetaures_block_id }} {
+    padding: 32px 0;
+  }
+
+  .rider-quote-layout-{{ fetaures_block_id }} {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .rider-portrait-{{ fetaures_block_id }} {
+    width: 100%;
+    height: 564px;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 416 / 564;
+  }
+
+  .rider-portrait-{{ fetaures_block_id }} img {
+    width: 100%;
+    height: 564px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .rider-portrait-placeholder-{{ fetaures_block_id }} {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rider-portrait-placeholder-{{ fetaures_block_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .rider-action-{{ fetaures_block_id }} {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+  }
+
+  .rider-action-image-{{ fetaures_block_id }} {
+    width: 100%;
+    height: 564px;;
+    display: block;
+    object-fit: cover;
+    filter: brightness(80%);
+    aspect-ratio: 847 / 564;
+  }
+
+  .rider-action-placeholder-{{ fetaures_block_id }} {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rider-action-placeholder-{{ fetaures_block_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .rider-action-overlay-{{ fetaures_block_id }} {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .quote-text-{{ fetaures_block_id }} {
+    font-family: "The Wave", Wave, Arial, sans-serif;;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .quote-name-{{ fetaures_block_id }} {
+    font-family: "The Wave", Wave, Arial, sans-serif;;
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .team-rider-container-{{ fetaures_block_id }} {
+      padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    }
+
+    .rider-quote-layout-{{ fetaures_block_id }} {
+      grid-template-columns: 1fr;
+      gap: 9px;
+    }
+
+    .team-rider-title-{{ fetaures_block_id }} {
+      font-size: 20px;
+    }
+
+    .quote-text-{{ fetaures_block_id }} {
+      font-size: 18px;
+    }
+
+    .rider-action-overlay-{{ fetaures_block_id }} {
+      padding: 16px;
+    }
+
+    .rider-portrait-{{ fetaures_block_id }},
+    .rider-portrait-{{ fetaures_block_id }} img {
+      height: 400px;
+    }
+
+    .rider-action-{{ fetaures_block_id }},
+    .rider-action-{{ fetaures_block_id }} img {
+      height: 240px;
+    }
+
+    .quote-text-{{ fetaures_block_id }} {
+      font-size: 18px;
+    }
+
+    .quote-name-{{ fetaures_block_id }} {
+      font-size: 18px;
+    }
+  }
+{% endstyle %}
+
+<team-rider-{{ fetaures_block_id }} class="team-rider-section-{{ fetaures_block_id }}" {{ block.shopify_attributes }}>
+  <div class="team-rider-container-{{ fetaures_block_id }}">
+    {% comment %} <div class="team-rider-header-{{ fetaures_block_id }}" data-toggle>
+      <h2 class="team-rider-title-{{ fetaures_block_id }}">{{ block.settings.section_title }}</h2>
+      <div class="team-rider-toggle-{{ fetaures_block_id }}">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div> {% endcomment %}
+
+    <div class="team-rider-content-{{ fetaures_block_id }}" data-content>
+      <div class="team-rider-content-inner-{{ fetaures_block_id }}">
+        <div class="rider-quote-layout-{{ fetaures_block_id }}">
+          <div class="rider-portrait-{{ fetaures_block_id }}">
+            {% if block.settings.portrait_image %}
+              <img
+                src="{{ block.settings.portrait_image | image_url: width: 600 }}"
+                alt="{{ block.settings.portrait_image.alt | escape }}"
+                loading="lazy"
+                width="{{ block.settings.portrait_image.width }}"
+                height="{{ block.settings.portrait_image.height }}"
+              >
+            {% else %}
+              <div class="rider-portrait-placeholder-{{ fetaures_block_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="rider-action-{{ fetaures_block_id }}">
+            {% if block.settings.action_image %}
+              <img
+                src="{{ block.settings.action_image | image_url: width: 1200 }}"
+                alt="{{ block.settings.action_image.alt | escape }}"
+                loading="lazy"
+                width="{{ block.settings.action_image.width }}"
+                height="{{ block.settings.action_image.height }}"
+                class="rider-action-image-{{ fetaures_block_id }}"
+              >
+            {% else %}
+              <div class="rider-action-placeholder-{{ fetaures_block_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+
+            <div class="rider-action-overlay-{{ fetaures_block_id }}">
+              {% if block.settings.quote_text != blank %}
+                <p class="quote-text-{{ fetaures_block_id }}">{{ block.settings.quote_text }}</p>
+              {% endif %}
+              {% if block.settings.rider_name != blank %}
+                <p class="quote-name-{{ fetaures_block_id }}">- {{ block.settings.rider_name }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</team-rider-{{ fetaures_block_id }}>
+
+{% schema %}
+{
+  "name": "team-rider",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "team-rider"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "portrait_image",
+      "label": "Portrait image"
+    },
+    {
+      "type": "image_picker",
+      "id": "action_image",
+      "label": "Action image"
+    },
+    {
+      "type": "header",
+      "content": "Quote"
+    },
+    {
+      "type": "textarea",
+      "id": "quote_text",
+      "label": "Quote text",
+      "default": "This board changed everything for me."
+    },
+    {
+      "type": "text",
+      "id": "rider_name",
+      "label": "Rider name",
+      "default": "Dustin Craven"
+    },
+    {
+      "type": "header",
+      "content": "Border"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#00bcd4"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    }
+  ],
+  "presets": [
+    {
+      "name": "team-rider"
+    }
+  ]
+}
+{% endschema %}

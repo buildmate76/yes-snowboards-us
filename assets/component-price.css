@@ -21,6 +21,16 @@
 .price .price-item {
 	display: inline-block;
 	margin: 0 1rem 0 0;
+	color: var(--color-black);
+	font-weight: 700;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 18px;
+}
+
+@meida screen and (max-width: 768px) {
+	.price .price-item {
+		font-size: 24px;
+	}
 }
 
 .price__regular .price-item--regular {

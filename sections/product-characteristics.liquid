@@ -1,0 +1,372 @@
+{%- assign current_product = product -%}
+
+<section class="characteristics-section" style="
+  background-color: {{ section.settings.bg_color }};
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  margin-top: {{ section.settings.margin_top }}px;
+  margin-bottom: {{ section.settings.margin_bottom }}px;
+">
+  <div class="characteristics-inner">
+
+    <div class="characteristics-header" id="characteristics-toggle-{{ section.id }}">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="characteristics-heading" style="color: {{ section.settings.heading_color }};">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      
+      <span class="characteristics-chevron">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </span>
+
+    </div>
+
+    <div class="characteristics-content-wrap" id="characteristics-body-{{ section.id }}">
+      <div class="characteristics-content">
+
+        {% if product.metafields.custom.flex.value %}
+          <section id="contentCharacteristics">
+            <div>
+              <h3>TERRAIN</h3>
+              <div class="bar-chart-wrapper" style='margin-top: 50px;'>
+                <span class="bar-chart-indice">{{ product.metafields.custom.flex }}/10</span>
+                <div class="bar-chart" data-total="{{ product.metafields.custom.flex | times: 10 }}">
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="bar-chart--inner chart-inner--resortTotal" style="width: {{ product.metafields.custom.flex | times: 10 }}%;"></span>
+                </div>
+              </div>
+              <div class="bar-chart-wrapper">
+                <span class="bar-chart-indice">{{ product.metafields.custom.flex }}/10</span>
+                <div class="bar-chart" data-total="{{ product.metafields.custom.flex | times: 10 }}">
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="bar-chart--inner chart-inner--resortTotal" style="width: {{ product.metafields.custom.flex | times: 10 }}%;"></span>
+                </div>
+              </div>
+              <div class="bar-chart-wrapper">
+                <span class="bar-chart-indice">{{ product.metafields.custom.flex }}/10</span>
+                <div class="bar-chart" data-total="{{ product.metafields.custom.flex | times: 10 }}">
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="limiter"></span><span class="limiter"></span><span class="limiter"></span>
+                  <span class="bar-chart--inner chart-inner--resortTotal" style="width: {{ product.metafields.custom.flex | times: 10 }}%;"></span>
+                </div>
+              </div>
+            </div>
+          </section>
+        {% endif %}
+
+        {% if product.metafields.custom.shape.value or product.metafields.custom.profile.value %}
+          <section id="contentShape">
+            {% if product.metafields.custom.profile.value %}
+              {% assign profile_img = product.metafields.custom.profile.value.image | image_url %}
+              {% if profile_img %}
+                <div style='display: flex; align-items: center; justify-content: space-between;'>
+                  <h3>Flex:</h3>
+                  <p>{{ product.metafields.custom.profile.value.title }}</p>
+                </div>
+                <img src="{{ profile_img }}" alt="">
+              {% endif %}
+            {% endif %}
+
+            {% if product.metafields.custom.shape.value %}
+              {% assign shape_img = product.metafields.custom.shape.value.image | image_url %}
+              {% if shape_img %}
+                <div style='display: flex; align-items: center; justify-content: space-between;'>
+                  <h3>Shape:</h3>
+                  <p>{{ product.metafields.custom.shape.value.display_name }}</p>
+                </div>
+                <img src="{{ shape_img }}" alt="">
+              {% endif %}
+            {% endif %}
+          </section>
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ↓ NEW: accordion header */
+  .characteristics-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-top: 1px solid var(--color-blue-light);
+    padding: 16px 0;
+    user-select: none;
+  }
+
+  .characteristics-heading {
+    font-family: "The Wave", Wave, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .characteristics-chevron {
+    font-size: 24px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+  }
+
+  .characteristics-chevron svg {
+    stroke: var(--color-blue-light);
+    stroke-width: 5;
+  }
+
+  .characteristics-chevron.is-closed {
+    transform: rotate(-180deg);
+  }
+
+
+  /* ↓ NEW: collapsible wrapper */
+  .characteristics-content-wrap {
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    max-height: 2000px;
+    opacity: 1;
+  }
+
+  .characteristics-content-wrap.is-closed {
+    max-height: 0;
+    opacity: 0;
+  }
+  /* ↑ END new accordion styles */
+
+  .characteristics-section img {
+    object-fit: cover;
+    width: 511px;
+  }
+
+  .characteristics-section h3 {
+    font-family: "The Wave", Wave, Arial, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 0;
+    color: #000000;
+  }
+
+  .characteristics-section p {
+    font-family: "The Wave", Wave, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 0;
+    color: #000000;
+  }
+
+  .characteristics-section {
+    width: 100%;
+  }
+
+  .characteristics-inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 70px;
+  }
+
+  .characteristics-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+
+  .bar-chart-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .bar-chart-wrapper .bar-chart-indice {
+    position: relative;
+    display: block;
+    width: fit-content;
+    text-align: right;
+    left: 0;
+    margin-top: -35px;
+    font-family: "The Wave", Wave, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .bar-chart-wrapper .bar-chart {
+    border-radius: 20px;
+    position: relative;
+    background-color: #E5E5E5;
+  }
+
+  .bar-chart-wrapper .bar-chart--inner {
+    height: 12px;
+    display: block;
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  .bar-chart-wrapper .bar-chart-legend {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    margin-top: 10px;
+  }
+
+  .bar-chart-wrapper .limiter {
+    background: #fff;
+    height: 12px;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%);
+    width: 4px;
+    z-index: 3;
+  }
+
+  .bar-chart-wrapper .limiter:first-child { left: calc(10% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(2) { left: calc(20% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(3) { left: calc(30% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(4) { left: calc(40% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(5) { left: calc(50% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(6) { left: calc(60% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(7) { left: calc(70% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(8) { left: calc(80% - 2px); }
+  .bar-chart-wrapper .limiter:nth-child(9) { left: calc(90% - 2px); }
+
+  @media screen and (max-width: 768px) {
+    .characteristics-section img {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .characteristics-inner {
+      max-width: 768px;
+      padding-inline: 20px;
+    }
+
+    .characteristics-content {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+
+    #contentShape > div {
+      flex-direction: column;
+      align-items: start !important;
+    }
+
+    .characteristics-section h3 {
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .characteristics-section p {
+      font-weight: 700;
+      font-size: 12px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    var toggle = document.getElementById('characteristics-toggle-{{ section.id }}');
+    var body = document.getElementById('characteristics-body-{{ section.id }}');
+    var chevron = toggle.querySelector('.characteristics-chevron');
+
+    toggle.addEventListener('click', function() {
+      var isOpen = !body.classList.contains('is-closed');
+      body.classList.toggle('is-closed', isOpen);
+      chevron.classList.toggle('is-closed', isOpen);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Characteristics",
+  "tag": "section",
+  "class": "characteristics",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Characteristics"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 48,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Characteristics"
+    }
+  ]
+}
+{% endschema %}
