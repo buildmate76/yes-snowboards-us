@@ -1,0 +1,454 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "judge_me_reviews_preview_badge_LXfCUf": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "key_benefits_yD7wj7": {
+          "type": "key-benefits",
+          "settings": {
+            "benefit_1": "Key Benefit Lorem Ipsum",
+            "benefit_2": "Key Benefit Lorem Ipsum",
+            "benefit_3": "Key Benefit Lorem Ipsum",
+            "benefit_4": "Key Benefit Lorem Ipsum"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "size_chart": {
+          "type": "size_chart",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "inventory_6xHa8L": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "reassurance_product_page_cqbc6p": {
+          "type": "reassurance_product_page",
+          "settings": {
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_LXfCUf",
+        "title",
+        "vendor",
+        "description",
+        "key_benefits_yD7wj7",
+        "price",
+        "size_chart",
+        "variant_picker",
+        "inventory_6xHa8L",
+        "buy_buttons",
+        "reassurance_product_page_cqbc6p"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "columns",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "marquee_ticker_DTUtCj": {
+      "type": "marquee-ticker",
+      "name": "Marquee Ticker",
+      "settings": {
+        "image_height": 12,
+        "repeat_count": 50,
+        "speed": 60,
+        "item_gap": 22,
+        "bg_color": "#f5f5f5",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "padding_top_mobile": 26,
+        "padding_bottom_mobile": 26,
+        "margin_top": 60,
+        "margin_bottom": 60,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "product_characteristics_x6nggB": {
+      "type": "product-characteristics",
+      "name": "Characteristics",
+      "settings": {
+        "heading": "Characteristics",
+        "heading_color": "#000000",
+        "bg_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "multicolumn_XjRRM9": {
+      "type": "tech-multicolumn",
+      "blocks": {
+        "column_RXeBQL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/tech-example.png",
+            "title": "<strong>Asym MidBite</strong>",
+            "text": "<p>The heelside edge has a deeper sidecut than the toe — so both edges hold equally hard. You carve with confidence instead of fighting heel slip.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eJnm6n": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/tech-example.png",
+            "title": "<strong>CamRock profile</strong>",
+            "text": "<p>Camber between your feet for pop and grip; a touch of rocker in nose and tail to stay loose and catch-free.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YJb9kq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/tech-example.png",
+            "title": "<strong>True twin shape</strong>",
+            "text": "<p>Nose and tail are mirror images with a centered stance. Everything you do regular, you can do switch — zero re-learning.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mCiYBt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/tech-example.png",
+            "title": "<strong>Built to last</strong>",
+            "text": "<p>Full poplar core, fast sintered base and recycled steel edges — lively, durable, made to abuse season after season.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_RXeBQL",
+        "column_eJnm6n",
+        "column_YJb9kq",
+        "column_mCiYBt"
+      ],
+      "custom_css": [],
+      "name": "Tech",
+      "settings": {
+        "title": "Tech",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "collapsible": true
+      }
+    },
+    "blocks_XY3bdT": {
+      "type": "_blocks",
+      "blocks": {
+        "yes_section_header_8HydUz": {
+          "type": "section-header",
+          "name": "Section Header",
+          "settings": {
+            "title": "Key Benefits",
+            "bg_color": "#ffffff",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "yes_section_header_8HydUz"
+      ],
+      "name": "Key Benefits",
+      "settings": {}
+    },
+    "blocks_zXRfWR": {
+      "type": "_blocks",
+      "blocks": {
+        "yes_section_header_6V9Xrn": {
+          "type": "section-header",
+          "name": "Section Header",
+          "settings": {
+            "title": "Features & Constructions",
+            "bg_color": "#ffffff",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "yes_section_header_6V9Xrn"
+      ],
+      "name": "Features & Constructions",
+      "settings": {}
+    },
+    "178458910786083929": {
+      "type": "_blocks",
+      "blocks": {
+        "features_and_constructions_iTmKtA": {
+          "type": "team_rider",
+          "settings": {
+            "section_title": "Features & Constructions",
+            "section_background": "#ffffff",
+            "padding_top": 48,
+            "padding_bottom": 48,
+            "portrait_image": "shopify://shop_images/features.png",
+            "action_image": "shopify://shop_images/constructions.png",
+            "quote_text": "\"This is my absolute favorite snowboard, I ride it every day\"",
+            "rider_name": "Dustin Craven",
+            "border_color": "#00bcd4",
+            "border_width": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "features_and_constructions_iTmKtA"
+      ],
+      "name": "Team Rider",
+      "settings": {}
+    },
+    "17259785007e69f931": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_yciqGR": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "no_reviews",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_yciqGR"
+      ],
+      "custom_css": [
+        ".page-width {padding-inline: 0px !important; background-color: #f1f1f1 !important; margin-inline: 0px !important; width: 100%; max-width: 100%;}"
+      ],
+      "name": "JudgeMe Review",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "178478640592dfed8a": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_YFLyBN": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Instagram",
+            "title_color": "#000000",
+            "title_size_v2": 24,
+            "alignment": "left",
+            "instafeed_margin_top": 70,
+            "instafeed_margin_bottom": 70,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": "<style>\n#insta-feed h2 {\n     font-weight: 700;\n     font-family: \"The Wave\", Wave, Arial, sans-serif;\n     text-transform: none;\n}\n\n@media screen and (max-width: 768px) {\n     #insta-feed h2 {\n          font-size: 20px;\n     }\n}\n</style>"
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_YFLyBN"
+      ],
+      "custom_css": [
+        ".page-width {padding-inline: 70px;}",
+        "@media screen and (max-width: 768px) {.page-width {padding-inline: 20px; }}"
+      ],
+      "name": "InstaFeed",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "team_members_gJfpXr": {
+      "type": "team-members",
+      "blocks": {
+        "member_KLUkCV": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team.png",
+            "icon": "shopify://shop_images/instagram-icon.png",
+            "name": "Pepe García",
+            "link": "",
+            "label": "Learn More"
+          }
+        },
+        "member_UxBziy": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team.png",
+            "icon": "shopify://shop_images/instagram-icon.png",
+            "name": "Pepe García",
+            "link": "",
+            "label": "Learn More"
+          }
+        },
+        "member_jcDz33": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team.png",
+            "icon": "shopify://shop_images/instagram-icon.png",
+            "name": "Pepe García",
+            "link": "",
+            "label": "Learn More"
+          }
+        },
+        "member_xT3VKX": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/team.png",
+            "icon": "shopify://shop_images/instagram-icon.png",
+            "name": "Pepe García",
+            "link": "",
+            "label": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "member_KLUkCV",
+        "member_UxBziy",
+        "member_jcDz33",
+        "member_xT3VKX"
+      ],
+      "name": "Meet the YES Team",
+      "settings": {
+        "heading": "Meet the YES team",
+        "heading_size": 24,
+        "heading_color": "#000000",
+        "bg_color": "#f7f7f7",
+        "padding_top": 76,
+        "padding_bottom": 72,
+        "columns_desktop": 4,
+        "gap_desktop": 8,
+        "gap_mobile": 12,
+        "radius_desktop": 16,
+        "radius_mobile": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You might also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "banner_collections_xLWGDA": {
+      "type": "banner-collections",
+      "disabled": true,
+      "settings": {
+        "image_desktop_snowboard": "shopify://shop_images/banner-collections-bindings-desktop.png",
+        "image_mobile_snowboard": "shopify://shop_images/banner-collections-bindings-mobile.png",
+        "image_desktop_bindings": "shopify://shop_images/BL_6_1.webp",
+        "image_mobile_bindings": "shopify://shop_images/BL_7_1.webp",
+        "title_snowboards": "Snowboards",
+        "title_bindings": "Bindings",
+        "btn_text_snowboards": "Shop now",
+        "btn_url_snowboards": "shopify://collections/snowboards",
+        "btn_text_bindings": "Shop now",
+        "btn_url_bindings": "shopify://collections/bindings"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "marquee_ticker_DTUtCj",
+    "product_characteristics_x6nggB",
+    "multicolumn_XjRRM9",
+    "blocks_XY3bdT",
+    "blocks_zXRfWR",
+    "178458910786083929",
+    "17259785007e69f931",
+    "178478640592dfed8a",
+    "team_members_gJfpXr",
+    "related-products",
+    "banner_collections_xLWGDA"
+  ]
+}

@@ -24,6 +24,9 @@
 	  %}
 {% endcomment %}
 
+{% assign color_handle = value | handleize %}
+{% assign color_object = shop.metaobjects.shopify--color-pattern[color_handle] %}
+
 <input
 	type="{{ type | default: 'radio' }}"
 	id="{{ id }}"
@@ -42,6 +45,7 @@
 	for="{{ id }}"
 	title="{{ value }}"
 	class="swatch-input__label{% if shape == 'square' %} swatch-input__label--square{% endif %}"
+	style="border-radius: 50%; width: 22px; height: 22px; {% if name == 'color' or name == 'Color' %} padding: 10px; {% endif %} background-color: {{ color_object.color }}"
 >
 	{% render 'swatch', swatch: swatch, shape: shape %}
 	{{ help_text }}

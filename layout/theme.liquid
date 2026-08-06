@@ -6,21 +6,6 @@
 >
 	<head>
 		<script>
-			console.log('gallary');
-			document.addEventListener("DOMContentLoaded", function(){
-				const galleries = document.querySelectorAll(
-					'.shg-box:has(.shogun-image-container)'
-				);
-				galleries.forEach(gallery => {
-					const content = gallery.querySelector('.shg-box-content');
-					if(!content) return;
-					const images = content.innerHTML;
-					content.innerHTML += images;
-				});
-			});
-		</script>
-
-		<script>
 			// Function to dispatch the custom event
 			function intervalFunction() {
 				document.dispatchEvent(new CustomEvent('la:dn:collection:updated'))
@@ -254,6 +239,7 @@
 		{%- endif -%}
 
 		{{ 'discountninja-custom.css' | asset_url | stylesheet_tag }}
+		{{ 'custom.css' | asset_url | stylesheet_tag }}
 
 		{{ content_for_header }}
 
@@ -823,6 +809,4 @@
 			></script>
 		{%- endif -%}
 	</body>
-
-
 </html>

@@ -1,0 +1,39 @@
+.jdgm-star {
+    font-size: 8px;
+}
+
+.jdgm-prev-badge__text {
+    font-size: 12px;
+}
+
+.instafeed-new-layout-container,
+.instafeed-new-layout-wrapper {
+    height: auto !important;
+}
+
+.instafeed-new-layout-wrapper {
+    gap: 8px !important;
+}
+
+.instafeed-new-layout-item {
+    aspect-ratio: 319 / 425 !important;
+    height: auto !important;
+    width: calc((100vw - 164px) / 4) !important;
+}
+
+@media screen and (min-width: 1441px) {
+    .instafeed-new-layout-item {
+        width: 319px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .instafeed-new-layout-wrapper {
+        gap: 12px !important;
+    }
+
+    .instafeed-new-layout-item {
+        aspect-ratio: 190 / 253 !important;
+        width: calc((100vw - 52px) / 2) !important;
+    }
+}

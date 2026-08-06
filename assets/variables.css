@@ -18,6 +18,11 @@
 	--color-gray-1: #333232;
 	--color-gray-2: #c0c0c0;
 	--color-gray-3: #f1f1f1;
+	--color-gray-light: #F7F7F7;
+	--color-gray-medium: #E5E5E5;
+	--color-gray-dark: #A2A2A2;
+
+	--color-blue-light: #A6DDE8;
 
 	--color-accent-primary: #ffea00;
 	--color-accent-secondary: #9747ff;
@@ -60,6 +65,7 @@
 	--size-320: calc(80 * var(--spacing-unit)); /* 320px */
 	--size-380: calc(95 * var(--spacing-unit)); /* 380px */
 	--size-440: calc(110 * var(--spacing-unit)); /* 440px */
+	--size-520: calc(130 * var(--spacing-unit)); /* 520px */
 	--size-800: calc(200 * var(--spacing-unit)); /* 800px */
 
 	/* Spacing - used for `margin`, `padding`, `top`, `right`, `bottom`, `left` */
