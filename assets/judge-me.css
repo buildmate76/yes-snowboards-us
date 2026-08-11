@@ -30,7 +30,7 @@
 }
 
 #judgeme_product_reviews .jdgm-rev-widg__title {
-  align-self: center;
+  align-self: start;
   margin: 0;
   color: var(--jdgm-ink);
   font-size: clamp(18px, 1.35vw, 24px);
@@ -46,6 +46,7 @@
 #judgeme_product_reviews .jdgm-rev-widg__summary {
   grid-column: 2;
   align-self: center;
+  justify-self: flex-start;
   width: auto;
   margin: 0;
   text-align: left;
@@ -67,18 +68,20 @@
   height: auto;
   overflow: visible;
   color: var(--jdgm-ink);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 #judgeme_product_reviews .jdgm-rev-widg__summary-text {
   margin: 0;
   color: var(--jdgm-ink);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.35;
+  justify-self: flex-start;
 }
 
-#judgeme_product_reviews .jdgm-histogram, .jdgm-rev-widg__summary-text {
+.jdgm-rev-widg__summary-text .jdgm-verified-checkmark,
+#judgeme_product_reviews .jdgm-histogram {
   display: none !important;
 }
 
@@ -119,27 +122,107 @@
 /* Write-review form: span the header grid and keep the form centered. */
 #judgeme_product_reviews .jdgm-form-wrapper {
   grid-column: 1 / -1;
-  width: min(100%, 620px);
-  margin: 48px auto 0;
+  width: max(100%, 620px);
+  margin: 53px auto 0;
+  padding: 51px 0 0;
   text-align: center;
 }
 
 #judgeme_product_reviews .jdgm-form-wrapper .jdgm-form {
   width: 100%;
-  max-width: 620px;
+  max-width: calc((100% - 2 * clamp(40px, 8vw, 160px)) / 3);
   margin-inline: auto;
+  padding: 0;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__title {
+  color: var(--Black, var(--jdgm-ink));
+	font-family: "The Wave", Wave, Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 #judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__title,
-#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset,
-#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset-actions {
-  text-align: center;
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset {
+  text-align: left;
 }
 
-#judgeme_product_reviews .jdgm-form-wrapper input:not([type="radio"]):not([type="checkbox"]),
-#judgeme_product_reviews .jdgm-form-wrapper textarea {
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset p,
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset a {
+  color: var(--Black, var(--jdgm-ink));
+	font-family: "The Wave", Wave, Arial, sans-serif;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset label {
+  color: var(--Black, var(--jdgm-ink));
+	font-family: "The Wave", Wave, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset .jdgm-form__reviewer-name-format-container {
+  display: none;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset .jdgm-form__rating .jdgm-star {
+	font-family: "The Wave", Wave, Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset input[type=text],
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset textarea {
+  padding: 12px 16px;
+  color: var(--Black, var(--jdgm-ink));
+	font-family: "The Wave", Wave, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset-actions .jdgm-btn {
   width: 100%;
-  max-width: 100%;
+  max-width: 187.5px;
+  padding: 9px 24px;
+  margin: 0;
+  border-radius: 15px;
+  color: var(--jdgm-ink);
+  text-align: center;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  line-height: normal;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset-actions .jdgm-cancel-rev {
+  background: var(--jdgm-page-background);
+  border: 1px solid var(--jdgm-ink);
+  font-weight: 400;
+  order: 2;
+}
+
+#judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset-actions .jdgm-submit-rev {
+  border: none;
+  background: var(--jdgm-load-more);
+  font-weight: 700;
 }
 
 #judgeme_product_reviews .jdgm-form-wrapper .jdgm-picture-fieldset__box,
@@ -330,6 +413,10 @@
     margin-bottom: 48px;
   }
 
+  #judgeme_product_reviews .jdgm-form-wrapper .jdgm-form {
+    max-width: calc((100% - 2 * clamp(40px, 8vw, 160px)) / 2);
+  }
+
   #judgeme_product_reviews .jdgm-rev-widg__title {
     grid-column: 1 / -1;
   }
@@ -365,6 +452,19 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  #judgeme_product_reviews .jdgm-form-wrapper {
+    width: 100%;
+  }
+
+  #judgeme_product_reviews .jdgm-form-wrapper .jdgm-form {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  #judgeme_product_reviews .jdgm-form-wrapper .jdgm-form__fieldset-actions .jdgm-btn {
+    max-width: 100%;
   }
 
   #judgeme_product_reviews .jdgm-rev-widg__summary,

@@ -34,18 +34,17 @@
 	font-family: var(--font-body-family);
 	margin: 0;
 	text-align: left;
+	text-transform: none;
 }
 
 .reassurance .item h4 {
 	color: var(--color-black);
 	font-size: var(--typo-heading-6);
-	text-transform: none;
 }
 
 .reassurance .item p {
 	color: var(--color-gray-dark);
 	font-size: var(--typo-body-xs);
-	text-transform: none;
 }
 
 /* reassurance_product_page */
@@ -75,7 +74,8 @@
 	width: var(--size-s);
 }
 
-.reassurance.reassurance_product_page .item h4, p {
+.reassurance.reassurance_product_page .item h4, 
+.reassurance.reassurance_product_page .item p {
 	font-size: var(--typo-body-xs);
 	text-transform: none;
 }
