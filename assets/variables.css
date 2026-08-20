@@ -86,6 +86,8 @@
 	--space-6xl: calc(22 * var(--spacing-unit)); /* 88px */
 	--space-7xl: calc(24 * var(--spacing-unit)); /* 96px */
 
+	--space-60: calc(15 * var(--spacing-unit)); /* 60px */
+
 	/* Transition - used for `transition-duration` */
 	--transition-duration-03s: 0.3s;
 

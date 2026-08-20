@@ -2,81 +2,146 @@
 	Usage:
 	- With parameters coming from block.settings.card_boolean {% render 'card-profile', card_boolean: true_or_false %}
 	- No parameters, show all profiles {% render 'card-profile' %}
+	- Home variant: {% render 'card-profile', home_style: true %}
 {% endcomment %}
 
-<div class="card-profile">
-	<div class="container">
-		{%- for block in section.blocks -%}
-			{% assign should_render = false %}
+{% if home_style == true %}
+	<div class="card-profile card-profile--home">
+		<div class="card-profile__track">
+			{%- for block in section.blocks -%}
+				{% assign img_default = block.settings.image_default | image_url: width: 800 %}
+				{% assign img_hover = block.settings.image_hover | image_url: width: 800 %}
+				{% assign card_name = block.settings.name %}
+				{% assign card_link = block.settings.url_instagram %}
+				{% assign card_label = block.settings.button_label | default: 'Meet Rider' %}
+				{% assign card_role = block.settings.role | default: 'TEAM RIDER' %}
 
-			{% if card_boolean == true %}
-				{% if block.settings.card_boolean == true %}
-					{% assign should_render = true %}
-				{% endif %}
-			{% elsif card_boolean == false %}
-				{% if block.settings.card_boolean == false %}
-					{% assign should_render = true %}
-				{% endif %}
-			{% else %}
-				{% assign should_render = true %}
-			{% endif %}
-
-			{% if should_render %}
-				<div class="card">
-					{% assign img = block.settings.image_default | image_url: width: 400 %}
-					{% assign img_hover = block.settings.image_hover | image_url: width: 400 %}
-					{% assign name = block.settings.name %}
-					{% assign url = block.settings.url_instagram %}
-					{% assign country_profile = block.settings.country %}
-
-					{% if img %}
-						<img
-							alt="{{ name }}"
-							class="image default"
-							loading="lazy"
-							src="{{ img }}"
-							title="{{ name }}"
-						>
-					{% else %}
-						<div class="image default">
-							{% render 'card-profile-placeholder' %}
+				{% if card_name != blank or img_default != blank %}
+					<div class="card-profile__item">
+						<div class="card-profile__content">
+							<div class="card-profile__role">{{ card_role }}</div>
+							<div class="card-profile__name">{{ card_name }}</div>
 						</div>
-					{% endif %}
 
-					{% if img_hover %}
-						<img
-							alt="{{ name }}"
-							class="image hover"
-							loading="lazy"
-							src="{{ img_hover }}"
-							title="{{ name }}"
-						>
-					{% else %}
-						<div class="image hover">
-							{% render 'card-profile-placeholder' %}
-						</div>
-					{% endif %}
-
-					<div class="info">
-						<div class="name">{{ name }}</div>
-						<div class="details">
-							{% if url %}
-								{% assign alias = url | split: '/' | last %}
-								<a
-									class="link"
-									href="{{ url }}"
+						<div class="card-profile__media">
+							{% if img_default != blank %}
+								<img
+									alt="{{ card_name | escape }}"
+									class="card-profile__image default"
+									loading="lazy"
+									src="{{ img_default }}"
+									title="{{ card_name | escape }}"
 								>
-									{% render 'icon-instagram-custom' %}
-									<p class="alias">{{ alias }}</p>
-								</a>
+							{% else %}
+								<div class="card-profile__placeholder">{% render 'card-profile-placeholder' %}</div>
 							{% endif %}
-							{% if country_profile %}
-								<p class="country">{{ country_profile }}</p>
+
+							{% if img_hover != blank %}
+								<img
+									alt="{{ card_name | escape }}"
+									class="card-profile__image hover"
+									loading="lazy"
+									src="{{ img_hover }}"
+									title="{{ card_name | escape }}"
+								>
+							{% elsif img_default != blank %}
+								<img
+									alt="{{ card_name | escape }}"
+									class="card-profile__image hover"
+									loading="lazy"
+									src="{{ img_default }}"
+									title="{{ card_name | escape }}"
+								>
+							{% else %}
+								<div class="card-profile__placeholder card-profile__placeholder--hover">{% render 'card-profile-placeholder' %}</div>
 							{% endif %}
+						</div>
+
+						{% if card_link != blank %}
+							<a class="card-profile__link" href="{{ card_link }}">{{ card_label }}</a>
+						{% elsif card_label != blank %}
+							<span class="card-profile__link">{{ card_label }}</span>
+						{% endif %}
+					</div>
+				{% endif %}
+			{%- endfor -%}
+		</div>
+	</div>
+{% else %}
+	<div class="card-profile">
+		<div class="container">
+			{%- for block in section.blocks -%}
+				{% assign should_render = false %}
+
+				{% if card_boolean == true %}
+					{% if block.settings.card_boolean == true %}
+						{% assign should_render = true %}
+					{% endif %}
+				{% elsif card_boolean == false %}
+					{% if block.settings.card_boolean == false %}
+						{% assign should_render = true %}
+					{% endif %}
+				{% else %}
+					{% assign should_render = true %}
+				{% endif %}
+
+				{% if should_render %}
+					<div class="card">
+						{% assign img = block.settings.image_default | image_url: width: 400 %}
+						{% assign img_hover = block.settings.image_hover | image_url: width: 400 %}
+						{% assign name = block.settings.name %}
+						{% assign url = block.settings.url_instagram %}
+						{% assign country_profile = block.settings.country %}
+
+						{% if img %}
+							<img
+								alt="{{ name }}"
+								class="image default"
+								loading="lazy"
+								src="{{ img }}"
+								title="{{ name }}"
+							>
+						{% else %}
+							<div class="image default">
+								{% render 'card-profile-placeholder' %}
+							</div>
+						{% endif %}
+
+						{% if img_hover %}
+							<img
+								alt="{{ name }}"
+								class="image hover"
+								loading="lazy"
+								src="{{ img_hover }}"
+								title="{{ name }}"
+							>
+						{% else %}
+							<div class="image hover">
+								{% render 'card-profile-placeholder' %}
+							</div>
+						{% endif %}
+
+						<div class="info">
+							<div class="name">{{ name }}</div>
+							<div class="details">
+								{% if url %}
+									{% assign alias = url | split: '/' | last %}
+									<a
+										class="link"
+										href="{{ url }}"
+									>
+										{% render 'icon-instagram-custom' %}
+										<p class="alias">{{ alias }}</p>
+									</a>
+								{% endif %}
+								{% if country_profile %}
+									<p class="country">{{ country_profile }}</p>
+								{% endif %}
+							</div>
 						</div>
 					</div>
-				</div>
-			{% endif %}
-		{%- endfor -%}
+				{% endif %}
+			{%- endfor -%}
+		</div>
 	</div>
-</div>
+{% endif %}

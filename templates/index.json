@@ -17,9 +17,9 @@
           "settings": {
             "image": "shopify://shop_images/New_Header.jpg",
             "image_mobile": "shopify://shop_images/mobile.jpg",
-            "title": "more to come",
-            "btn_primary_text": "STAY UPDATED",
-            "btn_primary_url": "https://www.instagram.com/yes_snowboards/",
+            "title": "",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
             "btn_secondary_text": "",
             "btn_secondary_url": ""
           }
@@ -27,6 +27,9 @@
       },
       "block_order": [
         "column_1"
+      ],
+      "custom_css": [
+        ".two-column-hero .column::before {background: none;}"
       ],
       "settings": {
         "color_scheme": "scheme-1"
@@ -42,6 +45,10 @@
     },
     "featured_collection_columns_cJqDdJ": {
       "type": "featured-collection-columns",
+      "custom_css": [
+        ".featured-collections .item .collection__view-all .button {background-color: var(--color-blue-light); border-radius: 15px;}",
+        "@media only screen and (min-width: 990px) {.featured-collections .item:first-child {padding-right: var(--space-2xl); } .featured-collections .item:last-child {padding-left: var(--space-2xl); }}"
+      ],
       "settings": {
         "title": "SNOWBOARDS",
         "title_2": "BINDINGS",
@@ -115,38 +122,55 @@
     "image_with_text_JKwqak": {
       "type": "image-with-text",
       "blocks": {
+        "caption_MWzNR7": {
+          "type": "caption",
+          "settings": {
+            "caption": "WE ARE YES.",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
         "heading_kDXhHV": {
           "type": "heading",
           "settings": {
-            "heading": "#YES, WE ARE UNINIC",
-            "heading_size": "h1"
+            "heading": "YES. is independent again",
+            "heading_size": "h2"
           }
         },
         "text_9P88wm": {
           "type": "text",
           "settings": {
-            "text": "<p>#YES is here because the legendary human beings that brainfarted all of this together just want to have the most fun humanly possible while riding sideways on no compromise kickass snowboards and bindings</p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi. Vestibulum quis felis sed sem placerat imperdiet. Cras lorem elit, tincidunt et elementum eu, tempus in ante. Fusce diam ante, fringilla ut orci vitae, pellentesque tincidunt purus. Nulla mollis faucibus ex ut hendrerit. Mauris a orci eget diam egestas malesuada sit amet quis purus. Fusce facilisis risus ligula, et consectetur sapien accumsan at. </p>",
             "text_style": "body"
           }
         },
         "button_ejfJCb": {
           "type": "button",
           "settings": {
-            "button_label": "EXPLORE THE COLLECTION",
+            "button_label": "READ THE STORY",
             "button_link": "shopify://collections/snowboards",
             "button_style_secondary": false
           }
         }
       },
       "block_order": [
+        "caption_MWzNR7",
         "heading_kDXhHV",
         "text_9P88wm",
         "button_ejfJCb"
       ],
+      "custom_css": [
+        "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
+        ".image-with-text__content {padding: 0rem !important;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
+        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+      ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/Home_Yes_we_are_uninc.webp",
-        "height": "adapt",
+        "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "top",
@@ -154,10 +178,13 @@
         "content_layout": "no-overlap",
         "section_color_scheme": "",
         "color_scheme": "",
+        "background": "#f7f7f7",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "padding_right": 0,
+        "padding_left": 0
       }
     },
     "collection_list_ikzWgB": {
@@ -180,9 +207,13 @@
         "featured_collection_QLWKBA",
         "featured_collection_jbyjDW"
       ],
+      "custom_css": [
+        ".collection-list {column-gap: var(--space-xxs); justify-content: space-between; --grid-desktop-horizontal-spacing: 12px;}",
+        ".collection-list .card:not(.ratio) {flex-direction: column-reverse;}"
+      ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
-        "title": "Collections",
+        "title": "",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 2,
@@ -236,8 +267,167 @@
         "reassurance_item_yGFbMK",
         "reassurance_item_Knqmt4"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-4"
+      }
+    },
+    "home_meet_team": {
+      "type": "home-meet-team",
+      "blocks": {
+        "team_member_1": {
+          "type": "team_member",
+          "settings": {
+            "name": "Emeraude Maheux",
+            "role": "Team Rider",
+            "url_instagram": "https://instagram.com/",
+            "button_label": "Meet me",
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png",
+            "image_hover": "shopify://shop_images/Emeraude_Maheux.png"
+          }
+        },
+        "team_member_2": {
+          "type": "team_member",
+          "settings": {
+            "name": "Mia Langridge",
+            "role": "Team Rider",
+            "url_instagram": "https://instagram.com/",
+            "button_label": "Meet me",
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png",
+            "image_hover": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+          }
+        },
+        "team_member_3": {
+          "type": "team_member",
+          "settings": {
+            "name": "Lorem Ipsum",
+            "role": "Team Rider",
+            "url_instagram": "https://instagram.com/",
+            "button_label": "Meet me",
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png",
+            "image_hover": "shopify://shop_images/Emeraude_Maheux.png"
+          }
+        },
+        "team_member_4": {
+          "type": "team_member",
+          "settings": {
+            "name": "Lorem Ipsum",
+            "role": "Team Rider",
+            "url_instagram": "https://instagram.com/",
+            "button_label": "Meet me",
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png",
+            "image_hover": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+          }
+        },
+        "team_member_BzrgFq": {
+          "type": "team_member",
+          "settings": {
+            "name": "Lorem Ipsum",
+            "role": "Team Rider",
+            "url_instagram": "https://instagram.com/",
+            "button_label": "Meet me",
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png",
+            "image_hover": "shopify://shop_images/Emeraude_Maheux.png"
+          }
+        },
+        "team_member_WMeXPx": {
+          "type": "team_member",
+          "settings": {
+            "name": "Lorem Ipsum",
+            "role": "Team Rider",
+            "url_instagram": "https://instagram.com/",
+            "button_label": "Meet me",
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png",
+            "image_hover": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_1",
+        "team_member_2",
+        "team_member_3",
+        "team_member_4",
+        "team_member_BzrgFq",
+        "team_member_WMeXPx"
+      ],
+      "settings": {
+        "heading": "Meet the Team",
+        "heading_color": "#111111",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi.</p>",
+        "text_color": "#111111",
+        "cta_text": "See Full Team",
+        "cta_link": "/pages/team",
+        "bg_color": "#f7f7f7",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_with_text_i6CXTK": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_LnzBVb": {
+          "type": "caption",
+          "settings": {
+            "caption": "SINCE 2009",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_hNCJwg": {
+          "type": "heading",
+          "settings": {
+            "heading": "YES. Started a movement.",
+            "heading_size": "h2"
+          }
+        },
+        "text_tG63ek": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi. Vestibulum quis felis sed sem placerat imperdiet. Cras lorem elit, tincidunt et elementum eu, tempus in ante. Fusce diam ante, fringilla ut orci vitae, pellentesque tincidunt purus.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_zPyh6G": {
+          "type": "button",
+          "settings": {
+            "button_label": "READ THE STORY",
+            "button_link": "shopify://collections/snowboards",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_LnzBVb",
+        "heading_hNCJwg",
+        "text_tG63ek",
+        "button_zPyh6G"
+      ],
+      "custom_css": [
+        "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
+        ".image-with-text__content {padding: 0rem !important;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
+        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/home-about.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "background": "#ffffff",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "padding_right": 0,
+        "padding_left": 0
       }
     },
     "two_columns": {
@@ -259,6 +449,7 @@
       "block_order": [
         "column_1"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1"
       }
@@ -282,6 +473,7 @@
       "block_order": [
         "column_1"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1"
       }
@@ -296,6 +488,8 @@
     "image_with_text_JKwqak",
     "collection_list_ikzWgB",
     "reassurance",
+    "home_meet_team",
+    "image_with_text_i6CXTK",
     "two_columns",
     "norway_trip"
   ]

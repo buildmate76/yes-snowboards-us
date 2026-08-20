@@ -89,7 +89,7 @@ div.eo-sh-message {
     }
 
     .collection__title.title-wrapper--self-padded-tablet-down {
-        /*padding: 0 5rem;*/
+        padding: 0;
     }
 
     .collection slider-component:not(.page-width-desktop) {
