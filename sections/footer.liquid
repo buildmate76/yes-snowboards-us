@@ -7,24 +7,159 @@
 {% include 'global-variables' %}
 
 {%- style -%}
-	.footer {
-	  margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+	.footer-block__heading {
+		font-size: 18px;
+		margin-bottom: 18px;
 	}
 
-	.section-{{ section.id }}-padding {
-	  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-	  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+	.footer-block__newsletter > p {
+		color: var(--color-grey-dark);
+		font-size: 18px;
+		margin-bottom: 18px;
+	}
+
+	.footer-block__newsletter .newsletter-form__field-wrapper .field {
+		display: flex;
+		align-items: center;
+		min-height: 50px;
+		width: 100%;
+		border: 0.75px solid var(--color-white);
+		border-radius: 15px;
+		background: transparent;
+		overflow: hidden;
+	}
+
+	.footer-block__newsletter .newsletter-form__field-wrapper .field::before {
+		content: '';
+		width: 13px;
+		height: 10px;
+		margin-left: 12px;
+		border: 1px solid var(--color-white);
+		border-radius: 3px;
+		background: linear-gradient(145deg, transparent 47%, var(--color-white) 48%, var(--color-white) 52%, transparent 53%), linear-gradient(215deg, transparent 47%, var(--color-white) 48%, var(--color-white) 52%, transparent 53%);
+		flex: 0 0 auto;
+	}
+
+	.footer-block__newsletter .newsletter-form .field__input {
+		min-width: 0;
+		padding: 0 10px;
+		color: var(--color-white);
+		font-size: 18px;
+		background: transparent;
+	}
+
+	.footer-block__newsletter .newsletter-form .field__input::placeholder {
+		color: var(--color-gray-2);
+		opacity: 1;
+	}
+
+	.footer-block__newsletter .newsletter-form__button {
+		position: static;
+		width: auto;
+		min-width: 64px;
+		height: 100%;
+		padding: 0 14px;
+		border: 0;
+		color: var(--color-white);
+		font-size: 18px;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		white-space: nowrap;
+		background: transparent;
+	}
+
+	.footer-block__newsletter .newsletter-form__button:hover {
+		color: var(--color-gray-2);
 	}
 
 	@media screen and (min-width: 750px) {
-	  .footer {
-	    margin-top: {{ section.settings.margin_top }}px;
-	  }
+		.footer {
+			margin-top: {{ section.settings.margin_top }}px;
+		}
 
-	  .section-{{ section.id }}-padding {
-	    padding-top: {{ section.settings.padding_top }}px;
-	    padding-bottom: {{ section.settings.padding_bottom }}px;
-	  }
+		.section-{{ section.id }}-padding {
+			padding-top: {{ section.settings.padding_top }}px;
+			padding-bottom: {{ section.settings.padding_bottom }}px;
+		}
+	}
+
+	@media screen and (max-width: 750px) {
+		.footer {
+			margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+		}
+
+		.footer .page-width {
+			padding-inline: 24px;
+		}
+
+		.section-{{ section.id }}-padding {
+			padding-top: 32px;
+			padding-bottom: 28px;
+		}
+
+		.footer-block--newsletter {
+			margin-top: 0;
+		}
+
+		.footer-block__newsletter {
+			width: 100%;
+		}
+
+		.footer-block__heading {
+			font-size: 13px;
+			margin-bottom: 0;
+		}
+
+		.footer-block__newsletter > p {
+			color: var(--color-grey-dark);
+			font-size: 13px;
+			margin-bottom: 18px;
+		}
+
+		.footer-block__newsletter .newsletter-form .field__input {
+			font-size: 13px;
+		}
+
+		.footer-block__newsletter .newsletter-form__button {
+			font-size: 13px;
+		}
+
+		.footer-block__newsletter .newsletter-form__field-wrapper .field {
+			min-height: 40px;
+		}
+
+		.footer__blocks-wrapper {
+			display: flex !important;
+			row-gap: 40px;
+		}
+
+		.footer-block--menu:nth-child(2),
+		.footer-block--menu:nth-child(3) {
+			width: fit-content !important;
+		}
+
+		.footer-block--menu:nth-child(1),
+		.footer-block--menu:nth-child(2),
+		.footer-block--menu:nth-child(3) {
+			margin: 0 !important;
+		}
+
+		.list-menu__item--link {
+			font-size: 13px;
+			font-weight: 400;
+			line-height: 20px;
+			padding-top: 1rem !important;
+			padding-bottom: 0 !important;
+		}
+
+		.footer__column--info {
+			padding-bottom: 3rem;
+			border-bottom: 1px solid var(--color-gray-dark);
+		}
+
+		.footer-block__details-content {
+			margin-bottom: 0;
+		}
 	}
 {%- endstyle -%}
 
@@ -137,7 +272,7 @@
 														id="Subscribe"
 														aria-label="{{ 'newsletter.button_label' | t }}"
 													>
-														{% render 'icon-arrow' %}
+														Sign up
 													</button>
 												</div>
 
