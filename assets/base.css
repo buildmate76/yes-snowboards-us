@@ -76,7 +76,7 @@
 .page-width {
 	max-width: var(--global-container);
 	margin: 0 auto;
-	padding: 0 var(--space-xs);
+	padding: 0 var(--space-xs-xs);
 	width: 100%;
 }
 
@@ -142,7 +142,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 990px) {
 	.page-width {
-		padding: 0 var(--space-xs);
+		padding: 0 var(--space-60);
 	}
 
 	.page-width--narrow {
@@ -1986,10 +1986,6 @@ input[type="checkbox"] {
 .quantity__input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
-}
-
-.quantity__input[type="number"] {
-	-moz-appearance: textfield;
 }
 
 .quantity__rules {

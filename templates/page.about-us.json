@@ -177,6 +177,65 @@
       "settings": {
         "color_scheme": ""
       }
+    },
+    "image_with_text_wbVpFR": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_8bEmKM": {
+          "type": "caption",
+          "settings": {
+            "caption": "THE PIG",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_mkRx8z": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Uninc to Yes, we're independent again",
+            "heading_size": "h2"
+          }
+        },
+        "text_nthnhW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Pig is the whole philosophy in one image. Built for snowboarding, not for money. Everybody gets paid. Nobody tells the riders what to build. Born from turbulent waters and corporate nonsense — and we came out stronger. This is the pig. This is YES.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_8bEmKM",
+        "heading_mkRx8z",
+        "text_nthnhW"
+      ],
+      "custom_css": [
+        "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
+        ".image-with-text__content {padding: 0rem !important;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
+        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Yes.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "background": "#f7f7f7",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "padding_right": 0,
+        "padding_left": 0
+      }
     }
   },
   "order": [
@@ -184,6 +243,7 @@
     "rich_text_rNJzPP",
     "main",
     "video_LxNL4a",
-    "two_column_hero_BNRpzb"
+    "two_column_hero_BNRpzb",
+    "image_with_text_wbVpFR"
   ]
 }
