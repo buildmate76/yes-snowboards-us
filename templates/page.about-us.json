@@ -15,8 +15,8 @@
         "column_8Egb4k": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/YES_snowboarding_Homepage_about_us.webp",
-            "image_mobile": "shopify://shop_images/YES_snowboarding_Homepage_about_us_mobile.webp",
+            "image": "shopify://shop_images/about.jpg",
+            "image_mobile": "shopify://shop_images/about.jpg",
             "title": "About us",
             "btn_primary_text": "",
             "btn_primary_url": "",
@@ -28,6 +28,13 @@
       "block_order": [
         "column_8Egb4k"
       ],
+      "custom_css": [
+        ".two-column-hero .column::before {background: none;}",
+        ".two-column-hero img {-webkit-filter: brightness(0.7);}",
+        ".two-column-hero .title {width: fit-content; font-size: 33.75px; font-weight: 700;}",
+        ".two-column-hero .btn-text-container {width: fit-content; left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%);}",
+        "@media screen and (max-width: 767px) {.two-column-hero .title {font-size: 26px; }}"
+      ],
       "settings": {
         "color_scheme": ""
       }
@@ -35,26 +42,165 @@
     "rich_text_rNJzPP": {
       "type": "rich-text",
       "blocks": {
+        "caption_cL7P9r": {
+          "type": "caption",
+          "settings": {
+            "caption": "YES WE CAN",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_Ywdkjg": {
+          "type": "heading",
+          "settings": {
+            "heading": "2009. Two riders get cut loose from a program that wanted them to follow the rules. Instead of quitting, they started their own brand. No shareholders, no committee, no one who'd never stood on a board telling them how to build one.",
+            "heading_size": "h2"
+          }
+        },
         "text_yhQBQY": {
           "type": "text",
           "settings": {
-            "text": "<p>YES it's happening!! Super exciting times ahead as Lobster, NOW and YES have joined forces under one brand with a mission to empower freestyle snowboard enthusiasts in this universe to reach new levels of fun and creativity.</p><p>YES, we want to ignite that stoke-fire within and inspire you to have as much fun as humanly possible while riding sideways. Snowboarding should be fun and that's at the core of everything we do.</p><p>YES you can join us on our new journey by sending it each and every day. Dream big, cream big and never forget that take offs are always mandatory and landings are most definitely optional.</p><p>YES, LET'S GO SNOWBOARDING!!!\"</p>"
+            "text": "<p>That's YES. Built from a middle finger to corporate snowboarding and a stubborn belief that the sport should be run by the people who actually ride it. For over a decade we've built boards the way riders want them built, not the way a spreadsheet says they should be built.</p><p>Along the way we've had partners. We've had backers. We've sat through boardrooms and budget meetings with people who'd never stood on a board telling us how to build one. None of that stuck. What stuck was the riding.</p><p>2026: we bought ourselves back. #YES is independent again, same riders, same reason we started this in the first place. Snowboarding should always be rider-driven, not boardroom-driven.</p>"
           }
         }
       },
       "block_order": [
+        "caption_cL7P9r",
+        "heading_Ywdkjg",
         "text_yhQBQY"
       ],
       "custom_css": [
-        "p {font-size: 20px; font-weight: 400;}"
+        ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
+        ".rich-text__heading,.rich-text__text p {font-size: 13.5px; font-weight: 700; line-height: 21px;}",
+        ".rich-text__text p {font-weight: 400;}",
+        "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__caption {justify-self: start; } .rich-text__heading, .rich-text__text p {text-align: left; } .rich-text__text p {margin: 0; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
-        "content_alignment": "left",
+        "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "image_with_text_wbVpFR": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_8bEmKM": {
+          "type": "caption",
+          "settings": {
+            "caption": "THE PIG",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_mkRx8z": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Uninc to Yes, we're independent again",
+            "heading_size": "h2"
+          }
+        },
+        "text_nthnhW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Pig is the whole philosophy in one image. Built for snowboarding, not for money. Everybody gets paid. Nobody tells the riders what to build. Born from turbulent waters and corporate nonsense — and we came out stronger. This is the pig. This is YES.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_8bEmKM",
+        "heading_mkRx8z",
+        "text_nthnhW"
+      ],
+      "custom_css": [
+        "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
+        ".image-with-text__content {padding: 0rem !important;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
+        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Yes.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "background": "#f7f7f7",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "padding_right": 0,
+        "padding_left": 0
+      }
+    },
+    "about_founders": {
+      "type": "about-founders",
+      "blocks": {
+        "founder_david": {
+          "type": "founder",
+          "settings": {
+            "role": "FOUNDER",
+            "name": "David Pitschi",
+            "button_label": "Meet David",
+            "url_instagram": "https://www.instagram.com/cholulaindahole/",
+            "image_default": "shopify://shop_images/David_Pitschi.png",
+            "image_hover": "shopify://shop_images/dcp.jpg"
+          }
+        },
+        "founder_romain": {
+          "type": "founder",
+          "settings": {
+            "role": "FOUNDER",
+            "name": "Romain De Marchi",
+            "button_label": "Meet Romain",
+            "url_instagram": "https://www.instagram.com/rdmyes/",
+            "image_default": "shopify://shop_images/Romain_De_Marchi.png",
+            "image_hover": "shopify://shop_images/rdm.jpg"
+          }
+        },
+        "founder_jp": {
+          "type": "founder",
+          "settings": {
+            "role": "FOUNDER",
+            "name": "JP Solberg",
+            "button_label": "Meet JP",
+            "url_instagram": "https://www.instagram.com/soulburger/",
+            "image_default": "shopify://shop_images/JP_Solberg.png",
+            "image_hover": "shopify://shop_images/JP_Solberg.png"
+          }
+        }
+      },
+      "block_order": [
+        "founder_david",
+        "founder_romain",
+        "founder_jp"
+      ],
+      "settings": {
+        "tag": "THE FOUNDERS",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi.</p>",
+        "columns_desktop": 3,
+        "bg_color": "#ffffff",
+        "text_color": "#000000",
+        "tag_bg_color": "#a6dde8",
+        "tag_text_color": "#000000",
+        "tag_border_color": "#000000",
+        "card_bg_color": "#f7f7f7",
+        "card_border_color": "#a2a2a2",
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#000000",
+        "button_border_color": "#000000",
+        "padding_top": 64,
+        "padding_bottom": 72
       }
     },
     "main": {
@@ -180,73 +326,15 @@
       "settings": {
         "color_scheme": ""
       }
-    },
-    "image_with_text_wbVpFR": {
-      "type": "image-with-text",
-      "blocks": {
-        "caption_8bEmKM": {
-          "type": "caption",
-          "settings": {
-            "caption": "THE PIG",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "large"
-          }
-        },
-        "heading_mkRx8z": {
-          "type": "heading",
-          "settings": {
-            "heading": "From Uninc to Yes, we're independent again",
-            "heading_size": "h2"
-          }
-        },
-        "text_nthnhW": {
-          "type": "text",
-          "settings": {
-            "text": "<p>The Pig is the whole philosophy in one image. Built for snowboarding, not for money. Everybody gets paid. Nobody tells the riders what to build. Born from turbulent waters and corporate nonsense — and we came out stronger. This is the pig. This is YES.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "caption_8bEmKM",
-        "heading_mkRx8z",
-        "text_nthnhW"
-      ],
-      "custom_css": [
-        "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
-        ".image-with-text__content {padding: 0rem !important;}",
-        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
-        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
-        ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
-        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/Yes.png",
-        "height": "medium",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "background": "#f7f7f7",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 44,
-        "padding_bottom": 44,
-        "padding_right": 0,
-        "padding_left": 0
-      }
     }
   },
   "order": [
     "two_column_hero_QFxGyK",
     "rich_text_rNJzPP",
+    "image_with_text_wbVpFR",
+    "about_founders",
     "main",
     "video_LxNL4a",
-    "two_column_hero_BNRpzb",
-    "image_with_text_wbVpFR"
+    "two_column_hero_BNRpzb"
   ]
 }

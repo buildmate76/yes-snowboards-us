@@ -1,0 +1,255 @@
+{{ 'section-about-founders.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+	#shopify-section-{{ section.id }} .about-founders {
+		padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+		padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+		background: {{ section.settings.bg_color }};
+		--about-founders-tag-bg: {{ section.settings.tag_bg_color }};
+		--about-founders-tag-text: {{ section.settings.tag_text_color }};
+		--about-founders-tag-border: {{ section.settings.tag_border_color }};
+		--about-founders-text: {{ section.settings.text_color }};
+		--about-founders-card-bg: {{ section.settings.card_bg_color }};
+		--about-founders-card-border: {{ section.settings.card_border_color }};
+		--about-founders-btn-bg: {{ section.settings.button_bg_color }};
+		--about-founders-btn-text: {{ section.settings.button_text_color }};
+		--about-founders-btn-border: {{ section.settings.button_border_color }};
+		--about-founders-columns: {{ section.settings.columns_desktop }};
+	}
+
+	@media screen and (min-width: 750px) {
+		#shopify-section-{{ section.id }} .about-founders {
+			padding-top: {{ section.settings.padding_top }}px;
+			padding-bottom: {{ section.settings.padding_bottom }}px;
+		}
+	}
+{%- endstyle -%}
+
+<div class="about-founders">
+	<div class="page-width about-founders__inner">
+		{%- if section.settings.tag != blank or section.settings.description != blank -%}
+			<div class="about-founders__header">
+				{%- if section.settings.tag != blank -%}
+					<span class="about-founders__tag">{{ section.settings.tag | escape }}</span>
+				{%- endif -%}
+
+				{%- if section.settings.description != blank -%}
+					<div class="about-founders__description">
+						{{ section.settings.description }}
+					</div>
+				{%- endif -%}
+			</div>
+		{%- endif -%}
+
+		{%- if section.blocks.size > 0 -%}
+			{% render 'card-profile', founder_style: true %}
+		{%- endif -%}
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "The Founders",
+	"tag": "section",
+	"class": "section section-about-founders",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"settings": [
+		{
+			"type": "header",
+			"content": "Header"
+		},
+		{
+			"type": "text",
+			"id": "tag",
+			"label": "Tag",
+			"default": "THE FOUNDERS",
+			"info": "Leave blank to hide the tag"
+		},
+		{
+			"type": "richtext",
+			"id": "description",
+			"label": "Description",
+			"default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi.</p>"
+		},
+		{
+			"type": "header",
+			"content": "Layout"
+		},
+		{
+			"type": "range",
+			"id": "columns_desktop",
+			"min": 2,
+			"max": 4,
+			"step": 1,
+			"label": "Columns on desktop",
+			"default": 3
+		},
+		{
+			"type": "header",
+			"content": "Colors"
+		},
+		{
+			"type": "color",
+			"id": "bg_color",
+			"label": "Background",
+			"default": "#FFFFFF"
+		},
+		{
+			"type": "color",
+			"id": "text_color",
+			"label": "Description text",
+			"default": "#000000"
+		},
+		{
+			"type": "color",
+			"id": "tag_bg_color",
+			"label": "Tag background",
+			"default": "#A6DDE8"
+		},
+		{
+			"type": "color",
+			"id": "tag_text_color",
+			"label": "Tag text",
+			"default": "#000000"
+		},
+		{
+			"type": "color",
+			"id": "tag_border_color",
+			"label": "Tag border",
+			"default": "#000000"
+		},
+		{
+			"type": "color",
+			"id": "card_bg_color",
+			"label": "Card background",
+			"default": "#F7F7F7"
+		},
+		{
+			"type": "color",
+			"id": "card_border_color",
+			"label": "Card border",
+			"default": "#A2A2A2"
+		},
+		{
+			"type": "color",
+			"id": "button_bg_color",
+			"label": "Button background",
+			"default": "#FFFFFF"
+		},
+		{
+			"type": "color",
+			"id": "button_text_color",
+			"label": "Button text",
+			"default": "#000000"
+		},
+		{
+			"type": "color",
+			"id": "button_border_color",
+			"label": "Button border",
+			"default": "#000000"
+		},
+		{
+			"type": "header",
+			"content": "Section padding"
+		},
+		{
+			"type": "range",
+			"id": "padding_top",
+			"min": 0,
+			"max": 120,
+			"step": 4,
+			"unit": "px",
+			"label": "Top padding",
+			"default": 64
+		},
+		{
+			"type": "range",
+			"id": "padding_bottom",
+			"min": 0,
+			"max": 120,
+			"step": 4,
+			"unit": "px",
+			"label": "Bottom padding",
+			"default": 72
+		}
+	],
+	"blocks": [
+		{
+			"type": "founder",
+			"name": "Founder",
+			"limit": 12,
+			"settings": [
+				{
+					"type": "text",
+					"id": "role",
+					"label": "Role",
+					"default": "FOUNDER"
+				},
+				{
+					"type": "text",
+					"id": "name",
+					"label": "Name",
+					"default": "Founder Name"
+				},
+				{
+					"type": "text",
+					"id": "button_label",
+					"label": "Button label",
+					"default": "Meet Founder",
+					"info": "If blank, uses “Meet [first name]”"
+				},
+				{
+					"type": "url",
+					"id": "url_instagram",
+					"label": "Button link"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_default",
+					"label": "Photo"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_hover",
+					"label": "Photo on hover",
+					"info": "Optional. Falls back to the main photo"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "The Founders",
+			"category": "About",
+			"blocks": [
+				{
+					"type": "founder",
+					"settings": {
+						"role": "FOUNDER",
+						"name": "Founder Name",
+						"button_label": "Meet Founder"
+					}
+				},
+				{
+					"type": "founder",
+					"settings": {
+						"role": "FOUNDER",
+						"name": "Founder Name",
+						"button_label": "Meet Founder"
+					}
+				},
+				{
+					"type": "founder",
+					"settings": {
+						"role": "FOUNDER",
+						"name": "Founder Name",
+						"button_label": "Meet Founder"
+					}
+				}
+			]
+		}
+	]
+}
+{% endschema %}
