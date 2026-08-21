@@ -78,7 +78,8 @@
 							card_collection: block.settings.collection,
 							media_aspect_ratio: section.settings.image_ratio,
 							columns: columns,
-							placeholder_image: placeholder_image
+							placeholder_image: placeholder_image,
+							show_explore_button: section.settings.show_explore_button
 						%}
 					</li>
 				{%- endfor -%}
@@ -209,6 +210,13 @@
 			"id": "show_view_all",
 			"default": false,
 			"label": "t:sections.collection-list.settings.show_view_all.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_explore_button",
+			"default": true,
+			"label": "Show Explore Collection button",
+			"info": "Displays a pill button overlaid on each collection image"
 		},
 		{
 			"type": "header",

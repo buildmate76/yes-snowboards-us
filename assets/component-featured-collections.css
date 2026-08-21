@@ -190,7 +190,7 @@
 }
 
 .featured-collections--home .card__content {
-	padding: 10px 8px 8px;
+	padding: 10px 8px 8px !important;
 }
 
 .featured-collections--home .card__heading {
@@ -317,6 +317,6 @@
 	.featured-collections--home .collection__view-all .button {
 		font-size: 12px !important;
 		padding: 4px 7px;
-		min-width: 60%;;
+		min-width: 60%;
 	}
 }

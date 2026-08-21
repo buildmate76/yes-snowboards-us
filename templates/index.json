@@ -212,7 +212,9 @@
       ],
       "custom_css": [
         ".collection-list {column-gap: var(--space-xxs); justify-content: space-between; --grid-desktop-horizontal-spacing: 12px;}",
-        ".collection-list .card:not(.ratio) {flex-direction: column-reverse;}"
+        ".collection-list .card:not(.ratio) {flex-direction: column-reverse; width: 100%;}",
+        ".collection-list .card-wrapper, .collection-list .collection-card-wrapper, .collection-list .card__inner, .collection-list .card__content {width: 100%;}",
+        ".collection-list .card__media {margin: 0 !important; width: 100% !important;}"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
@@ -222,6 +224,7 @@
         "columns_desktop": 2,
         "color_scheme": "",
         "show_view_all": false,
+        "show_explore_button": true,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
