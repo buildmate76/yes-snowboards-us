@@ -163,16 +163,11 @@
         scroll-snap-align: start;
         border-radius: 24px;
         overflow: hidden;
-        background: #efefef;
         border: none;
         padding: 0;
         transition: transform 0.25s ease;
         border-radius: 18.75px;
         border: 0.75px solid var(--color-gray-dark);
-    }
-
-    .card-profile--home .card-profile__item:hover {
-        transform: translateY(-3px);
     }
 
     .card-profile--home .card-profile__media {
@@ -181,7 +176,7 @@
         aspect-ratio: 0.78;
         overflow: hidden;
         border-radius: 24px;
-        background: #ebebeb;
+        background: var(--color-white);
     }
 
     .card-profile--home .card-profile__image {
@@ -309,6 +304,41 @@
 
         .card-profile--home .card-profile__link {
             font-size: 10px;
+        }
+
+        .home-meet-team__heading {
+            font-size: 20px;
+        }
+
+        .home-meet-team__description {
+            font-size: 13.5px;
+            line-height: 20px;
+        }
+
+        .home-meet-team__cta {
+            font-size: 11px;
+        }
+
+        .card-profile__track {
+            gap: 10px !important;
+        }
+        .card-profile__content {
+            padding: 10px 5px !important;
+        }
+
+        .card-profile__role {
+            font-size: 6.701px !important;
+            line-height: normal !important;
+        }
+
+        .card-profile__name {
+            margin-top: 5px;
+            font-size: 13.69px !important;
+            line-height: normal !important;
+        }
+
+        .card-profile--home .card-profile__link  {
+            width: calc(100% - 20px);
         }
     }
 </style>

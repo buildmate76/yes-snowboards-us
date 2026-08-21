@@ -47,6 +47,8 @@
       "type": "featured-collection-columns",
       "custom_css": [
         ".featured-collections .item .collection__view-all .button {background-color: var(--color-blue-light); border-radius: 15px;}",
+        "h2 {margin-bottom: 0;}",
+        ".card__heading {font-size: 18.065px; font-style: normal; font-weight: 400; line-height: 24.087px;}",
         "@media only screen and (min-width: 990px) {.featured-collections .item:first-child {padding-right: var(--space-2xl); } .featured-collections .item:last-child {padding-left: var(--space-2xl); }}"
       ],
       "settings": {
