@@ -3,9 +3,79 @@
 	- With parameters coming from block.settings.card_boolean {% render 'card-profile', card_boolean: true_or_false %}
 	- No parameters, show all profiles {% render 'card-profile' %}
 	- Home variant: {% render 'card-profile', home_style: true %}
+	- Founders variant (About Us only): {% render 'card-profile', founder_style: true %}
 {% endcomment %}
 
-{% if home_style == true %}
+{% if founder_style == true %}
+	<div class="card-profile card-profile--founders">
+		<div class="card-profile__grid">
+			{%- for block in section.blocks -%}
+				{% assign img_default = block.settings.image_default | image_url: width: 800 %}
+				{% assign img_hover = block.settings.image_hover | image_url: width: 800 %}
+				{% assign card_name = block.settings.name %}
+				{% assign card_link = block.settings.url_instagram %}
+				{% assign card_label = block.settings.button_label %}
+				{% assign card_role = block.settings.role | default: 'FOUNDER' %}
+
+				{% if card_label == blank and card_name != blank %}
+					{% assign card_first = card_name | split: ' ' | first %}
+					{% assign card_label = 'Meet ' | append: card_first %}
+				{% elsif card_label == blank %}
+					{% assign card_label = 'Meet Founder' %}
+				{% endif %}
+
+				{% if card_name != blank or block.settings.image_default != blank %}
+					<div class="card-profile__item" {{ block.shopify_attributes }}>
+						<div class="card-profile__content">
+							<div class="card-profile__role">{{ card_role }}</div>
+							<div class="card-profile__name">{{ card_name }}</div>
+						</div>
+
+						<div class="card-profile__media">
+							{% if block.settings.image_default != blank %}
+								<img
+									alt="{{ card_name | escape }}"
+									class="card-profile__image default"
+									loading="lazy"
+									src="{{ img_default }}"
+									title="{{ card_name | escape }}"
+								>
+							{% else %}
+								<div class="card-profile__placeholder">{% render 'card-profile-placeholder' %}</div>
+							{% endif %}
+
+							{% if block.settings.image_hover != blank %}
+								<img
+									alt="{{ card_name | escape }}"
+									class="card-profile__image hover"
+									loading="lazy"
+									src="{{ img_hover }}"
+									title="{{ card_name | escape }}"
+								>
+							{% elsif block.settings.image_default != blank %}
+								<img
+									alt="{{ card_name | escape }}"
+									class="card-profile__image hover"
+									loading="lazy"
+									src="{{ img_default }}"
+									title="{{ card_name | escape }}"
+								>
+							{% else %}
+								<div class="card-profile__placeholder card-profile__placeholder--hover">{% render 'card-profile-placeholder' %}</div>
+							{% endif %}
+						</div>
+
+						{% if card_link != blank %}
+							<a class="card-profile__link" href="{{ card_link }}" target="_blank" rel="noopener">{{ card_label }}</a>
+						{% elsif card_label != blank %}
+							<span class="card-profile__link">{{ card_label }}</span>
+						{% endif %}
+					</div>
+				{% endif %}
+			{%- endfor -%}
+		</div>
+	</div>
+{% elsif home_style == true %}
 	<div class="card-profile card-profile--home">
 		<div class="card-profile__track">
 			{%- for block in section.blocks -%}

@@ -1,0 +1,255 @@
+/* About Founders — scoped only to this section */
+
+.about-founders {
+	background: var(--color-white);
+}
+
+.about-founders__inner {
+	width: 100%;
+}
+
+.about-founders__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 20px;
+	max-width: 720px;
+	margin: 0 auto 48px;
+}
+
+.about-founders__tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 20px;
+	border-radius: 15px;
+	background: var(--color-blue-light);
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: var(--color-black);
+}
+
+.about-founders__description {
+	margin: 0;
+	width: 100%;
+}
+
+.about-founders__description p {
+	margin: 0;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 13.5px;
+	font-weight: 400;
+	line-height: 21px;
+	color: var(--color-black);
+}
+
+/* Cards via card-profile founder_style — full bleed media/content */
+.about-founders .card-profile--founders {
+	width: 100%;
+}
+
+.about-founders .card-profile--founders .card-profile__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 15px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.about-founders .card-profile--founders .card-profile__item {
+	position: relative;
+	width: 100%;
+	min-width: 0;
+	border-radius: 18.75px;
+	overflow: hidden;
+	border: 0.75px solid var(--color-gray-dark);
+	background: var(--color-gray-light);
+}
+
+.about-founders .card-profile--founders .card-profile__media {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 0.78;
+	overflow: hidden;
+	background: var(--color-gray-light);
+	margin-top: 20px;
+}
+
+.about-founders .card-profile--founders .card-profile__image {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+	display: block;
+	transition: opacity 0.25s ease;
+}
+
+.about-founders .card-profile--founders .card-profile__image.default {
+	opacity: 1;
+}
+
+.about-founders .card-profile--founders .card-profile__image.hover {
+	opacity: 0;
+}
+
+.about-founders .card-profile--founders .card-profile__item:hover .card-profile__image.default {
+	opacity: 0;
+}
+
+.about-founders .card-profile--founders .card-profile__item:hover .card-profile__image.hover {
+	opacity: 1;
+}
+
+.about-founders .card-profile--founders .card-profile__placeholder {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-gray-medium);
+}
+
+.about-founders .card-profile--founders .card-profile__content {
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 22px 16px 18px;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+.about-founders .card-profile--founders .card-profile__role {
+	width: 100%;
+	text-align: center;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: var(--color-black);
+}
+
+.about-founders .card-profile--founders .card-profile__name {
+	width: 100%;
+	text-align: center;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.25;
+	color: var(--color-black);
+}
+
+.about-founders .card-profile--founders .card-profile__link {
+	position: absolute;
+	left: 50%;
+	bottom: 18px;
+	transform: translateX(-50%);
+	z-index: 3;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: calc(100% - 32px);
+	max-width: 100%;
+	min-height: 28px;
+	padding: 8px 16px;
+	box-sizing: border-box;
+	background: var(--color-white);
+	border-radius: 16.875px;
+	color: var(--color-black);
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 11.25px;
+	font-weight: 700;
+	line-height: normal;
+}
+
+@media screen and (max-width: 989px) {
+	.about-founders .card-profile--founders .card-profile__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+	}
+
+	.about-founders .card-profile--founders .card-profile__name {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.about-founders__header {
+		gap: 16px;
+		margin-bottom: 28px;
+		align-items: flex-start;
+		text-align: left;
+		max-width: none;
+	}
+
+	.about-founders__tag {
+		font-size: 12px;
+		line-height: 13px;
+	}
+
+	.about-founders__description p {
+		font-size: 13.5px;
+		line-height: 20px;
+		text-align: left;
+	}
+
+	/* Mobile design: single-column stacked full-width cards */
+	.about-founders .card-profile--founders .card-profile__grid {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		overflow: visible;
+		width: 100%;
+	}
+
+	.about-founders .card-profile--founders .card-profile__item {
+		flex: none;
+		width: 100%;
+		border-radius: 16px;
+	}
+
+	.about-founders .card-profile--founders .card-profile__media {
+		aspect-ratio: 0.85;
+		width: 100%;
+	}
+
+	.about-founders .card-profile--founders .card-profile__content {
+		padding: 18px 16px 16px;
+		width: 100%;
+	}
+
+	.about-founders .card-profile--founders .card-profile__role {
+		font-size: 11px;
+		font-weight: 400;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	.about-founders .card-profile--founders .card-profile__name {
+		margin-top: 4px;
+		font-size: 22px;
+		font-weight: 400;
+		line-height: 1.2;
+	}
+
+	.about-founders .card-profile--founders .card-profile__link {
+		bottom: 16px;
+		width: calc(100% - 32px);
+		min-height: 32px;
+		font-size: 11px;
+	}
+}
