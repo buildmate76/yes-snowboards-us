@@ -135,10 +135,12 @@
         "founder_zeMUhT",
         "founder_JpjV6T"
       ],
+      "disabled": true,
       "settings": {}
     },
     "video_LxNL4a": {
       "type": "video",
+      "disabled": true,
       "custom_css": [
         "h2 {display: none;}"
       ],
@@ -174,6 +176,7 @@
       "block_order": [
         "column_axgYKK"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": ""
       }

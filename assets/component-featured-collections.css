@@ -104,3 +104,219 @@
 		margin: 0 0 var(--space-2xl) 0;
 	}
 }
+
+/* Homepage featured collections only */
+.featured-collections--home {
+	background: var(--color-white);
+	padding: 70px 0;
+}
+
+.featured-collections--home .page-width {
+	max-width: 1440px;
+	padding-inline: 60px;
+}
+
+.featured-collections--home .collection-two-column {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 0;
+	margin-inline: auto;
+}
+
+.featured-collections--home .item {
+	width: auto;
+	padding: 0 32px 0 0;
+}
+
+.featured-collections--home .item + .item {
+	border: 0;
+	margin: 0;
+	padding: 0 0 0 32px;
+	border-left: 1px solid var(--color-blue-light);
+}
+
+.featured-collections--home .collection__title {
+	padding: 0 !important;
+	margin: 0 0 26px;
+}
+
+.featured-collections--home .collection__title h2 {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.featured-collections--home slider-component {
+	display: block;
+}
+
+.featured-collections--home .grid {
+	column-gap: 12px !important;
+	row-gap: 0;
+	margin: 0;
+}
+
+.featured-collections--home .grid__item {
+	width: calc(50% - 6px);
+	max-width: calc(50% - 6px);
+	padding: 0;
+}
+
+.featured-collections--home .product-card-wrapper {
+	height: 100%;
+}
+
+.featured-collections--home .card-wrapper {
+	height: 100%;
+	border: 1px solid var(--color-gray-medium);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.featured-collections--home .card__inner {
+	height: 190px;
+	background: var(--color-white);
+}
+
+.featured-collections--home .card--standard .card__inner {
+	background: var(--color-white);
+}
+
+.featured-collections--home .card__media {
+	margin: 0;
+	width: 100%;
+}
+
+.featured-collections--home .card__content {
+	padding: 10px 8px 8px !important;
+}
+
+.featured-collections--home .card__heading {
+	font-size: 18.065px;
+	font-weight: 400;
+	line-height: 24.087px;
+}
+
+.featured-collections--home .card-information {
+	padding: 0;
+}
+
+.featured-collections--home .price {
+	font-size: 19.57px;
+	line-height: normal;
+	font-weight: 700;
+}
+
+.featured-collections--home .slider-buttons {
+	display: flex;
+	justify-content: flex-start;
+	gap: 4px;
+	margin: 16px 0 12px;
+}
+
+.featured-collections--home .slider-button {
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	color: var(--color-gray-dark);
+}
+
+.featured-collections--home .slider-button--next {
+	color: var(--color-black);
+}
+
+.featured-collections--home .slider-button .icon {
+	width: 12px;
+	height: 12px;
+}
+
+.featured-collections--home .collection__view-all {
+	margin: 0;
+	text-align: left;
+}
+
+.featured-collections--home .collection__view-all .button {
+	min-height: 0;
+	padding: 5px 8px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--color-blue-light);
+	box-shadow: none;
+	color: var(--color-black);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 15px;
+	text-transform: uppercase;
+}
+
+.featured-collections--home .collection__view-all .button::before,
+.featured-collections--home .collection__view-all .button::after {
+	display: none;
+}
+
+@media only screen and (max-width: 749px) {
+	.featured-collections--home {
+		padding-block: 30px;
+	}
+
+	.featured-collections--home .page-width {
+		padding-inline: 24px;
+	}
+
+	.featured-collections--home .collection-two-column {
+		display: flex;
+		gap: 0;
+	}
+
+	.featured-collections--home .item,
+	.featured-collections--home .item + .item {
+		width: 100%;
+		padding: 0;
+		border: 0;
+	}
+
+	.featured-collections--home .item + .item {
+		margin-top: 32px;
+	}
+
+	.featured-collections--home .collection__title {
+		margin-bottom: 16px;
+	}
+
+	.featured-collections--home .collection__title h2 {
+		font-size: 20px !important;
+	}
+
+	.featured-collections--home .card__inner {
+		height: 220px !important;
+	}
+
+	.featured-collections--home .card__content {
+		padding: 6px 6px 5px !important;
+	}
+
+	.featured-collections--home .card__content .card__size  {
+		display: none !important;
+	}
+
+	.featured-collections--home .card__heading {
+		font-size: 13px !important;
+	}
+
+	.featured-collections--home .price {
+		font-size: 14px !important;
+	}
+
+	.featured-collections--home .slider-buttons {
+		margin: 10px 0 9px;
+	}
+
+	.featured-collections--home .collection__view-all .button {
+		font-size: 12px !important;
+		padding: 4px 7px;
+		min-width: 60%;
+	}
+}
