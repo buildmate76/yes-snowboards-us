@@ -42,7 +42,7 @@
 
 {% include 'global-variables' %}
 
-<div class="featured-collections isolate gradient">
+<div class="featured-collections{% if section.settings.home_layout %} featured-collections--home{% endif %} isolate gradient">
 	<div
 		class="page-width collection-two-column{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding"
 		id="collection-{{ section.id }}"
@@ -219,6 +219,12 @@
 			"type": "inline_richtext",
 			"id": "title_2",
 			"label": "Title for second collection"
+		},
+		{
+			"type": "checkbox",
+			"id": "home_layout",
+			"label": "Use homepage layout",
+			"default": true
 		},
 		{
 			"type": "collection",

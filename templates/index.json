@@ -54,6 +54,7 @@
       "settings": {
         "title": "SNOWBOARDS",
         "title_2": "BINDINGS",
+        "home_layout": true,
         "collection": "snowboards",
         "collection_2": "bindings",
         "show_view_all": true,
