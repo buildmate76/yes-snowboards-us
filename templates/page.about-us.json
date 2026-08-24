@@ -18,6 +18,7 @@
             "image": "shopify://shop_images/about.jpg",
             "image_mobile": "shopify://shop_images/about.jpg",
             "title": "About us",
+            "caption": "SINCE 2009",
             "btn_primary_text": "",
             "btn_primary_url": "",
             "btn_secondary_text": "",
@@ -118,8 +119,8 @@
       "custom_css": [
         "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
         ".image-with-text__content {padding: 0rem !important;}",
-        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
-        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: normal; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 25px !important; font-size: 33.75px;}",
         ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
         "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
       ],
@@ -154,7 +155,7 @@
             "button_label": "Meet David",
             "url_instagram": "https://www.instagram.com/cholulaindahole/",
             "image_default": "shopify://shop_images/David_Pitschi.png",
-            "image_hover": "shopify://shop_images/dcp.jpg"
+            "image_hover": "shopify://shop_images/David_Pitschi.png"
           }
         },
         "founder_romain": {
@@ -165,7 +166,7 @@
             "button_label": "Meet Romain",
             "url_instagram": "https://www.instagram.com/rdmyes/",
             "image_default": "shopify://shop_images/Romain_De_Marchi.png",
-            "image_hover": "shopify://shop_images/rdm.jpg"
+            "image_hover": "shopify://shop_images/Romain_De_Marchi.png"
           }
         },
         "founder_jp": {
@@ -312,6 +313,7 @@
             "image": "shopify://shop_images/home-team-desktop-1.png",
             "image_mobile": "shopify://shop_images/home-team-mobile-1.png",
             "title": "Meet our Team",
+            "caption": "Column Caption",
             "btn_primary_text": "Explore",
             "btn_primary_url": "shopify://pages/team",
             "btn_secondary_text": "",

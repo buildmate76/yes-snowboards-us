@@ -213,7 +213,8 @@
 	display: flex;
 	justify-content: flex-start;
 	gap: 4px;
-	margin: 16px 0 12px;
+	margin-top: 25px !important;
+	margin-bottom: 20px !important;
 }
 
 .featured-collections--home .slider-button {
@@ -240,6 +241,7 @@
 .featured-collections--home .collection__view-all .button {
 	min-height: 0;
 	padding: 5px 8px;
+	margin-top: 0;
 	border: 0;
 	border-radius: 999px;
 	background: var(--color-blue-light);
@@ -248,7 +250,7 @@
 	font-size: 12px;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 15px;
+	line-height: normal;
 	text-transform: uppercase;
 }
 

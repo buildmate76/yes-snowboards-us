@@ -7,6 +7,24 @@
 	{%- endif -%}
 {%- endfor -%}
 
+<style>
+	.two-column-hero .caption {
+		border-radius: 4.5px;
+		border: 0.75px solid #FFF;
+		background: rgba(0, 0, 0, 0.20);
+		color: var(--color-white);
+		text-align: center;
+		font-family: "The Wave", Wave, Arial, sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		width: fit-content;
+		justify-self: center;
+		padding: 5px 10px;
+	}
+</style>
+
 <div class="two-column-hero">
 	<div class="page-width">
 		<div class="flex two-column-hero--columns-{{ column_count }}">
@@ -51,6 +69,7 @@
 								{{ block.settings.btn_secondary_text }}
 							</a>
 						{%- endif -%}
+						<p class="caption">{{ block.settings.caption }}</p>
 						<h2 class="title">{{ block.settings.title }}</h2>
 					</div>
 				</div>
@@ -92,6 +111,12 @@
 					"id": "title",
 					"label": "Title",
 					"default": "Column Title"
+				},
+				{
+					"type": "text",
+					"id": "caption",
+					"label": "Caption",
+					"default": "Column Caption"
 				},
 				{
 					"type": "text",

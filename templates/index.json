@@ -165,10 +165,10 @@
       "custom_css": [
         "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
         ".image-with-text__content {padding: 0rem !important;}",
-        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
-        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: normal; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 25px !important; font-size: 33.75px;}",
         ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
-        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+        "a {background-color: black; color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700; min-height: auto}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -228,7 +228,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 100
       }
     },
     "reassurance": {
@@ -411,10 +411,10 @@
       "custom_css": [
         "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
         ".image-with-text__content {padding: 0rem !important;}",
-        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
-        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: normal; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 25px !important; font-size: 33.75px;}",
         ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
-        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+        "a {background-color: black; color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700; min-height: auto}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
