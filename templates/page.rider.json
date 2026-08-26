@@ -25,8 +25,8 @@
           "settings": {
             "image": "shopify://shop_images/founder_focus.png",
             "image_mobile": "shopify://shop_images/founder_focus.png",
-            "title": "JP SOLBERG",
-            "caption": "CO-FOUNDER",
+            "title": "MOMO MAHEUX",
+            "caption": "BACKCOUNTRY / FREERIDE",
             "btn_primary_text": "",
             "btn_primary_url": "",
             "btn_secondary_text": "",
@@ -54,7 +54,7 @@
         "caption_TEDTmV": {
           "type": "caption",
           "settings": {
-            "caption": "YES WE CAN",
+            "caption": "Whisteler, BC",
             "text_style": "caption-with-letter-spacing",
             "text_size": "medium"
           }
