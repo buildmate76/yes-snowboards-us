@@ -62,6 +62,7 @@
         "text_cNBTnB": {
           "type": "text",
           "settings": {
+            "text_style": "body",
             "text": "<p>JP Solberg is a Norwegian professional snowboarder who has made a significant impact on the world of snowboarding, particularly during the 2000s with his powerful riding in the backcountry and his film parts in some of the most influential snowboard movies of that era. Like his contemporaries Romain de Marchi and David Carrier Porcheron (DCP), JP is one of the co-founders of YES. Snowboards, a rider-owned snowboard brand that has become a major player in the industry. His smooth style, versatility, and passion for snowboarding have earned him a legendary status in the snowboarding world.</p>"
           }
         },
@@ -82,6 +83,7 @@
         "text_MGGL9F": {
           "type": "text",
           "settings": {
+            "text_style": "body",
             "text": "<p>JP Solberg is a true legend in snowboarding, known for his effortless style, innovative tricks, and contributions to backcountry riding. As a co-founder of YES. Snowboards, he has not only left his mark on the slopes but also helped shape the future of snowboard design and culture. His dedication to the sport, both as a rider and an entrepreneur, has earned him a lasting place in snowboarding history.</p>"
           }
         },
@@ -95,6 +97,7 @@
         "text_KfEtgg": {
           "type": "text",
           "settings": {
+            "text_style": "body",
             "text": "<p>JP Solberg’s talent and smooth style were immortalized in numerous snowboarding films during the 2000s. His work with companies like Absinthe Films helped establish him as one of the most respected riders in the backcountry and freeride scene.</p>"
           }
         },
@@ -108,6 +111,7 @@
         "text_MhQrQC": {
           "type": "text",
           "settings": {
+            "text_style": "body",
             "text": "<p>JP Solberg’s influence on snowboarding goes far beyond his personal accomplishments. He has become a symbol of the modern backcountry rider, someone who merges technical freestyle tricks with the exploration of remote and untouched mountain terrain. His smooth, effortless riding has inspired countless snowboarders to adopt a more flowing, style-focused approach to the sport.</p>"
           }
         }
@@ -133,6 +137,39 @@
         "padding_bottom": 60
       }
     },
+    "image_slider": {
+      "type": "image-slider",
+      "blocks": {
+        "slide_1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/founder-1.png",
+            "alt": "Founder photo 1"
+          }
+        },
+        "slide_3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/founder-3.png",
+            "alt": "Founder photo 3"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_3"
+      ],
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 4,
+        "show_arrows": true,
+        "gap": 16,
+        "border_radius": 8,
+        "bg_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "video_Qbc7PJ": {
       "type": "video",
       "name": "t:sections.video.presets.name",
@@ -153,6 +190,7 @@
     "main",
     "two_column_hero_TNr9DH",
     "rich_text_V4dxT8",
+    "image_slider",
     "video_Qbc7PJ"
   ]
 }
