@@ -68,6 +68,7 @@
 
 .collection-card-wrapper--explore .card__explore-btn {
 	position: absolute;
+	z-index: 9999;
 	left: 50%;
 	bottom: 24px;
 	transform: translateX(-50%);
@@ -91,9 +92,8 @@
 	pointer-events: auto;
 }
 
-.card__explore-btn:hover {
-	background: var(--color-black);
-	color: var(--color-white);
+.collection-card-wrapper--explore .card__explore-btn:hover {
+	background-color: #FCFCFC !important;
 }
 
 @media screen and (max-width: 749px) {

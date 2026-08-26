@@ -154,8 +154,7 @@
             "name": "David Pitschi",
             "button_label": "Meet David",
             "url_instagram": "https://www.instagram.com/cholulaindahole/",
-            "image_default": "shopify://shop_images/David_Pitschi.png",
-            "image_hover": "shopify://shop_images/David_Pitschi.png"
+            "image_default": "shopify://shop_images/David_Pitschi.png"
           }
         },
         "founder_romain": {
@@ -165,8 +164,7 @@
             "name": "Romain De Marchi",
             "button_label": "Meet Romain",
             "url_instagram": "https://www.instagram.com/rdmyes/",
-            "image_default": "shopify://shop_images/Romain_De_Marchi.png",
-            "image_hover": "shopify://shop_images/Romain_De_Marchi.png"
+            "image_default": "shopify://shop_images/Romain_De_Marchi.png"
           }
         },
         "founder_jp": {
@@ -176,8 +174,7 @@
             "name": "JP Solberg",
             "button_label": "Meet JP",
             "url_instagram": "https://www.instagram.com/soulburger/",
-            "image_default": "shopify://shop_images/JP_Solberg.png",
-            "image_hover": "shopify://shop_images/JP_Solberg.png"
+            "image_default": "shopify://shop_images/JP_Solberg.png"
           }
         }
       },
@@ -313,7 +310,7 @@
             "image": "shopify://shop_images/home-team-desktop-1.png",
             "image_mobile": "shopify://shop_images/home-team-mobile-1.png",
             "title": "Meet our Team",
-            "caption": "Column Caption",
+            "caption": "",
             "btn_primary_text": "Explore",
             "btn_primary_url": "shopify://pages/team",
             "btn_secondary_text": "",

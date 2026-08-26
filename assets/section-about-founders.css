@@ -28,7 +28,7 @@
 	font-family: "The Wave", Wave, Arial, sans-serif;
 	font-size: 12px;
 	font-weight: 400;
-	line-height: 15px;
+	line-height: normal;
 	text-transform: uppercase;
 	color: var(--color-black);
 }
@@ -56,7 +56,8 @@
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 15px;
-	width: 80%;
+	max-width: 800px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -67,6 +68,10 @@
 	border-radius: 18.75px;
 	overflow: hidden;
 	border: 0.75px solid var(--color-gray-dark);
+	background: var(--color-white);
+}
+
+.about-founders .card-profile--founders .card-profile__item:hover {
 	background: var(--color-gray-light);
 }
 
@@ -75,7 +80,6 @@
 	width: 100%;
 	aspect-ratio: 0.78;
 	overflow: hidden;
-	background: var(--color-gray-light);
 	margin-top: 20px;
 }
 
@@ -144,7 +148,7 @@
 	width: 100%;
 	text-align: center;
 	font-family: "The Wave", Wave, Arial, sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.25;
 	color: var(--color-black);
@@ -176,6 +180,10 @@
 	line-height: normal;
 }
 
+.about-founders .card-profile--founders .card-profile__link:hover {
+	background: #FCFCFC;
+}
+
 @media screen and (max-width: 989px) {
 	.about-founders .card-profile--founders .card-profile__grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -198,7 +206,6 @@
 
 	.about-founders__tag {
 		font-size: 12px;
-		line-height: 13px;
 	}
 
 	.about-founders__description p {

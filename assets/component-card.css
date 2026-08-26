@@ -443,6 +443,10 @@ main#MainContent product-info .limoniapps-discountninja-shortcode-original_price
     text-transform: lowercase;
 }
 
+.collection-list-wrapper .card__heading {
+    text-transform: uppercase;
+}
+
 .card__heading > a {
     color: var(--color-black);
     font-weight: var(--font-weight-400);
