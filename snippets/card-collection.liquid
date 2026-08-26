@@ -76,18 +76,6 @@
 							class="motion-reduce"
 						>
 					</div>
-					{%- if show_explore_button -%}
-						<a
-							{% if card_collection == blank %}
-								role="link" aria-disabled="true"
-							{% else %}
-								href="{{ card_collection.url }}"
-							{% endif %}
-							class="card__explore-btn"
-						>
-							Explore Collection
-						</a>
-					{%- endif -%}
 				</div>
 			{%- endif -%}
 			{%- if card_collection == blank -%}
@@ -101,25 +89,16 @@
 				<div class="card__content">
 					<div class="card__information">
 						<h3 class="card__heading">
-							<a
-								{% if card_collection == blank %}
-									role="link" aria-disabled="true"
-								{% else %}
-									href="{{ card_collection.url }}"
-								{% endif %}
-								class="full-unstyled-link"
-							>
-								{%- if card_collection.title != blank -%}
-									{{- card_collection.title | escape -}}
-								{%- else -%}
-									{{ 'onboarding.collection_title' | t }}
+							{%- if card_collection.title != blank -%}
+								{{- card_collection.title | escape -}}
+							{%- else -%}
+								{{ 'onboarding.collection_title' | t }}
+							{%- endif -%}
+							{%- unless show_explore_button -%}
+								{%- if card_collection.description == blank -%}
+									<span class="icon-wrap">{% render 'icon-arrow' %}</span>
 								{%- endif -%}
-								{%- unless show_explore_button -%}
-									{%- if card_collection.description == blank -%}
-										<span class="icon-wrap">{% render 'icon-arrow' %}</span>
-									{%- endif -%}
-								{%- endunless -%}
-							</a>
+							{%- endunless -%}
 						</h3>
 						{%- if card_collection.description != blank -%}
 							<p class="card__caption">
@@ -130,30 +109,33 @@
 					</div>
 				</div>
 			{%- endif -%}
+			{%- if show_explore_button -%}
+				<a
+					{% if card_collection == blank %}
+						role="link" aria-disabled="true"
+					{% else %}
+						href="{{ card_collection.url }}"
+					{% endif %}
+					class="card__explore-btn"
+				>
+					Explore Collection
+				</a>
+			{%- endif -%}
 		</div>
 		{%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
 			<div class="card__content">
 				<div class="card__information">
 					<h3 class="card__heading">
-						<a
-							{% if card_collection == blank %}
-								role="link" aria-disabled="true"
-							{% else %}
-								href="{{ card_collection.url }}"
-							{% endif %}
-							class="full-unstyled-link"
-						>
-							{%- if card_collection.title != blank -%}
-								{{- card_collection.title | escape -}}
-							{%- else -%}
-								{{ 'onboarding.collection_title' | t }}
+						{%- if card_collection.title != blank -%}
+							{{- card_collection.title | escape -}}
+						{%- else -%}
+							{{ 'onboarding.collection_title' | t }}
+						{%- endif -%}
+						{%- unless show_explore_button -%}
+							{%- if card_collection.featured_image or card_collection.description == blank -%}
+								<span class="icon-wrap">{% render 'icon-arrow' %}</span>
 							{%- endif -%}
-							{%- unless show_explore_button -%}
-								{%- if card_collection.featured_image or card_collection.description == blank -%}
-									<span class="icon-wrap">{% render 'icon-arrow' %}</span>
-								{%- endif -%}
-							{%- endunless -%}
-						</a>
+						{%- endunless -%}
 					</h3>
 					{%- if card_collection.featured_image == null
 						and card_collection.description != blank

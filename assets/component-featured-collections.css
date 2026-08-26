@@ -90,7 +90,7 @@
 	}
 
 	.featured-collections .item:first-child {
-		border-right: 1px solid var(--color-gray-2);
+		border-right: 1px solid var(--color-blue-light);
 		border-bottom: none;
 		padding-right: var(--space-s);
 		margin: 0;
@@ -132,7 +132,6 @@
 	border: 0;
 	margin: 0;
 	padding: 0 0 0 32px;
-	border-left: 1px solid var(--color-blue-light);
 }
 
 .featured-collections--home .collection__title {
@@ -190,7 +189,7 @@
 }
 
 .featured-collections--home .card__content {
-	padding: 10px 8px 8px !important;
+	padding: 16px !important;
 }
 
 .featured-collections--home .card__heading {
@@ -213,7 +212,8 @@
 	display: flex;
 	justify-content: flex-start;
 	gap: 4px;
-	margin: 16px 0 12px;
+	margin-top: 25px !important;
+	margin-bottom: 20px !important;
 }
 
 .featured-collections--home .slider-button {
@@ -240,6 +240,7 @@
 .featured-collections--home .collection__view-all .button {
 	min-height: 0;
 	padding: 5px 8px;
+	margin-top: 0;
 	border: 0;
 	border-radius: 999px;
 	background: var(--color-blue-light);
@@ -248,7 +249,7 @@
 	font-size: 12px;
 	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 15px;
+	line-height: normal;
 	text-transform: uppercase;
 }
 
@@ -295,7 +296,7 @@
 	}
 
 	.featured-collections--home .card__content {
-		padding: 6px 6px 5px !important;
+		padding: 6px !important;
 	}
 
 	.featured-collections--home .card__content .card__size  {

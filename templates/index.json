@@ -18,6 +18,7 @@
             "image": "shopify://shop_images/New_Header.jpg",
             "image_mobile": "shopify://shop_images/mobile.jpg",
             "title": "",
+            "caption": "",
             "btn_primary_text": "",
             "btn_primary_url": "",
             "btn_secondary_text": "",
@@ -165,10 +166,10 @@
       "custom_css": [
         "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
         ".image-with-text__content {padding: 0rem !important;}",
-        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
-        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: normal; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 25px !important; font-size: 33.75px;}",
         ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
-        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+        "a {background-color: black; color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700; min-height: auto;}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -213,7 +214,7 @@
       "custom_css": [
         ".collection-list {column-gap: var(--space-xxs); justify-content: space-between; --grid-desktop-horizontal-spacing: 12px;}",
         ".collection-list .card:not(.ratio) {flex-direction: column-reverse; width: 100%;}",
-        ".collection-list .card-wrapper, .collection-list .collection-card-wrapper, .collection-list .card__inner, .collection-list .card__content {width: 100%;}",
+        ".collection-list .card-wrapper,.collection-list .collection-card-wrapper,.collection-list .card__inner,.collection-list .card__content {width: 100%;}",
         ".collection-list .card__media {margin: 0 !important; width: 100% !important;}"
       ],
       "name": "t:sections.collection-list.presets.name",
@@ -228,7 +229,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 100
       }
     },
     "reassurance": {
@@ -288,8 +289,7 @@
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
             "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Emeraude_Maheux.png",
-            "image_hover": "shopify://shop_images/Emeraude_Maheux.png"
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png"
           }
         },
         "team_member_2": {
@@ -299,8 +299,7 @@
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
             "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png",
-            "image_hover": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
           }
         },
         "team_member_3": {
@@ -310,8 +309,7 @@
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
             "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Emeraude_Maheux.png",
-            "image_hover": "shopify://shop_images/Emeraude_Maheux.png"
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png"
           }
         },
         "team_member_4": {
@@ -321,8 +319,7 @@
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
             "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png",
-            "image_hover": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
           }
         },
         "team_member_BzrgFq": {
@@ -332,8 +329,7 @@
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
             "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Emeraude_Maheux.png",
-            "image_hover": "shopify://shop_images/Emeraude_Maheux.png"
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png"
           }
         },
         "team_member_WMeXPx": {
@@ -343,8 +339,7 @@
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
             "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png",
-            "image_hover": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
           }
         }
       },
@@ -411,10 +406,10 @@
       "custom_css": [
         "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
         ".image-with-text__content {padding: 0rem !important;}",
-        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: 15px; border-radius: 4.5px; border: 0.75px solid black;}",
-        "h2 {margin-top: 12px !important; font-size: 33.75px;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: normal; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 25px !important; font-size: 33.75px;}",
         ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
-        "a {background-color: var(--color-black); color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700;}"
+        "a {background-color: black; color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700; min-height: auto;}"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -445,6 +440,7 @@
             "image": "shopify://shop_images/Team_2.webp",
             "image_mobile": "shopify://shop_images/Team_1_1.webp",
             "title": "Meet our team",
+            "caption": "",
             "btn_primary_text": "",
             "btn_primary_url": "",
             "btn_secondary_text": "Discover",
@@ -469,6 +465,7 @@
             "image": "shopify://shop_images/YES_snowboarding_Homepage_about_us.webp",
             "image_mobile": "shopify://shop_images/YES_snowboarding_Homepage_about_us_mobile.webp",
             "title": "About us",
+            "caption": "",
             "btn_primary_text": "",
             "btn_primary_url": "",
             "btn_secondary_text": "Read more",

@@ -348,7 +348,7 @@ span:first-of-type {
 }
 
 .card__badge .badge, #product-grid li.grid__item .limoniapps-discountninja-badge {
-    border-radius: var(--border-radius-3xs);
+    border-radius: 15px;
     font-size: var(--typo-body-xxs);
     letter-spacing: initial;
     padding: var(--space-4xs) var(--space-xxs);
@@ -440,6 +440,11 @@ main#MainContent product-info .limoniapps-discountninja-shortcode-original_price
 .card__heading {
     margin-top: 0;
     margin-bottom: 0;
+    text-transform: lowercase;
+}
+
+.collection-list-wrapper .card__heading {
+    text-transform: uppercase;
 }
 
 .card__heading > a {
