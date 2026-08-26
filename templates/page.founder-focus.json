@@ -1,0 +1,155 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "two_column_hero_TNr9DH": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_apNzt8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/founder_focus.png",
+            "image_mobile": "shopify://shop_images/founder_focus.png",
+            "title": "JP SOLBERG",
+            "caption": "CO-FOUNDER",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_secondary_text": "",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_apNzt8"
+      ],
+      "custom_css": [
+        ".two-column-hero .column::before {background: none;}",
+        ".two-column-hero img {-webkit-filter: brightness(0.7);}",
+        ".two-column-hero .title {width: fit-content; font-size: 33.75px; font-weight: 700;}",
+        ".two-column-hero .btn-text-container {width: fit-content; left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%);}",
+        "@media screen and (max-width: 767px) {.two-column-hero .title {font-size: 26px; }}"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "rich_text_V4dxT8": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_bnhwPj": {
+          "type": "caption",
+          "settings": {
+            "caption": "WHO IS JP SOLBERG?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_cNBTnB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>JP Solberg is a Norwegian professional snowboarder who has made a significant impact on the world of snowboarding, particularly during the 2000s with his powerful riding in the backcountry and his film parts in some of the most influential snowboard movies of that era. Like his contemporaries Romain de Marchi and David Carrier Porcheron (DCP), JP is one of the co-founders of YES. Snowboards, a rider-owned snowboard brand that has become a major player in the industry. His smooth style, versatility, and passion for snowboarding have earned him a legendary status in the snowboarding world.</p>"
+          }
+        },
+        "heading_qAriNw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Snowboarding passion ",
+            "heading_size": "h1"
+          }
+        },
+        "text_MGGL9F": {
+          "type": "text",
+          "settings": {
+            "text": "<p>JP Solberg is a true legend in snowboarding, known for his effortless style, innovative tricks, and contributions to backcountry riding. As a co-founder of YES. Snowboards, he has not only left his mark on the slopes but also helped shape the future of snowboard design and culture. His dedication to the sport, both as a rider and an entrepreneur, has earned him a lasting place in snowboarding history.</p>"
+          }
+        },
+        "heading_RL8FD4": {
+          "type": "heading",
+          "settings": {
+            "heading": "TALENT",
+            "heading_size": "h1"
+          }
+        },
+        "text_KfEtgg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>JP Solberg’s talent and smooth style were immortalized in numerous snowboarding films during the 2000s. His work with companies like Absinthe Films helped establish him as one of the most respected riders in the backcountry and freeride scene.</p>"
+          }
+        },
+        "heading_pkxzTX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Snowboarding influence",
+            "heading_size": "h1"
+          }
+        },
+        "text_MhQrQC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>JP Solberg’s influence on snowboarding goes far beyond his personal accomplishments. He has become a symbol of the modern backcountry rider, someone who merges technical freestyle tricks with the exploration of remote and untouched mountain terrain. His smooth, effortless riding has inspired countless snowboarders to adopt a more flowing, style-focused approach to the sport.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_bnhwPj",
+        "text_cNBTnB",
+        "heading_qAriNw",
+        "text_MGGL9F",
+        "heading_RL8FD4",
+        "text_KfEtgg",
+        "heading_pkxzTX",
+        "text_MhQrQC"
+      ],
+      "custom_css": [
+        ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
+        ".rich-text__heading {font-size: 33.75px; font-weight: 400;}",
+        ".rich-text__text p {font-size: 13.5px; font-weight: 400; line-height: 21px;}",
+        "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__caption {justify-self: start; } .rich-text__heading {font-size: 22px; } .rich-text__text p {margin: 0; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "video_Qbc7PJ": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "Video",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "two_column_hero_TNr9DH",
+    "rich_text_V4dxT8",
+    "video_Qbc7PJ"
+  ]
+}

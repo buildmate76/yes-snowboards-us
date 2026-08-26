@@ -14,6 +14,7 @@
 
 .two-column-hero .column img {
 	min-height: 400px;
+	max-height: 100vh;
 	object-fit: cover;
 	width: 100%;
 }
