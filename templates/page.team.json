@@ -456,6 +456,7 @@
         "caption_Ufy3DJ",
         "text_wpqPhN"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
         ".rich-text__heading,.rich-text__text p {font-size: 13.5px; font-weight: 700; line-height: 21px;}",
@@ -470,6 +471,63 @@
         "biography_style": false,
         "padding_top": 60,
         "padding_bottom": 60
+      }
+    },
+    "about_founders_ePAwJt": {
+      "type": "about-founders",
+      "blocks": {
+        "founder_3q9dMF": {
+          "type": "founder",
+          "settings": {
+            "role": "TEAM RIDER",
+            "name": "Emeraude Maheux",
+            "button_label": "MEET MOMO",
+            "url_instagram": "https://www.instagram.com/cholulaindahole/",
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png"
+          }
+        },
+        "founder_tCCPtg": {
+          "type": "founder",
+          "settings": {
+            "role": "TEAM RIDER",
+            "name": "Mia Langridge",
+            "button_label": "MEET MIA",
+            "url_instagram": "https://www.instagram.com/rdmyes/",
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+          }
+        },
+        "founder_xYxNEL": {
+          "type": "founder",
+          "settings": {
+            "role": "TEAM RIDER",
+            "name": "Dustin Crave",
+            "button_label": "MEET DUSTIN",
+            "url_instagram": "https://www.instagram.com/soulburger/",
+            "image_default": "shopify://shop_images/Dustin_Crave.png"
+          }
+        }
+      },
+      "block_order": [
+        "founder_3q9dMF",
+        "founder_tCCPtg",
+        "founder_xYxNEL"
+      ],
+      "settings": {
+        "tag": "OUR CREW",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi. Vestibulum quis felis sed sem placerat imperdiet. </p>",
+        "columns_desktop": 3,
+        "bg_color": "#ffffff",
+        "text_color": "#000000",
+        "tag_bg_color": "#a6dde8",
+        "tag_text_color": "#000000",
+        "tag_border_color": "#000000",
+        "card_bg_color": "#f7f7f7",
+        "card_border_color": "#a2a2a2",
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#000000",
+        "button_border_color": "#000000",
+        "padding_top": 64,
+        "padding_bottom": 72
       }
     },
     "image_with_text_fwaWfb": {
@@ -538,6 +596,7 @@
     "two_column_hero_Ji4MWr",
     "two_column_hero_wLAFr7",
     "rich_text_3waRDc",
+    "about_founders_ePAwJt",
     "image_with_text_fwaWfb"
   ]
 }

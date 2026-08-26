@@ -101,21 +101,37 @@
         "image_3JXh3A": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/founder-1.png",
+            "image": "shopify://shop_images/team-1.png",
             "alt": "Founder photo 1"
           }
         },
         "image_krVJJC": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/founder-3.png",
+            "image": "shopify://shop_images/team-2.png",
+            "alt": "Founder photo 3"
+          }
+        },
+        "image_BgYi6e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/team-3.png",
+            "alt": "Founder photo 3"
+          }
+        },
+        "image_3dW6kB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/team-4.png",
             "alt": "Founder photo 3"
           }
         }
       },
       "block_order": [
         "image_3JXh3A",
-        "image_krVJJC"
+        "image_krVJJC",
+        "image_BgYi6e",
+        "image_3dW6kB"
       ],
       "settings": {
         "autoplay": true,
