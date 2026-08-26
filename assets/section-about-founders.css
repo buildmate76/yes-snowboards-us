@@ -181,7 +181,8 @@
 }
 
 .about-founders .card-profile--founders .card-profile__link:hover {
-	background: #FCFCFC;
+	background: var(--color-blue-light) !important;
+	color: var(--color-black) !important;
 }
 
 @media screen and (max-width: 989px) {

@@ -93,7 +93,8 @@
 }
 
 .collection-card-wrapper--explore .card__explore-btn:hover {
-	background-color: #FCFCFC !important;
+	background-color: var(--color-blue-light) !important;
+	color: var(--color-black) !important;
 }
 
 @media screen and (max-width: 749px) {
