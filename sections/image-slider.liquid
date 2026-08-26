@@ -1,0 +1,370 @@
+{{ 'section-image-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+	.image-slider-{{ section.id }} {
+		padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+		padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+		background: {{ section.settings.bg_color }};
+		--image-slider-gap: {{ section.settings.gap }}px;
+		--image-slider-radius: {{ section.settings.border_radius }}px;
+		--image-slider-speed: {{ section.settings.autoplay_speed }}s;
+	}
+
+	@media screen and (min-width: 750px) {
+		.image-slider-{{ section.id }} {
+			padding-top: {{ section.settings.padding_top }}px;
+			padding-bottom: {{ section.settings.padding_bottom }}px;
+		}
+	}
+{%- endstyle -%}
+
+<section
+	id="ImageSlider-{{ section.id }}"
+	class="image-slider image-slider-{{ section.id }}"
+	data-autoplay="{{ section.settings.autoplay }}"
+	data-speed="{{ section.settings.autoplay_speed }}"
+	aria-label="Image slider"
+>
+	<div class="image-slider__inner">
+		<div class="image-slider__viewport" data-image-slider-viewport>
+			<div class="image-slider__content" data-image-slider-content>
+				<div class="image-slider__set" data-image-slider-set>
+					{%- for block in section.blocks -%}
+						{%- if block.settings.image != blank -%}
+							{%- liquid
+								assign slide_alt = block.settings.alt
+								if slide_alt == blank
+									assign slide_alt = block.settings.image.alt
+								endif
+							-%}
+							<div class="image-slider__slide" {{ block.shopify_attributes }}>
+								<img
+									class="image-slider__image"
+									src="{{ block.settings.image | image_url: width: 800 }}"
+									srcset="
+										{{ block.settings.image | image_url: width: 400 }} 400w,
+										{{ block.settings.image | image_url: width: 600 }} 600w,
+										{{ block.settings.image | image_url: width: 800 }} 800w,
+										{{ block.settings.image | image_url: width: 1200 }} 1200w
+									"
+									sizes="(min-width: 990px) 32vw, (min-width: 750px) 38vw, 72vw"
+									alt="{{ slide_alt | escape }}"
+									loading="lazy"
+									width="{{ block.settings.image.width }}"
+									height="{{ block.settings.image.height }}"
+									draggable="false"
+								>
+							</div>
+						{%- else -%}
+							<div class="image-slider__slide image-slider__slide--placeholder" {{ block.shopify_attributes }}>
+								{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+							</div>
+						{%- endif -%}
+					{%- endfor -%}
+				</div>
+			</div>
+		</div>
+
+		{%- if section.blocks.size > 1 and section.settings.show_arrows -%}
+			<div class="image-slider__nav image-slider__nav--mobile">
+				<button
+					class="image-slider__btn image-slider__btn--prev"
+					type="button"
+					aria-label="Previous images"
+					data-image-slider-prev
+				>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+				<button
+					class="image-slider__btn image-slider__btn--next"
+					type="button"
+					aria-label="Next images"
+					data-image-slider-next
+				>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			</div>
+		{%- endif -%}
+	</div>
+</section>
+
+<script>
+	(function () {
+		var root = document.getElementById('ImageSlider-{{ section.id }}');
+		if (!root) return;
+
+		var viewport = root.querySelector('[data-image-slider-viewport]');
+		var content = root.querySelector('[data-image-slider-content]');
+		var originalSet = root.querySelector('[data-image-slider-set]');
+		var prevBtn = root.querySelector('[data-image-slider-prev]');
+		var nextBtn = root.querySelector('[data-image-slider-next]');
+		if (!viewport || !content || !originalSet) return;
+
+		var autoplay = root.getAttribute('data-autoplay') === 'true';
+		var durationSec = Math.max(parseFloat(root.getAttribute('data-speed')) || 20, 8);
+		/* Map admin "seconds" to full-loop duration: slower feel for continuous scroll */
+		durationSec = durationSec * 5;
+
+		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		var desktopMq = window.matchMedia('(min-width: 750px)');
+		var rafId = null;
+		var resizeTimer = null;
+		var offset = 0;
+		var setWidth = 0;
+		var lastTs = 0;
+		var paused = false;
+
+		function clearClones() {
+			content.querySelectorAll('[data-image-slider-clone]').forEach(function (node) {
+				node.remove();
+			});
+		}
+
+		function fillTrack() {
+			clearClones();
+			offset = 0;
+			content.style.transform = 'translate3d(0,0,0)';
+			setWidth = originalSet.getBoundingClientRect().width;
+			if (!setWidth) return;
+
+			var viewportWidth = viewport.clientWidth;
+			var copiesNeeded = Math.max(2, Math.ceil((viewportWidth * 2) / setWidth) + 1);
+
+			for (var i = 1; i < copiesNeeded; i++) {
+				var clone = originalSet.cloneNode(true);
+				clone.removeAttribute('data-image-slider-set');
+				clone.setAttribute('data-image-slider-clone', '');
+				clone.setAttribute('aria-hidden', 'true');
+				content.appendChild(clone);
+			}
+		}
+
+		function tick(ts) {
+			if (!desktopMq.matches || reduceMotion.matches || !autoplay || paused || !setWidth) {
+				rafId = requestAnimationFrame(tick);
+				lastTs = ts;
+				return;
+			}
+
+			if (!lastTs) lastTs = ts;
+			var delta = Math.min((ts - lastTs) / 1000, 0.064);
+			lastTs = ts;
+
+			offset += (setWidth / durationSec) * delta;
+			if (offset >= setWidth) offset -= setWidth;
+
+			content.style.transform = 'translate3d(' + -offset.toFixed(2) + 'px,0,0)';
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function stepSize() {
+			var slide = originalSet.querySelector('.image-slider__slide');
+			if (!slide) return 300;
+			var gap = parseFloat(getComputedStyle(originalSet).gap) || 16;
+			return slide.getBoundingClientRect().width + gap;
+		}
+
+		function enableMobileScroll() {
+			root.classList.remove('image-slider--marquee');
+			root.classList.add('image-slider--scroll');
+			clearClones();
+			content.style.transform = '';
+			offset = 0;
+			cancelAnimationFrame(rafId);
+			rafId = null;
+		}
+
+		function enableDesktopMarquee() {
+			root.classList.remove('image-slider--scroll');
+			root.classList.add('image-slider--marquee');
+			fillTrack();
+			lastTs = 0;
+			cancelAnimationFrame(rafId);
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function applyMode() {
+			if (desktopMq.matches && autoplay && !reduceMotion.matches) {
+				enableDesktopMarquee();
+			} else {
+				enableMobileScroll();
+			}
+		}
+
+		function onResize() {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(applyMode, 150);
+		}
+
+		if (prevBtn) {
+			prevBtn.addEventListener('click', function () {
+				if (desktopMq.matches && root.classList.contains('image-slider--marquee')) {
+					offset = Math.max(0, offset - stepSize());
+					content.style.transform = 'translate3d(' + -offset.toFixed(2) + 'px,0,0)';
+					paused = true;
+					setTimeout(function () { paused = false; }, 2000);
+				} else {
+					viewport.scrollBy({ left: -stepSize(), behavior: 'smooth' });
+				}
+			});
+		}
+
+		if (nextBtn) {
+			nextBtn.addEventListener('click', function () {
+				if (desktopMq.matches && root.classList.contains('image-slider--marquee')) {
+					offset += stepSize();
+					if (setWidth && offset >= setWidth) offset -= setWidth;
+					content.style.transform = 'translate3d(' + -offset.toFixed(2) + 'px,0,0)';
+					paused = true;
+					setTimeout(function () { paused = false; }, 2000);
+				} else {
+					viewport.scrollBy({ left: stepSize(), behavior: 'smooth' });
+				}
+			});
+		}
+
+		root.addEventListener('mouseenter', function () {
+			if (desktopMq.matches) paused = true;
+		});
+		root.addEventListener('mouseleave', function () {
+			if (desktopMq.matches) {
+				paused = false;
+				lastTs = 0;
+			}
+		});
+
+		if (document.readyState === 'complete') {
+			applyMode();
+		} else {
+			window.addEventListener('load', applyMode, { once: true });
+		}
+
+		window.addEventListener('resize', onResize);
+
+		document.addEventListener('shopify:section:load', function (event) {
+			if (event.target.contains(root) || event.target === root) applyMode();
+		});
+	})();
+</script>
+
+{% schema %}
+{
+	"name": "Image slider",
+	"tag": "section",
+	"class": "section section-image-slider",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"settings": [
+		{
+			"type": "checkbox",
+			"id": "autoplay",
+			"label": "Infinite auto-scroll (desktop)",
+			"default": true
+		},
+		{
+			"type": "range",
+			"id": "autoplay_speed",
+			"min": 2,
+			"max": 10,
+			"step": 1,
+			"unit": "s",
+			"label": "Scroll speed",
+			"info": "Lower = faster continuous scroll on desktop",
+			"default": 4
+		},
+		{
+			"type": "checkbox",
+			"id": "show_arrows",
+			"label": "Show arrow controls",
+			"default": true,
+			"info": "Mainly for mobile swipe control; also works on desktop"
+		},
+		{
+			"type": "range",
+			"id": "gap",
+			"min": 8,
+			"max": 40,
+			"step": 2,
+			"unit": "px",
+			"label": "Gap between images",
+			"default": 16
+		},
+		{
+			"type": "range",
+			"id": "border_radius",
+			"min": 0,
+			"max": 24,
+			"step": 1,
+			"unit": "px",
+			"label": "Image corner radius",
+			"default": 8
+		},
+		{
+			"type": "color",
+			"id": "bg_color",
+			"label": "Background",
+			"default": "#FFFFFF"
+		},
+		{
+			"type": "header",
+			"content": "Section padding"
+		},
+		{
+			"type": "range",
+			"id": "padding_top",
+			"min": 0,
+			"max": 120,
+			"step": 4,
+			"unit": "px",
+			"label": "Top padding",
+			"default": 40
+		},
+		{
+			"type": "range",
+			"id": "padding_bottom",
+			"min": 0,
+			"max": 120,
+			"step": 4,
+			"unit": "px",
+			"label": "Bottom padding",
+			"default": 40
+		}
+	],
+	"blocks": [
+		{
+			"type": "image",
+			"name": "Image",
+			"limit": 20,
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Image"
+				},
+				{
+					"type": "text",
+					"id": "alt",
+					"label": "Alt text",
+					"info": "Used if the image has no alt text set in Files"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Image slider",
+			"blocks": [
+				{ "type": "image" },
+				{ "type": "image" },
+				{ "type": "image" },
+				{ "type": "image" }
+			]
+		}
+	]
+}
+{% endschema %}

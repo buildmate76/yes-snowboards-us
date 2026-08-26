@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "two_column_hero_XEVYbW": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_9qUWK9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/founder_focus.png",
+            "image_mobile": "shopify://shop_images/founder_focus.png",
+            "title": "MOMO MAHEUX",
+            "caption": "BACKCOUNTRY / FREERIDE",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_secondary_text": "",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_9qUWK9"
+      ],
+      "custom_css": [
+        ".two-column-hero .column::before {background: none;}",
+        ".two-column-hero img {-webkit-filter: brightness(0.7);}",
+        ".two-column-hero .title {width: fit-content; font-size: 33.75px; font-weight: 700;}",
+        ".two-column-hero .btn-text-container {width: fit-content; left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%);}",
+        "@media screen and (max-width: 767px) {.two-column-hero .title {font-size: 26px; }}"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "rich_text_LRBJCd": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_TEDTmV": {
+          "type": "caption",
+          "settings": {
+            "caption": "Whisteler, BC",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_aRRywt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Canadian backcountry rider based near Whistler, BC,  the kind of terrain that doesn't forgive a board that can't hold an edge. Momo rides for the line, not the leaderboard, though she'll take the leaderboard too when it's there.",
+            "heading_size": "h2"
+          }
+        },
+        "text_7f8iCW": {
+          "type": "text",
+          "settings": {
+            "text_style": "body",
+            "text": "<p>\"The mountain doesn't care about your Instagram. Ride for the line.\"</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_TEDTmV",
+        "heading_aRRywt",
+        "text_7f8iCW"
+      ],
+      "custom_css": [
+        ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
+        ".rich-text__heading,.rich-text__text p {font-size: 13.5px; font-weight: 700; line-height: 21px;}",
+        ".rich-text__text p {font-weight: 400;}",
+        "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__caption {justify-self: start; } .rich-text__heading, .rich-text__text p {text-align: left; } .rich-text__text p {margin: 0; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "biography_style": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "image_slider_dtzQL4": {
+      "type": "image-slider",
+      "blocks": {
+        "image_3JXh3A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/team-1.png",
+            "alt": "Founder photo 1"
+          }
+        },
+        "image_krVJJC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/team-2.png",
+            "alt": "Founder photo 3"
+          }
+        },
+        "image_BgYi6e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/team-3.png",
+            "alt": "Founder photo 3"
+          }
+        },
+        "image_3dW6kB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/team-4.png",
+            "alt": "Founder photo 3"
+          }
+        }
+      },
+      "block_order": [
+        "image_3JXh3A",
+        "image_krVJJC",
+        "image_BgYi6e",
+        "image_3dW6kB"
+      ],
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 4,
+        "show_arrows": true,
+        "gap": 16,
+        "border_radius": 8,
+        "bg_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "apps_bUeGVk": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_JYFC4x": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Momo Instagram",
+            "title_color": "#000000",
+            "title_size_v2": 24,
+            "alignment": "left",
+            "instafeed_margin_top": 70,
+            "instafeed_margin_bottom": 70,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": "<style>\n#insta-feed h2 {\n     font-weight: 700;\n     font-family: \"The Wave\", Wave, Arial, sans-serif;\n     text-transform: none;\n}\n\n@media screen and (max-width: 768px) {\n     #insta-feed h2 {\n          font-size: 20px;\n     }\n}\n</style>"
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_JYFC4x"
+      ],
+      "custom_css": [
+        ".page-width {padding-inline: 70px;}",
+        "@media screen and (max-width: 768px) {.page-width {padding-inline: 20px; }}"
+      ],
+      "name": "InstaFeed",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "two_column_hero_XEVYbW",
+    "rich_text_LRBJCd",
+    "image_slider_dtzQL4",
+    "apps_bUeGVk"
+  ]
+}

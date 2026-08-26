@@ -49,6 +49,11 @@
 	padding: var(--space-xxs);
 }
 
+.featured-collections .item .collection__view-all .button:hover {
+	background-color: var(--color-black) !important;
+	color: var(--color-white) !important;
+}
+
 .featured-collections .item .collection__view-all .button:before {
 	box-shadow: none;
 }

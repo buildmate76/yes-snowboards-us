@@ -13,7 +13,8 @@
 }
 
 .two-column-hero .column img {
-	max-height: calc(100vh - var(--size-110));
+	min-height: 400px;
+	max-height: 100vh;
 	object-fit: cover;
 	width: 100%;
 }

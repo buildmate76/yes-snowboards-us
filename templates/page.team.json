@@ -18,6 +18,7 @@
             "image": "shopify://shop_images/Team_2.webp",
             "image_mobile": "shopify://shop_images/Team_1_1.webp",
             "title": "Meet our team",
+            "caption": "",
             "btn_primary_text": "",
             "btn_primary_url": "",
             "btn_secondary_text": "",
@@ -28,6 +29,7 @@
       "block_order": [
         "column_LV3EYz"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": ""
       }
@@ -372,6 +374,7 @@
         "team_member_gejCbh",
         "team_member_FgjG4R"
       ],
+      "disabled": true,
       "settings": {}
     },
     "two_column_hero_Ji4MWr": {
@@ -383,6 +386,7 @@
             "image": "shopify://shop_images/home-about-us-desktop-1.png",
             "image_mobile": "shopify://shop_images/home-about-us-mobile-1-1-0.png",
             "title": "ABOUT US",
+            "caption": "",
             "btn_primary_text": "",
             "btn_primary_url": "",
             "btn_secondary_text": "READ MORE",
@@ -393,14 +397,206 @@
       "block_order": [
         "column_eQxdJg"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": ""
+      }
+    },
+    "two_column_hero_wLAFr7": {
+      "type": "two-column-hero",
+      "blocks": {
+        "column_bAPVAh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/team_2688a6c1-5b11-4ee5-881f-511807b0064f.png",
+            "image_mobile": "shopify://shop_images/team_2688a6c1-5b11-4ee5-881f-511807b0064f.png",
+            "title": "MEET THE TEAM",
+            "caption": "YES. RIDERS",
+            "btn_primary_text": "",
+            "btn_primary_url": "",
+            "btn_secondary_text": "",
+            "btn_secondary_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_bAPVAh"
+      ],
+      "custom_css": [
+        ".two-column-hero .column::before {background: none;}",
+        ".two-column-hero img {-webkit-filter: brightness(0.7);}",
+        ".two-column-hero .title {width: fit-content; font-size: 33.75px; font-weight: 700;}",
+        ".two-column-hero .btn-text-container {width: fit-content; left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%);}",
+        "@media screen and (max-width: 767px) {.two-column-hero .title {font-size: 26px; }}"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "rich_text_3waRDc": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_Ufy3DJ": {
+          "type": "caption",
+          "settings": {
+            "caption": "OUR CREW",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_wpqPhN": {
+          "type": "text",
+          "settings": {
+            "text_style": "body",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi. Vestibulum quis felis sed sem placerat imperdiet. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_Ufy3DJ",
+        "text_wpqPhN"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
+        ".rich-text__heading,.rich-text__text p {font-size: 13.5px; font-weight: 700; line-height: 21px;}",
+        ".rich-text__text p {font-weight: 400;}",
+        "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__caption {justify-self: start; } .rich-text__heading, .rich-text__text p {text-align: left; } .rich-text__text p {margin: 0; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "biography_style": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "about_founders_ePAwJt": {
+      "type": "about-founders",
+      "blocks": {
+        "founder_3q9dMF": {
+          "type": "founder",
+          "settings": {
+            "role": "TEAM RIDER",
+            "name": "Emeraude Maheux",
+            "button_label": "MEET MOMO",
+            "url_instagram": "https://www.instagram.com/cholulaindahole/",
+            "image_default": "shopify://shop_images/Emeraude_Maheux.png"
+          }
+        },
+        "founder_tCCPtg": {
+          "type": "founder",
+          "settings": {
+            "role": "TEAM RIDER",
+            "name": "Mia Langridge",
+            "button_label": "MEET MIA",
+            "url_instagram": "https://www.instagram.com/rdmyes/",
+            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+          }
+        },
+        "founder_xYxNEL": {
+          "type": "founder",
+          "settings": {
+            "role": "TEAM RIDER",
+            "name": "Dustin Crave",
+            "button_label": "MEET DUSTIN",
+            "url_instagram": "https://www.instagram.com/soulburger/",
+            "image_default": "shopify://shop_images/Dustin_Crave.png"
+          }
+        }
+      },
+      "block_order": [
+        "founder_3q9dMF",
+        "founder_tCCPtg",
+        "founder_xYxNEL"
+      ],
+      "settings": {
+        "tag": "OUR CREW",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl felis, condimentum nec mi quis, aliquet molestie nisi. Vestibulum quis felis sed sem placerat imperdiet. </p>",
+        "columns_desktop": 3,
+        "bg_color": "#ffffff",
+        "text_color": "#000000",
+        "tag_bg_color": "#a6dde8",
+        "tag_text_color": "#000000",
+        "tag_border_color": "#000000",
+        "card_bg_color": "#f7f7f7",
+        "card_border_color": "#a2a2a2",
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#000000",
+        "button_border_color": "#000000",
+        "padding_top": 64,
+        "padding_bottom": 72
+      }
+    },
+    "image_with_text_fwaWfb": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_PdYeyX": {
+          "type": "caption",
+          "settings": {
+            "caption": "THE TEAM",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_YGxDwz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Not employees. Riders.",
+            "heading_size": "h2"
+          }
+        },
+        "text_HF3XdU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every board and binding in the lineup gets ridden by these people before it gets ridden by anyone else.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_PdYeyX",
+        "heading_YGxDwz",
+        "text_HF3XdU"
+      ],
+      "custom_css": [
+        "h2,p,a {font-family: \"The Wave\", Wave, Arial, sans-serif; font-weight: 400; line-height: normal;}",
+        ".image-with-text__content {padding: 0rem !important;}",
+        ".image-with-text__text--caption {padding: 1px 5px; font-size: 12px; font-weight: 700; line-height: normal; border-radius: 4.5px; border: 0.75px solid black;}",
+        "h2 {margin-top: 25px !important; font-size: 33.75px;}",
+        ".image-with-text__text p {font-size: 13.5px; line-height: 21px;}",
+        "a {background-color: black; color: white; border-radius: 16.875px; font-size: 11.25px; font-weight: 700; min-height: auto;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/team1.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "background": "#f7f7f7",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "padding_right": 0,
+        "padding_left": 0
       }
     }
   },
   "order": [
     "two_column_hero_FDPw6L",
     "main",
-    "two_column_hero_Ji4MWr"
+    "two_column_hero_Ji4MWr",
+    "two_column_hero_wLAFr7",
+    "rich_text_3waRDc",
+    "about_founders_ePAwJt",
+    "image_with_text_fwaWfb"
   ]
 }
