@@ -15,7 +15,7 @@
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-	<div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+	<div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %}{% if section.settings.biography_style %} rich-text--biography{% endif %} section-{{ section.id }}-padding">
 		<div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
 			<div class="rich-text__blocks {{ section.settings.content_alignment }}">
 				{%- for block in section.blocks -%}
@@ -43,16 +43,29 @@
 								{{ block.settings.caption | escape }}
 							</p>
 						{%- when 'text' -%}
-							<div
-								class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-								{{ block.shopify_attributes }}
-								{% if settings.animations_reveal_on_scroll %}
-									data-cascade
-									style="--animation-order: {{ forloop.index }};"
-								{% endif %}
-							>
-								{{ block.settings.text }}
-							</div>
+							{%- if block.settings.text_style == 'quote' -%}
+								<blockquote
+									class="rich-text__quote{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+									{{ block.shopify_attributes }}
+									{% if settings.animations_reveal_on_scroll %}
+										data-cascade
+										style="--animation-order: {{ forloop.index }};"
+									{% endif %}
+								>
+									{{ block.settings.text }}
+								</blockquote>
+							{%- else -%}
+								<div
+									class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+									{{ block.shopify_attributes }}
+									{% if settings.animations_reveal_on_scroll %}
+										data-cascade
+										style="--animation-order: {{ forloop.index }};"
+									{% endif %}
+								>
+									{{ block.settings.text }}
+								</div>
+							{%- endif -%}
 						{%- when 'button' -%}
 							<div
 								class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -155,6 +168,13 @@
 			"id": "full_width",
 			"default": true,
 			"label": "t:sections.rich-text.settings.full_width.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "biography_style",
+			"default": false,
+			"label": "Biography style",
+			"info": "Blue tag pill, uppercase headings, quote styling (Founder Focus)"
 		},
 		{
 			"type": "header",
@@ -271,8 +291,24 @@
 		{
 			"type": "text",
 			"name": "t:sections.rich-text.blocks.text.name",
-			"limit": 5,
+			"limit": 10,
 			"settings": [
+				{
+					"type": "select",
+					"id": "text_style",
+					"label": "Text style",
+					"options": [
+						{
+							"value": "body",
+							"label": "Body"
+						},
+						{
+							"value": "quote",
+							"label": "Quote"
+						}
+					],
+					"default": "body"
+				},
 				{
 					"type": "richtext",
 					"id": "text",

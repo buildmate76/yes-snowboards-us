@@ -65,6 +65,13 @@
             "text": "<p>JP Solberg is a Norwegian professional snowboarder who has made a significant impact on the world of snowboarding, particularly during the 2000s with his powerful riding in the backcountry and his film parts in some of the most influential snowboard movies of that era. Like his contemporaries Romain de Marchi and David Carrier Porcheron (DCP), JP is one of the co-founders of YES. Snowboards, a rider-owned snowboard brand that has become a major player in the industry. His smooth style, versatility, and passion for snowboarding have earned him a legendary status in the snowboarding world.</p>"
           }
         },
+        "text_quote_jp": {
+          "type": "text",
+          "settings": {
+            "text_style": "quote",
+            "text": "<p>We didn't start this to build a business. We started it so nobody could tell us how to ride again.</p>"
+          }
+        },
         "heading_qAriNw": {
           "type": "heading",
           "settings": {
@@ -108,6 +115,7 @@
       "block_order": [
         "caption_bnhwPj",
         "text_cNBTnB",
+        "text_quote_jp",
         "heading_qAriNw",
         "text_MGGL9F",
         "heading_RL8FD4",
@@ -115,17 +123,12 @@
         "heading_pkxzTX",
         "text_MhQrQC"
       ],
-      "custom_css": [
-        ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
-        ".rich-text__heading {font-size: 33.75px; font-weight: 400;}",
-        ".rich-text__text p {font-size: 13.5px; font-weight: 400; line-height: 21px;}",
-        "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__caption {justify-self: start; } .rich-text__heading {font-size: 22px; } .rich-text__text p {margin: 0; }}"
-      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
+        "biography_style": true,
         "padding_top": 60,
         "padding_bottom": 60
       }

@@ -84,3 +84,98 @@
 .rich-text__blocks.right .rich-text__buttons {
 	justify-content: flex-end;
 }
+
+/* Quote / blockquote inside rich-text body */
+.rich-text__quote,
+.rich-text__text blockquote {
+	display: block;
+	width: 100%;
+	margin: 0;
+	margin-top: 4rem;
+	padding: 0 0 0 20px;
+	border-left: 2px solid var(--color-gray-2, #c0c0c0);
+	font-style: normal;
+	color: var(--color-gray-dark, #a2a2a2);
+}
+
+.rich-text__quote > *,
+.rich-text__text blockquote > * {
+	margin: 0;
+}
+
+.rich-text__quote p,
+.rich-text__text blockquote p {
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 28px;
+	color: var(--color-gray-dark, #a2a2a2);
+}
+
+/* Biography layout (Founder Focus) — opt-in via section setting */
+.rich-text--biography .rich-text__caption {
+	width: fit-content;
+	border-radius: 15px;
+	background: var(--color-blue-light, #a6dde8);
+	padding: 5px 16px;
+	justify-self: center;
+}
+
+.rich-text--biography .rich-text__heading {
+	font-size: 33.75px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.rich-text--biography .rich-text__text p {
+	font-size: 13.5px;
+	font-weight: 400;
+	line-height: 21px;
+}
+
+@media screen and (max-width: 767px) {
+	.rich-text__quote,
+	.rich-text__text blockquote {
+		padding-left: 16px;
+		border-left: 4px solid var(--color-black);
+		margin-top: 20px;
+	}
+
+	.rich-text__quote p,
+	.rich-text__text blockquote p {
+		font-size: 16px;
+		line-height: 27px;
+		color: var(--color-black);
+		font-weight: 700;
+	}
+
+	.rich-text--biography {
+		padding-block: 40px 20px;
+	}
+
+	.rich-text--biography .rich-text__wrapper {
+		width: 100%;
+	}
+
+	.rich-text--biography .page-width {
+		padding-inline: 24px;
+	}
+
+	.rich-text--biography .rich-text__caption {
+		justify-self: start;
+		margin-bottom: 12px;;
+	}
+
+	.rich-text--biography .rich-text__heading {
+		font-size: 22px;
+		margin-top: 32px;
+	}
+
+	.rich-text--biography .rich-text__text {
+		margin-top: 8px;
+	}
+
+	.rich-text--biography .rich-text__text p {
+		margin: 0;
+	}
+}
