@@ -288,7 +288,7 @@
             "name": "Emeraude Maheux",
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
-            "button_label": "Meet me",
+            "button_label": "MEET MOMO",
             "image_default": "shopify://shop_images/Emeraude_Maheux.png"
           }
         },
@@ -298,58 +298,25 @@
             "name": "Mia Langridge",
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
-            "button_label": "Meet me",
+            "button_label": "MEET MIA",
             "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
           }
         },
         "team_member_3": {
           "type": "team_member",
           "settings": {
-            "name": "Lorem Ipsum",
+            "name": "Dustin Crave",
             "role": "Team Rider",
             "url_instagram": "https://instagram.com/",
-            "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Emeraude_Maheux.png"
-          }
-        },
-        "team_member_4": {
-          "type": "team_member",
-          "settings": {
-            "name": "Lorem Ipsum",
-            "role": "Team Rider",
-            "url_instagram": "https://instagram.com/",
-            "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
-          }
-        },
-        "team_member_BzrgFq": {
-          "type": "team_member",
-          "settings": {
-            "name": "Lorem Ipsum",
-            "role": "Team Rider",
-            "url_instagram": "https://instagram.com/",
-            "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Emeraude_Maheux.png"
-          }
-        },
-        "team_member_WMeXPx": {
-          "type": "team_member",
-          "settings": {
-            "name": "Lorem Ipsum",
-            "role": "Team Rider",
-            "url_instagram": "https://instagram.com/",
-            "button_label": "Meet me",
-            "image_default": "shopify://shop_images/Mia_Langridge_f4d583a9-5586-444a-8f81-1e8f302ad85b.png"
+            "button_label": "MEET DUSTIN",
+            "image_default": "shopify://shop_images/Dustin_Crave.png"
           }
         }
       },
       "block_order": [
         "team_member_1",
         "team_member_2",
-        "team_member_3",
-        "team_member_4",
-        "team_member_BzrgFq",
-        "team_member_WMeXPx"
+        "team_member_3"
       ],
       "settings": {
         "heading": "Meet the Team",
