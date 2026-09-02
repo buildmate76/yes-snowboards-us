@@ -25,7 +25,18 @@
 				{% endif %}
 
 				{% if card_name != blank or block.settings.image_default != blank %}
-					<div class="card-profile__item" {{ block.shopify_attributes }}>
+					{% if card_link != blank %}
+						<a
+							class="card-profile__item card-profile__item--linked"
+							href="{{ card_link }}"
+							target="_blank"
+							rel="noopener"
+							aria-label="{{ card_label | escape }}"
+							{{ block.shopify_attributes }}
+						>
+					{% else %}
+						<div class="card-profile__item" {{ block.shopify_attributes }}>
+					{% endif %}
 						<div class="card-profile__content">
 							<div class="card-profile__role">{{ card_role }}</div>
 							<div class="card-profile__name">{{ card_name }}</div>
@@ -65,12 +76,14 @@
 							{% endif %}
 						</div>
 
-						{% if card_link != blank %}
-							<a class="card-profile__link" href="{{ card_link }}" target="_blank" rel="noopener">{{ card_label }}</a>
-						{% elsif card_label != blank %}
+						{% if card_label != blank %}
 							<span class="card-profile__link">{{ card_label }}</span>
 						{% endif %}
-					</div>
+					{% if card_link != blank %}
+						</a>
+					{% else %}
+						</div>
+					{% endif %}
 				{% endif %}
 			{%- endfor -%}
 		</div>
@@ -87,7 +100,15 @@
 				{% assign card_role = block.settings.role | default: 'TEAM RIDER' %}
 
 				{% if card_name != blank or img_default != blank %}
-					<div class="card-profile__item">
+					{% if card_link != blank %}
+						<a
+							class="card-profile__item card-profile__item--linked"
+							href="{{ card_link }}"
+							aria-label="{{ card_label | escape }}"
+						>
+					{% else %}
+						<div class="card-profile__item">
+					{% endif %}
 						<div class="card-profile__content">
 							<div class="card-profile__role">{{ card_role }}</div>
 							<div class="card-profile__name">{{ card_name }}</div>
@@ -127,12 +148,14 @@
 							{% endif %}
 						</div>
 
-						{% if card_link != blank %}
-							<a class="card-profile__link" href="{{ card_link }}">{{ card_label }}</a>
-						{% elsif card_label != blank %}
+						{% if card_label != blank %}
 							<span class="card-profile__link">{{ card_label }}</span>
 						{% endif %}
-					</div>
+					{% if card_link != blank %}
+						</a>
+					{% else %}
+						</div>
+					{% endif %}
 				{% endif %}
 			{%- endfor -%}
 		</div>

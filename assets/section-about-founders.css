@@ -71,6 +71,13 @@
 	background: var(--color-white);
 }
 
+.about-founders .card-profile--founders .card-profile__item--linked {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 .about-founders .card-profile--founders .card-profile__item:hover {
 	background: var(--color-gray-light);
 }
@@ -180,7 +187,8 @@
 	line-height: normal;
 }
 
-.about-founders .card-profile--founders .card-profile__link:hover {
+.about-founders .card-profile--founders .card-profile__item:hover .card-profile__link,
+.about-founders .card-profile--founders .card-profile__item--linked:focus-visible .card-profile__link {
 	background: var(--color-blue-light) !important;
 	color: var(--color-black) !important;
 }
