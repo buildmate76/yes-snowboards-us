@@ -177,6 +177,13 @@
         background: var(--color-white);
     }
 
+    .card-profile--home .card-profile__item--linked {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
     .card-profile--home .card-profile__media {
         position: relative;
         top: 20px;
@@ -274,7 +281,8 @@
         line-height: normal;
     }
 
-    .card-profile--home .card-profile__link:hover {
+    .card-profile--home .card-profile__item:hover .card-profile__link,
+    .card-profile--home .card-profile__item--linked:focus-visible .card-profile__link {
         background: var(--color-blue-light) !important;
         color: var(--color-black) !important;
     }

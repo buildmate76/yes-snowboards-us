@@ -151,3 +151,13 @@
 		transform: none !important;
 	}
 }
+
+@media screen and (max-width: 767px) {
+	.image-slider__slide {
+		max-height: 250px;
+	}
+	
+	.image-slider__image {
+		max-height: 250px;
+	}
+}
