@@ -1,0 +1,227 @@
+{{ 'section-rider-setup.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+	.rider-setup-{{ section.id }} {
+		padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+		padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+		background: {{ section.settings.bg_color }};
+	}
+	@media screen and (min-width: 750px) {
+		.rider-setup-{{ section.id }} {
+			padding-top: {{ section.settings.padding_top }}px;
+			padding-bottom: {{ section.settings.padding_bottom }}px;
+		}
+	}
+{%- endstyle -%}
+
+<section
+	id="RiderSetup-{{ section.id }}"
+	class="rider-setup rider-setup-{{ section.id }}"
+	aria-label="{{ section.settings.title | escape }}"
+>
+	<div class="page-width rider-setup__inner">
+		{%- if section.settings.title != blank -%}
+			<h2 class="rider-setup__heading">{{ section.settings.title | escape }}</h2>
+		{%- endif -%}
+
+		{%- if section.blocks.size > 0 -%}
+			<div class="rider-setup__viewport">
+				<div class="rider-setup__track" data-rider-setup-track>
+					{%- for block in section.blocks -%}
+						{%- assign card_product = block.settings.product -%}
+						{%- if card_product != blank -%}
+							{%- assign card_variant = card_product.selected_or_first_available_variant -%}
+							<article
+								class="rider-setup__card"
+								{{ block.shopify_attributes }}
+							>
+								<div class="rider-setup__card-inner">
+									<a
+										class="rider-setup__media"
+										href="{{ card_product.url }}"
+										aria-label="{{ card_product.title | escape }}"
+									>
+									{%- if card_product.featured_media -%}
+										<img
+											class="rider-setup__image"
+											src="{{ card_product.featured_media | image_url: width: 600 }}"
+											srcset="
+												{{ card_product.featured_media | image_url: width: 300 }} 300w,
+												{{ card_product.featured_media | image_url: width: 450 }} 450w,
+												{{ card_product.featured_media | image_url: width: 600 }} 600w
+											"
+											sizes="(min-width: 990px) 280px, (min-width: 750px) 33vw, 45vw"
+											alt="{{ card_product.featured_media.alt | default: card_product.title | escape }}"
+											loading="lazy"
+											width="{{ card_product.featured_media.width }}"
+											height="{{ card_product.featured_media.height }}"
+										>
+									{%- else -%}
+										{{ 'product-apparel-2' | placeholder_svg_tag: 'rider-setup__placeholder' }}
+									{%- endif -%}
+									<span class="rider-setup__add" aria-hidden="true">+</span>
+									</a>
+
+									<div class="rider-setup__info">
+										<h3 class="rider-setup__title">
+											<a href="{{ card_product.url }}">{{ card_product.title | escape }}</a>
+										</h3>
+										<div class="rider-setup__price">
+											<span class="rider-setup__price-current">{{ card_variant.price | money }}</span>
+											{%- if card_variant.compare_at_price > card_variant.price -%}
+												<span class="rider-setup__price-compare">{{ card_variant.compare_at_price | money }}</span>
+											{%- endif -%}
+										</div>
+									</div>
+								</div>
+							</article>
+						{%- endif -%}
+					{%- endfor -%}
+				</div>
+			</div>
+
+			{%- if section.blocks.size > 1 -%}
+				<div class="rider-setup__nav">
+					<button
+						class="rider-setup__btn rider-setup__btn--prev"
+						type="button"
+						aria-label="Previous products"
+						data-rider-setup-prev
+					>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+					<button
+						class="rider-setup__btn rider-setup__btn--next"
+						type="button"
+						aria-label="Next products"
+						data-rider-setup-next
+					>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+				</div>
+			{%- endif -%}
+		{%- endif -%}
+	</div>
+</section>
+
+<script>
+	(function () {
+		var root = document.getElementById('RiderSetup-{{ section.id }}');
+		if (!root) return;
+
+		var track = root.querySelector('[data-rider-setup-track]');
+		var prevBtn = root.querySelector('[data-rider-setup-prev]');
+		var nextBtn = root.querySelector('[data-rider-setup-next]');
+		if (!track) return;
+
+		function step() {
+			var card = track.querySelector('.rider-setup__card');
+			if (!card) return 280;
+			var gap = parseFloat(getComputedStyle(track).gap) || 16;
+			return card.getBoundingClientRect().width + gap;
+		}
+
+		function updateArrows() {
+			if (!prevBtn || !nextBtn) return;
+			var atStart = track.scrollLeft <= 8;
+			var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+			prevBtn.disabled = atStart;
+			prevBtn.style.opacity = atStart ? '0.45' : '1';
+			nextBtn.disabled = atEnd;
+			nextBtn.style.opacity = atEnd ? '0.45' : '1';
+		}
+
+		if (prevBtn) {
+			prevBtn.addEventListener('click', function () {
+				track.scrollBy({ left: -step(), behavior: 'smooth' });
+			});
+		}
+
+		if (nextBtn) {
+			nextBtn.addEventListener('click', function () {
+				track.scrollBy({ left: step(), behavior: 'smooth' });
+			});
+		}
+
+		track.addEventListener('scroll', updateArrows, { passive: true });
+		updateArrows();
+	})();
+</script>
+
+{% schema %}
+{
+	"name": "Rider setup",
+	"tag": "section",
+	"class": "section section-rider-setup",
+	"disabled_on": {
+		"groups": ["header", "footer"]
+	},
+	"settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Heading",
+			"default": "Momo Setup"
+		},
+		{
+			"type": "color",
+			"id": "bg_color",
+			"label": "Background",
+			"default": "#FFFFFF"
+		},
+		{
+			"type": "header",
+			"content": "Section padding"
+		},
+		{
+			"type": "range",
+			"id": "padding_top",
+			"min": 0,
+			"max": 120,
+			"step": 4,
+			"unit": "px",
+			"label": "Top padding",
+			"default": 48
+		},
+		{
+			"type": "range",
+			"id": "padding_bottom",
+			"min": 0,
+			"max": 120,
+			"step": 4,
+			"unit": "px",
+			"label": "Bottom padding",
+			"default": 48
+		}
+	],
+	"blocks": [
+		{
+			"type": "product",
+			"name": "Product",
+			"limit": 12,
+			"settings": [
+				{
+					"type": "product",
+					"id": "product",
+					"label": "Product"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Rider setup",
+			"blocks": [
+				{ "type": "product" },
+				{ "type": "product" },
+				{ "type": "product" },
+				{ "type": "product" }
+			]
+		}
+	]
+}
+{% endschema %}
