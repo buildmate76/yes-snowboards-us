@@ -320,7 +320,7 @@
             "link_color": "#000000",
             "background_color": "",
             "feed_id": "",
-            "html_area": "<style>\n#insta-feed h2 {\n     font-weight: 700;\n     font-family: \"The Wave\", Wave, Arial, sans-serif;\n     text-transform: none;\n}\n\n@media screen and (max-width: 768px) {\n     #insta-feed h2 {\n          font-size: 20px;\n     }\n}\n</style>"
+            "html_area": "<style>\n#insta-feed h2 {\n     font-weight: 400;\n     font-family: \"The Wave\", Wave, Arial, sans-serif;\n     text-transform: uppercase;\n}\n\n@media screen and (max-width: 768px) {\n     #insta-feed h2 {\n          font-size: 20px;\n     }\n}\n</style>"
           }
         }
       },
