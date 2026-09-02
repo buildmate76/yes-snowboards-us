@@ -137,11 +137,38 @@
         "autoplay": true,
         "autoplay_speed": 4,
         "show_arrows": true,
-        "gap": 16,
+        "gap": 10,
         "border_radius": 8,
         "bg_color": "#ffffff",
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "rider_setup": {
+      "type": "rider-setup",
+      "blocks": {
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product": "airmaster-fridge"
+          }
+        },
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product": "ankle-buckles"
+          }
+        }
+      },
+      "block_order": [
+        "product_2",
+        "product_1"
+      ],
+      "settings": {
+        "title": "Momo Setup",
+        "bg_color": "#ffffff",
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "apps_bUeGVk": {
@@ -154,7 +181,7 @@
             "title_color": "#000000",
             "title_size_v2": 24,
             "alignment": "left",
-            "instafeed_margin_top": 70,
+            "instafeed_margin_top": 0,
             "instafeed_margin_bottom": 70,
             "instafeed_margin_sides": 0,
             "show_instagram_link": false,
@@ -184,6 +211,7 @@
     "two_column_hero_XEVYbW",
     "rich_text_LRBJCd",
     "image_slider_dtzQL4",
+    "rider_setup",
     "apps_bUeGVk"
   ]
 }
