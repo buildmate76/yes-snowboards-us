@@ -185,7 +185,7 @@
 }
 
 .featured-collections--home .card--standard .card__inner {
-	background: var(--color-white);
+	background-color: var(--color-gray-4) !important;
 }
 
 .featured-collections--home .card__media {
@@ -195,6 +195,10 @@
 
 .featured-collections--home .card__content {
 	padding: 16px !important;
+}
+
+.featured-collections--home .card__information {
+	padding: 0 !important;
 }
 
 .featured-collections--home .card__heading {
