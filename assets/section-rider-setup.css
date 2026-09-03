@@ -13,10 +13,10 @@
 	margin: 0 0 28px;
 	font-family: "The Wave", Wave, Arial, sans-serif;
 	font-size: 24px;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: normal;
 	color: var(--color-black, #000);
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
 .rider-setup__viewport {
@@ -150,13 +150,6 @@
 	text-decoration: line-through;
 }
 
-.rider-setup__nav {
-	display: flex;
-	align-items: center;
-	gap: 4px;
-	margin-top: 20px;
-}
-
 .rider-setup__btn {
 	display: inline-flex;
 	align-items: center;
@@ -212,10 +205,6 @@
 	.rider-setup__info {
 		gap: 6px;
 		padding-top: 12px;
-	}
-
-	.rider-setup__nav {
-		display: none;
 	}
 
 	.rider-setup__add {

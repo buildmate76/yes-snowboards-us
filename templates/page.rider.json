@@ -81,8 +81,8 @@
       ],
       "custom_css": [
         ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
-        ".rich-text__heading,.rich-text__text p {font-size: 13.5px; font-weight: 700; line-height: 21px;}",
-        ".rich-text__text p {font-weight: 400;}",
+        ".rich-text__heading,.rich-text__text p {font-size: 13.5px; line-height: 21px; text-transform: none;}",
+        ".rich-text__text p {color: #A2A2A2;}",
         "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__caption {justify-self: start; } .rich-text__heading, .rich-text__text p {text-align: left; } .rich-text__text p {margin: 0; }}"
       ],
       "settings": {
@@ -197,7 +197,7 @@
         "instafeed_app_block_JYFC4x"
       ],
       "custom_css": [
-        ".page-width {padding-inline: 70px;}",
+        ".page-width {padding-inline: 60px;}",
         "@media screen and (max-width: 768px) {.page-width {padding-inline: 20px; }}"
       ],
       "name": "InstaFeed",
