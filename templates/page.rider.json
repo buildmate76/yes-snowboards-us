@@ -59,6 +59,14 @@
             "text_size": "medium"
           }
         },
+        "caption_ngy4ip": {
+          "type": "caption",
+          "settings": {
+            "caption": "Canada",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "heading_aRRywt": {
           "type": "heading",
           "settings": {
@@ -76,14 +84,14 @@
       },
       "block_order": [
         "caption_TEDTmV",
+        "caption_ngy4ip",
         "heading_aRRywt",
         "text_7f8iCW"
       ],
       "custom_css": [
-        ".rich-text__caption {width: fit-content; border-radius: 15px; background: #a6dde8; padding: 5px 16px; justify-self: center;}",
         ".rich-text__heading,.rich-text__text p {font-size: 13.5px; line-height: 21px; text-transform: none;}",
-        ".rich-text__text p {color: #A2A2A2;}",
-        "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__caption {justify-self: start; } .rich-text__heading, .rich-text__text p {text-align: left; } .rich-text__text p {margin: 0; }}"
+        ".rich-text__text p {color: #a2a2a2;}",
+        "@media screen and (max-width: 767px) {.rich-text {padding-block: 40px 20px; } .rich-text__wrapper {width: 100%; } .page-width {padding-inline: 24px; } .rich-text__heading, .rich-text__text p {text-align: left; } .rich-text__text p {margin: 0; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -91,6 +99,7 @@
         "color_scheme": "",
         "full_width": true,
         "biography_style": false,
+        "outlined_captions": true,
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -189,7 +198,7 @@
             "link_color": "#000000",
             "background_color": "",
             "feed_id": "",
-            "html_area": "<style>\n#insta-feed h2 {\n     font-weight: 400;\n     font-family: \"The Wave\", Wave, Arial, sans-serif;\n     text-transform: uppercase;\n}\n\n@media screen and (max-width: 768px) {\n     #insta-feed h2 {\n          font-size: 20px;\n     }\n}\n</style>"
+            "html_area": "<style>\n#insta-feed h2 {\n     font-weight: 400;\n     font-family: \"The Wave\", Wave, Arial, sans-serif;\n     text-transform: uppercase;\n}\n\n#insta-feed .instafeed-new-layout-item img {\n     filter: brightness(0.7);\n}\n\n@media screen and (max-width: 768px) {\n     #insta-feed h2 {\n          font-size: 20px;\n     }\n}\n</style>"
           }
         }
       },

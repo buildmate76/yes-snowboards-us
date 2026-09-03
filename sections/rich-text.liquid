@@ -15,7 +15,7 @@
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-	<div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %}{% if section.settings.biography_style %} rich-text--biography{% endif %} section-{{ section.id }}-padding">
+	<div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %}{% if section.settings.biography_style %} rich-text--biography{% endif %}{% if section.settings.outlined_captions %} rich-text--outlined-captions{% endif %} section-{{ section.id }}-padding">
 		<div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
 			<div class="rich-text__blocks {{ section.settings.content_alignment }}">
 				{%- for block in section.blocks -%}
@@ -175,6 +175,13 @@
 			"default": false,
 			"label": "Biography style",
 			"info": "Blue tag pill, uppercase headings, quote styling (Founder Focus)"
+		},
+		{
+			"type": "checkbox",
+			"id": "outlined_captions",
+			"default": false,
+			"label": "Outlined location captions",
+			"info": "White pill tags with gray border, shown side-by-side (Rider page)"
 		},
 		{
 			"type": "header",

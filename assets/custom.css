@@ -100,6 +100,22 @@
     display: none !important;
 }
 
+#insta-feed .instafeed-new-layout-item-container .instafeed-hover-layer .instafeed-hover-icon {
+    width: 20px !important;
+    height: 20px !important;
+    top: 10px;
+    right: 0;
+    left: auto;
+}
+
+#insta-feed .instafeed-new-layout-item-container .instafeed-hover-layer .instafeed-hover-icon img {
+    content: url('https://upload.wikimedia.org/wikipedia/commons/b/bd/Instagram_white.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original') !important;
+}
+
+#insta-feed .instafeed-new-layout-item-container .instafeed-hover-layer {
+    opacity: 1;
+}
+
 @media screen and (min-width: 1441px) {
     .instafeed-new-layout-item {
         width: 319px !important;
