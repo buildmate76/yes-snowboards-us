@@ -112,6 +112,57 @@
 	color: var(--color-gray-dark, #a2a2a2);
 }
 
+/* Outlined location captions (Rider) — opt-in via section setting */
+.rich-text--outlined-captions .rich-text__blocks {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	column-gap: 10px;
+	row-gap: 0;
+}
+
+.rich-text--outlined-captions .rich-text__blocks.left {
+	justify-content: flex-start;
+}
+
+.rich-text--outlined-captions .rich-text__blocks.right {
+	justify-content: flex-end;
+}
+
+.rich-text--outlined-captions .rich-text__caption {
+	width: fit-content;
+	margin-top: 0 !important;
+	margin-bottom: 0;
+	padding: 5px 16px;
+	border: 1px solid var(--color-gray-medium, #e5e5e5);
+	border-radius: 15px;
+	background: var(--color-white, #fff);
+	color: var(--color-gray-dark, #a2a2a2);
+	font-family: "The Wave", Wave, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.rich-text--outlined-captions .rich-text__caption + .rich-text__caption {
+	margin-top: 0 !important;
+}
+
+.rich-text--outlined-captions .rich-text__heading,
+.rich-text--outlined-captions .rich-text__text,
+.rich-text--outlined-captions .rich-text__quote,
+.rich-text--outlined-captions .rich-text__buttons {
+	flex: 0 0 100%;
+}
+
+.rich-text--outlined-captions .rich-text__caption + .rich-text__heading,
+.rich-text--outlined-captions .rich-text__caption + .rich-text__text,
+.rich-text--outlined-captions .rich-text__caption + .rich-text__quote {
+	margin-top: 24px;
+}
+
 /* Biography layout (Founder Focus) — opt-in via section setting */
 .rich-text--biography .rich-text__caption {
 	width: fit-content;
@@ -178,5 +229,14 @@
 
 	.rich-text--biography .rich-text__text p {
 		margin: 0;
+	}
+
+	.rich-text--outlined-captions .rich-text__blocks {
+		justify-content: flex-start;
+	}
+
+	.rich-text--outlined-captions .rich-text__caption + .rich-text__heading,
+	.rich-text--outlined-captions .rich-text__caption + .rich-text__text {
+		margin-top: 20px;
 	}
 }

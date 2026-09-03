@@ -11,6 +11,12 @@
     height: auto !important;
 }
 
+.instafeed-new-layout-container {
+    position: relative !important;
+    overflow: visible !important;
+    padding-bottom: 52px !important;
+}
+
 .instafeed-new-layout-wrapper {
     gap: 8px !important;
 }
@@ -19,6 +25,95 @@
     aspect-ratio: 319 / 425 !important;
     height: auto !important;
     width: calc((100vw - 164px) / 4) !important;
+}
+
+/* InstaFeed nav: bottom-left line arrows (match image-slider / meet-team) */
+#insta-feed .instafeed-new-arrow,
+#insta-feed .instafeed-new-arrow-prev,
+#insta-feed .instafeed-new-arrow-next {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+    transform: none !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 18px 18px !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
+    cursor: pointer !important;
+    z-index: 5 !important;
+}
+
+#insta-feed .instafeed-new-arrow::before,
+#insta-feed .instafeed-new-arrow::after,
+#insta-feed .instafeed-new-arrow-prev::before,
+#insta-feed .instafeed-new-arrow-prev::after,
+#insta-feed .instafeed-new-arrow-next::before,
+#insta-feed .instafeed-new-arrow-next::after {
+    content: none !important;
+    display: none !important;
+}
+
+#insta-feed .instafeed-new-arrow.prev,
+#insta-feed .instafeed-new-arrow-prev {
+    left: 0 !important;
+    right: auto !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 12H18M6 12L11 7M6 12L11 17' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+#insta-feed .instafeed-new-arrow.next,
+#insta-feed .instafeed-new-arrow-next {
+    left: 42px !important;
+    right: auto !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 12H18M18 12L13 7M18 12L13 17' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+#insta-feed .instafeed-new-arrow.prev[style*="display: none"],
+#insta-feed .instafeed-new-arrow-prev[style*="display: none"],
+#insta-feed .instafeed-new-arrow.next[style*="display: none"],
+#insta-feed .instafeed-new-arrow-next[style*="display: none"] {
+    display: none !important;
+}
+
+#insta-feed .instafeed-new-arrow[aria-disabled="true"],
+#insta-feed .instafeed-new-arrow.disabled,
+#insta-feed .instafeed-new-arrow-prev[aria-disabled="true"],
+#insta-feed .instafeed-new-arrow-next[aria-disabled="true"] {
+    opacity: 0.35 !important;
+    cursor: default !important;
+    pointer-events: none !important;
+}
+
+#insta-feed .instafeed-new-arrow svg,
+#insta-feed .instafeed-new-arrow-prev svg,
+#insta-feed .instafeed-new-arrow-next svg {
+    display: none !important;
+}
+
+#insta-feed .instafeed-new-layout-item-container .instafeed-hover-layer .instafeed-hover-icon {
+    width: 20px !important;
+    height: 20px !important;
+    top: 10px;
+    right: 0;
+    left: auto;
+}
+
+#insta-feed .instafeed-new-layout-item-container .instafeed-hover-layer .instafeed-hover-icon img {
+    content: url('https://upload.wikimedia.org/wikipedia/commons/b/bd/Instagram_white.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original') !important;
+}
+
+#insta-feed .instafeed-new-layout-item-container .instafeed-hover-layer {
+    opacity: 1;
 }
 
 @media screen and (min-width: 1441px) {
@@ -35,5 +130,9 @@
     .instafeed-new-layout-item {
         aspect-ratio: 190 / 253 !important;
         width: calc((100vw - 52px) / 2) !important;
+    }
+
+    .instafeed-new-layout-container {
+        padding-bottom: 44px !important;
     }
 }
