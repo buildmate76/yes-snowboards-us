@@ -105,3 +105,21 @@ div.eo-sh-message {
 .collection__view-all a:not(.link) {
     margin-top: var(--space-xs-xs);
 }
+
+
+.collection-hero .page-width,
+.facets-wrapper.page-width,
+.collection.page-width {
+    padding-inline: 180px !important;
+}
+
+.collection .product-grid {
+    column-gap: 30px;
+    row-gap: 58px;
+}
+
+.collection .product-card-wrapper .card__inner,
+.collection .product-card-wrapper .card__inner.color-scheme-1,
+.collection .product-card-wrapper .card__inner.gradient {
+    height: var(--product-card-media-container) !important;
+}

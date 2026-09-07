@@ -2965,7 +2965,7 @@ details[open] > .header__submenu li:last-child .header__menu-item {
 }
 
 .header__inline-menu.right li:not(.list-menu__regions):hover a span {
-	background-color: var(--color-accent-primary);
+	background-color: var(--color-blue-light);
 	transition: background-color ease var(--transition-duration-03s);
 }
 
@@ -3070,7 +3070,7 @@ details[open] > .header__menu-item .icon-caret {
 .header__active-menu-item,
 .header__menu-item:hover span.header__active-menu-item,
 .header__menu-item:hover span {
-	background-color: var(--color-accent-primary);
+	background-color: var(--color-blue-light);
 	color: rgb(var(--color-foreground));
 	transition: all ease var(--transition-duration-03s);
 }
@@ -3110,7 +3110,7 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__submenu .header__menu-item:hover {
-	background-color: var(--color-accent-primary);
+	background-color: var(--color-blue-light);
 }
 
 .header__menu-item .icon-caret {

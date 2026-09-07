@@ -20,7 +20,7 @@
 }
 
 .list-menu__item--active {
-	background: var(--color-accent-primary);
+	background: var(--color-blue-light);
 	text-decoration: none;
 	text-underline-offset: var(--space-3xxs);
 }

@@ -25,7 +25,7 @@
 
 	--color-blue-light: #A6DDE8;
 
-	--color-accent-primary: #ffea00;
+	--color-accent-primary: var(--color-blue-light);
 	--color-accent-secondary: #9747ff;
 
 	--color-success: #369e53;
@@ -38,7 +38,10 @@
 	--global-container: 1440px;
 
 	/* Product Card */
-	--product-card-media-container: 348px;
+	--product-card-media-container: 280px;
+
+	/* Collection List Wrapper */
+	--collection-list-wrapper-height: 431px;
 
 	/* Size - used for `height`, `max-height`, `width`, `max-width` */
 	--size-3xs: calc(1 * var(--spacing-unit)); /*  4px */

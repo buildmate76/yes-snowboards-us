@@ -118,7 +118,7 @@
 
 .featured-collections--home .page-width {
 	max-width: 1440px;
-	padding-inline: 60px;
+	padding-inline: 143px;
 }
 
 .featured-collections--home .collection-two-column {
@@ -130,13 +130,13 @@
 
 .featured-collections--home .item {
 	width: auto;
-	padding: 0 32px 0 0;
+	padding: 0 48px 0 0;
 }
 
 .featured-collections--home .item + .item {
 	border: 0;
 	margin: 0;
-	padding: 0 0 0 32px;
+	padding: 0 0 0 48px;
 }
 
 .featured-collections--home .collection__title {
@@ -177,11 +177,12 @@
 	border: 1px solid var(--color-gray-medium);
 	border-radius: 8px;
 	overflow: hidden;
+	background: var(--color-gray-light);
 }
 
 .featured-collections--home .card__inner {
 	height: 190px;
-	background: var(--color-white);
+	background: var(--color-gray-light);
 }
 
 .featured-collections--home .card--standard .card__inner {
@@ -195,6 +196,7 @@
 
 .featured-collections--home .card__content {
 	padding: 16px !important;
+	background: transparent;
 }
 
 .featured-collections--home .card__information {
